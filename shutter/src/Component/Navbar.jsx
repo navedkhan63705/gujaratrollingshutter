@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [overviewOpen, setOverviewOpen] = useState(false);
@@ -54,7 +56,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-white font-bold text-xl">Logo</a>
+          <img src="../assets/logo.svg" alt="Logo" />
           </div>
           
           {/* Navigation Links */}

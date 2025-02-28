@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import supportbg from "../assets/supportBg.jpg";
 
 const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
@@ -6,10 +7,10 @@ const Home2 = () => {
   
   // Sample images (using placeholder images)
   const images = [
-    "/api/placeholder/600/400",
-    "/api/placeholder/600/400",
-    "/api/placeholder/600/400",
-    "/api/placeholder/600/400"
+    supportbg,
+    supportbg,
+    supportbg,
+    supportbg
   ];
   
   const handleNext = (type) => {

@@ -1,0 +1,1 @@
+import support1 from './support1.jpg';
