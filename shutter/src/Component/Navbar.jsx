@@ -39,7 +39,7 @@ const Navbar = () => {
               
               {activeDropdown === 'overview' && (
                 <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg z-10">
-                  <div className="py-1">
+                  <div className="py-1 z-10">
                     <a href="/about-us" className="block px-4 py-2 hover:bg-gray-600">About Us</a>
                     <a href="/milestone" className="block px-4 py-2 hover:bg-gray-600">Milestone</a>
                     <a href="/sustainability" className="block px-4 py-2 hover:bg-gray-600">Sustainability</a>
@@ -57,7 +57,7 @@ const Navbar = () => {
               <a href="/products" className="py-2 hover:text-blue-300">Products</a>
               
               {activeDropdown === 'products' && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto">
+                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto opacity-100">
                   <div className="py-1">
                     <a href="/product/1" className="block px-4 py-2 hover:bg-gray-600">Product 1</a>
                     <a href="/product/2" className="block px-4 py-2 hover:bg-gray-600">Product 2</a>
@@ -67,8 +67,6 @@ const Navbar = () => {
                     <a href="/product/6" className="block px-4 py-2 hover:bg-gray-600">Product 6</a>
                     <a href="/product/7" className="block px-4 py-2 hover:bg-gray-600">Product 7</a>
                     <a href="/product/8" className="block px-4 py-2 hover:bg-gray-600">Product 8</a>
-                    <a href="/product/9" className="block px-4 py-2 hover:bg-gray-600">Product 9</a>
-                    <a href="/product/10" className="block px-4 py-2 hover:bg-gray-600">Product 10</a>
                   </div>
                 </div>
               )}
@@ -164,8 +162,6 @@ const Navbar = () => {
                   <a href="/product/6" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 6</a>
                   <a href="/product/7" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 7</a>
                   <a href="/product/8" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 8</a>
-                  <a href="/product/9" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 9</a>
-                  <a href="/product/10" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 10</a>
                 </div>
               )}
             </div>
