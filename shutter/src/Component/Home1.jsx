@@ -7,7 +7,7 @@ const Home1 = () => {
   const slides = [
     {
       id: 1,
-      image:"./assets/background1 .jpg",
+      image:'/api/placeholder/1920/1080',
       heading: 'Welcome to Transpire',
       buttonText: 'Discover More'
     },

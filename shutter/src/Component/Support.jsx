@@ -1,4 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import supportbg from "../assets/supportBg.jpg";
+// import support1 from "../assets/support1.jpg";
+// import support2 from "../assets/support2.jpg";
+// import support3 from "../assets/support3.jpg";
+
 
 const Support = () => {
   // Custom hook for scroll animations
@@ -34,25 +39,34 @@ const Support = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50">
-      {/* Hero Section */}
+      {/* Hero Section with Background Image */}
       <div 
         ref={heroRef} 
-        className={`bg-white shadow-lg rounded-b-3xl transition-all duration-1000 ease-out ${
+        className={`relative h-96 transition-all duration-1000 ease-out ${
           heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
         }`}
+        style={{
+          backgroundImage: `url(${supportbg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          borderBottomLeftRadius: '1.5rem',
+          borderBottomRightRadius: '1.5rem',
+        }}
       >
-        <div className="container mx-auto px-4 py-12 flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-center">
-            <span className="text-blue-600">Customer</span> Support Center
+        {/* Dark overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black bg-opacity-40" style={{
+          borderBottomLeftRadius: '1.5rem',
+          borderBottomRightRadius: '1.5rem',
+        }}></div>
+        
+        {/* Text overlay centered on image */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          <h1 className="text-4xl mt-10 md:text-5xl font-bold text-white mb-6 text-center">
+            <span className="text-blue-300">Customer</span> Support Center
           </h1>
-          <p className="text-gray-600 max-w-2xl text-center mb-8">
+          <p className="text-white max-w-2xl text-center mb-8">
             Get the help you need with our comprehensive support resources
           </p>
-          <img 
-            src="/api/placeholder/800/400" 
-            alt="Support Hero" 
-            className="rounded-xl shadow-xl max-w-4xl w-full hover:shadow-2xl transition-shadow duration-300"
-          />
         </div>
       </div>
 
@@ -84,7 +98,7 @@ const Support = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="/api/placeholder/500/300" 
+              src={supportbg}
               alt="Getting Started" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />
@@ -117,7 +131,7 @@ const Support = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="/api/placeholder/500/300" 
+              src={supportbg}
               alt="Troubleshooting" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />
@@ -151,7 +165,7 @@ const Support = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="/api/placeholder/500/300" 
+              src={supportbg}
               alt="Contact Us" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />

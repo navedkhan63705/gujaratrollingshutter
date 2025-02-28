@@ -1,179 +1,155 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [overviewOpen, setOverviewOpen] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
+  
+  // Change navbar background when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const handleMouseEnter = (dropdownName) => {
-    setActiveDropdown(dropdownName);
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const closeDropdowns = () => {
+      setOverviewOpen(false);
+      setProductOpen(false);
+    };
+    
+    document.addEventListener('click', closeDropdowns);
+    return () => document.removeEventListener('click', closeDropdowns);
+  }, []);
+
+  // Prevent clicks inside dropdown from closing it
+  const handleDropdownClick = (e) => {
+    e.stopPropagation();
   };
 
-  const handleMouseLeave = () => {
-    setActiveDropdown(null);
+  // Toggle specific dropdown
+  const toggleOverview = (e) => {
+    e.stopPropagation();
+    setOverviewOpen(!overviewOpen);
+    setProductOpen(false);
   };
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const toggleDropdown = (name) => {
-    setActiveDropdown(activeDropdown === name ? null : name);
+  const toggleProduct = (e) => {
+    e.stopPropagation();
+    setProductOpen(!productOpen);
+    setOverviewOpen(false);
   };
 
   return (
-    <nav className="bg-gray-800 text-white">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className={`fixed w-full z-10 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-70 shadow-md' : 'bg-transparent'}`}>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="/" className="text-xl font-bold">Transpire</a>
+          <div className="flex-shrink-0">
+            <a href="/" className="text-white font-bold text-xl">Logo</a>
+          </div>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {/* Overview dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => handleMouseEnter('overview')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <a href="/overview" className="py-2 hover:text-blue-300">Overview</a>
+          {/* Navigation Links */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-8">
+              <a href="/" className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
               
-              {activeDropdown === 'overview' && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg z-10">
-                  <div className="py-1 z-10">
-                    <a href="/about-us" className="block px-4 py-2 hover:bg-gray-600">About Us</a>
-                    <a href="/milestone" className="block px-4 py-2 hover:bg-gray-600">Milestone</a>
-                    <a href="/sustainability" className="block px-4 py-2 hover:bg-gray-600">Sustainability</a>
+              {/* Overview Dropdown */}
+              <div className="relative" onClick={handleDropdownClick}>
+                <button 
+                  onClick={toggleOverview}
+                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
+                >
+                  Overview
+                  <svg className={`ml-1 h-4 w-4 transition-transform duration-200 ${overviewOpen ? 'transform rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {overviewOpen && (
+                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                    <a href="/overview/option1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 1</a>
+                    <a href="/overview/option2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 2</a>
+                    <a href="/overview/option3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 3</a>
                   </div>
-                </div>
-              )}
-            </div>
-            
-            {/* Products dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => handleMouseEnter('products')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <a href="/products" className="py-2 hover:text-blue-300">Products</a>
+                )}
+              </div>
               
-              {activeDropdown === 'products' && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto opacity-100">
-                  <div className="py-1">
-                    <a href="/product/1" className="block px-4 py-2 hover:bg-gray-600">Product 1</a>
-                    <a href="/product/2" className="block px-4 py-2 hover:bg-gray-600">Product 2</a>
-                    <a href="/product/3" className="block px-4 py-2 hover:bg-gray-600">Product 3</a>
-                    <a href="/product/4" className="block px-4 py-2 hover:bg-gray-600">Product 4</a>
-                    <a href="/product/5" className="block px-4 py-2 hover:bg-gray-600">Product 5</a>
-                    <a href="/product/6" className="block px-4 py-2 hover:bg-gray-600">Product 6</a>
-                    <a href="/product/7" className="block px-4 py-2 hover:bg-gray-600">Product 7</a>
-                    <a href="/product/8" className="block px-4 py-2 hover:bg-gray-600">Product 8</a>
+              <a href="/contact" className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+              <a href="/support" className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Support</a>
+              
+              {/* Product Dropdown */}
+              <div className="relative" onClick={handleDropdownClick}>
+                <button 
+                  onClick={toggleProduct}
+                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
+                >
+                  Product
+                  <svg className={`ml-1 h-4 w-4 transition-transform duration-200 ${productOpen ? 'transform rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {productOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                    <a href="/product/feature1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 1</a>
+                    <a href="/product/feature2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 2</a>
+                    <a href="/product/feature3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 3</a>
+                    <a href="/product/feature4" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 4</a>
+                    <a href="/product/feature5" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 5</a>
+                    <a href="/product/feature6" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 6</a>
+                    <a href="/product/feature7" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 7</a>
+                    <a href="/product/feature8" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 8</a>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-            
-            {/* Support link */}
-            <a href="/support" className="py-2 hover:text-blue-300">Support</a>
-            
-            {/* Contact link */}
-            <a href="/contact" className="py-2 hover:text-blue-300">Contact</a>
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button 
-              onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
-            >
-              <svg 
-                className="h-6 w-6" 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+          <div className="md:hidden flex items-center">
+            <button className="text-white hover:text-gray-300 focus:outline-none">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
       </div>
       
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-gray-800 pb-4 px-4">
-          <div className="space-y-1">
-            {/* Overview with dropdown */}
-            <div>
-              <button 
-                onClick={() => toggleDropdown('overview')}
-                className="w-full text-left px-3 py-2 flex justify-between items-center text-white hover:bg-gray-700 rounded-md"
-              >
-                <span>Overview</span>
-                <svg 
-                  className={`h-4 w-4 transition-transform ${activeDropdown === 'overview' ? 'transform rotate-180' : ''}`} 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {activeDropdown === 'overview' && (
-                <div className="mt-2 pl-4 border-l-2 border-gray-600 ml-3">
-                  <a href="/about-us" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">About Us</a>
-                  <a href="/milestone" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Milestone</a>
-                  <a href="/sustainability" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Sustainability</a>
-                </div>
-              )}
-            </div>
-            
-            {/* Products with dropdown */}
-            <div>
-              <button 
-                onClick={() => toggleDropdown('products')}
-                className="w-full text-left px-3 py-2 flex justify-between items-center text-white hover:bg-gray-700 rounded-md"
-              >
-                <span>Products</span>
-                <svg 
-                  className={`h-4 w-4 transition-transform ${activeDropdown === 'products' ? 'transform rotate-180' : ''}`} 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {activeDropdown === 'products' && (
-                <div className="mt-2 pl-4 border-l-2 border-gray-600 ml-3 max-h-64 overflow-y-auto">
-                  <a href="/product/1" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 1</a>
-                  <a href="/product/2" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 2</a>
-                  <a href="/product/3" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 3</a>
-                  <a href="/product/4" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 4</a>
-                  <a href="/product/5" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 5</a>
-                  <a href="/product/6" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 6</a>
-                  <a href="/product/7" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 7</a>
-                  <a href="/product/8" className="block px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">Product 8</a>
-                </div>
-              )}
-            </div>
-            
-            {/* Support link */}
-            <a href="/support" className="block px-3 py-2 text-white hover:bg-gray-700 rounded-md">Support</a>
-            
-            {/* Contact link */}
-            <a href="/contact" className="block px-3 py-2 text-white hover:bg-gray-700 rounded-md">Contact</a>
+      {/* Mobile menu, hidden by default */}
+      <div className="md:hidden hidden">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="/" className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+          
+          {/* Mobile Overview Menu */}
+          <div className="relative">
+            <button className="w-full text-left text-white hover:text-gray-300 px-3 py-2 rounded-md text-base font-medium">
+              Overview
+            </button>
+            {/* Mobile dropdown would go here */}
+          </div>
+          
+          <a href="/contact" className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+          <a href="/support" className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Support</a>
+          
+          {/* Mobile Product Menu */}
+          <div className="relative">
+            <button className="w-full text-left text-white hover:text-gray-300 px-3 py-2 rounded-md text-base font-medium">
+              Product
+            </button>
+            {/* Mobile dropdown would go here */}
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
