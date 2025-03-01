@@ -5,6 +5,7 @@ import Footer from './Component/Footer';
 import Help from './Component/Help';
 import Support from './Component/Support';
 import ContactPage from './Component/ContactPage';
+import AboutUs from './Component/AboutUs';
  
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/support' element={<Support/>} />
         <Route path='/contact' element={<ContactPage/>}/>
+        <Route path='/AboutUs' element={<AboutUs/>}/>
       </Routes>
       <Help/>
       <Footer/>

@@ -1,156 +1,142 @@
-import React, { useState, useEffect } from 'react';
-
-
+import React, { useState } from 'react';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [overviewOpen, setOverviewOpen] = useState(false);
-  const [productOpen, setProductOpen] = useState(false);
-  
-  // Change navbar background when scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [activeMenu, setActiveMenu] = useState(null);
 
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const closeDropdowns = () => {
-      setOverviewOpen(false);
-      setProductOpen(false);
-    };
-    
-    document.addEventListener('click', closeDropdowns);
-    return () => document.removeEventListener('click', closeDropdowns);
-  }, []);
-
-  // Prevent clicks inside dropdown from closing it
-  const handleDropdownClick = (e) => {
-    e.stopPropagation();
-  };
-
-  // Toggle specific dropdown
-  const toggleOverview = (e) => {
-    e.stopPropagation();
-    setOverviewOpen(!overviewOpen);
-    setProductOpen(false);
-  };
-
-  const toggleProduct = (e) => {
-    e.stopPropagation();
-    setProductOpen(!productOpen);
-    setOverviewOpen(false);
-  };
+  // Menu data
+  const menuItems = [
+    {
+      title: 'Overview',
+      options: [
+        { label: 'Product Features', link: '/features' },
+        { label: 'Use Cases', link: '/use-cases' },
+        { label: 'Testimonials', link: '/testimonials' },
+        { label: 'Pricing', link: '/pricing' }
+      ]
+    },
+    {
+      title: 'Products',
+      options: [
+        { label: 'Product A', link: '/product-a' },
+        { label: 'Product B', link: '/product-b' },
+        { label: 'Product C', link: '/product-c' },
+        { label: 'Enterprise Solutions', link: '/enterprise' }
+      ]
+    },
+    { title: 'Documentation', link: '/docs' },
+    { title: 'Resources', link: '/resources' },
+    { title: 'Support', link: '/support' }
+  ];
 
   return (
-    <nav className={`fixed w-full z-10 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-70 shadow-md' : 'bg-transparent'}`}>
-      <div className="max-w-6xl mx-auto px-4">
+    <nav className="bg-white shadow-md w-full">
+      <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-          <img src="../assets/logo.svg" alt="Logo" />
-          </div>
-          
-          {/* Navigation Links */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a href="/" className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-              
-              {/* Overview Dropdown */}
-              <div className="relative" onClick={handleDropdownClick}>
-                <button 
-                  onClick={toggleOverview}
-                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
-                >
-                  Overview
-                  <svg className={`ml-1 h-4 w-4 transition-transform duration-200 ${overviewOpen ? 'transform rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                {overviewOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                    <a href="/overview/option1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 1</a>
-                    <a href="/overview/option2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 2</a>
-                    <a href="/overview/option3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 3</a>
-                  </div>
-                )}
-              </div>
-              
-              <a href="/contact" className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
-              <a href="/support" className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Support</a>
-              
-              {/* Product Dropdown */}
-              <div className="relative" onClick={handleDropdownClick}>
-                <button 
-                  onClick={toggleProduct}
-                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
-                >
-                  Product
-                  <svg className={`ml-1 h-4 w-4 transition-transform duration-200 ${productOpen ? 'transform rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                {productOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                    <a href="/product/feature1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 1</a>
-                    <a href="/product/feature2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 2</a>
-                    <a href="/product/feature3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 3</a>
-                    <a href="/product/feature4" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 4</a>
-                    <a href="/product/feature5" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 5</a>
-                    <a href="/product/feature6" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 6</a>
-                    <a href="/product/feature7" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 7</a>
-                    <a href="/product/feature8" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Feature 8</a>
-                  </div>
-                )}
-              </div>
+          {/* Logo Section */}
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <a href="/" className="text-blue-600 font-bold text-xl">ProductLogo</a>
             </div>
           </div>
-          
-          {/* Mobile menu button */}
+
+          {/* Navigation Links */}
+          <div className="hidden md:block">
+            <div className="flex space-x-8">
+              {menuItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="relative"
+                  onMouseEnter={() => setActiveMenu(index)}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <a
+                    href={item.link || '#'}
+                    className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 group relative"
+                  >
+                    {item.title}
+                    {item.options && (
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    )}
+                    {item.options && (
+                      <svg 
+                        className="inline-block ml-1 w-4 h-4 transition-transform duration-200" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                  </a>
+
+                  {/* Dropdown Menu */}
+                  {item.options && activeMenu === index && (
+                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 py-1 transform origin-top-left transition-all duration-200 opacity-100 scale-100">
+                      {item.options.map((option, i) => (
+                        <a
+                          key={i}
+                          href={option.link}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
+                        >
+                          {option.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button className="text-white hover:text-gray-300 focus:outline-none">
+            <button className="text-gray-500 hover:text-blue-600 focus:outline-none">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
+
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a href="/login" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+              Login
+            </a>
+            <a href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+              Sign Up
+            </a>
+          </div>
         </div>
       </div>
-      
-      {/* Mobile menu, hidden by default */}
-      <div className="md:hidden hidden">
+
+      {/* Mobile Menu (hidden by default) */}
+      <div className="hidden md:hidden">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="/" className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-          
-          {/* Mobile Overview Menu */}
-          <div className="relative">
-            <button className="w-full text-left text-white hover:text-gray-300 px-3 py-2 rounded-md text-base font-medium">
-              Overview
-            </button>
-            {/* Mobile dropdown would go here */}
-          </div>
-          
-          <a href="/contact" className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-          <a href="/support" className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Support</a>
-          
-          {/* Mobile Product Menu */}
-          <div className="relative">
-            <button className="w-full text-left text-white hover:text-gray-300 px-3 py-2 rounded-md text-base font-medium">
-              Product
-            </button>
-            {/* Mobile dropdown would go here */}
-          </div>
+          {menuItems.map((item, index) => (
+            <div key={index}>
+              <a
+                href={item.link || '#'}
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
+              >
+                {item.title}
+              </a>
+              {item.options && (
+                <div className="pl-4 space-y-1">
+                  {item.options.map((option, i) => (
+                    <a
+                      key={i}
+                      href={option.link}
+                      className="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-sm"
+                    >
+                      {option.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
+        
       </div>
     </nav>
   );

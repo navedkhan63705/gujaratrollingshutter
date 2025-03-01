@@ -9,7 +9,7 @@ const Home2 = () => {
   const images = [
     supportbg,
     supportbg,
-    supportbg,
+    " ",
     supportbg
   ];
   
@@ -32,9 +32,9 @@ const Home2 = () => {
   return (
     <div className="max-w-8xl mx-auto p-4 bg-gray-200 ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
-      <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-bold mb-4 text-black">Welcome to our Product</h2>
-          <p className="text-gray-700 mb-6">
+      <div className="flex flex-col justify-center border">
+          <h2 className="text-3xl font-bold mb-4 text-black">Welcome to our Product</h2>
+          <p className="text-gray-700 mb-6 font-sans p-3 ">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad officia, libero omnis obcaecati unde dolore, magnam ea tempore fugit error
              ratione sed ipsum reiciendis fuga aliquid corrupti rem, nesciunt ex sequi impedit. Sint at consectetur minima iste velit quasi voluptatibus
               perspiciatis alias! A accusamus aliquid voluptate corrupti aliquam recusandae modi enim, autem, deserunt doloribus ipsam! Reprehenderit ut
@@ -55,7 +55,7 @@ const Home2 = () => {
         {/* Left Column - Image Swipers */}
         <div className="flex flex-col space-y-4">
           {/* Main Swiper (Now First and Larger) */}
-          <div className="relative overflow-hidden rounded-lg h-96">
+          <div className="relative overflow-hidden rounded-lg h-150">
             <img 
               src={images[currentMainImage]} 
               alt={`Image ${currentMainImage + 1}`}
@@ -81,7 +81,7 @@ const Home2 = () => {
           </div>
           
           {/* Small Swiper (Now Second) */}
-          <div className="relative overflow-hidden rounded-lg h-24">
+          <div className="relative overflow-hidden rounded-lg h-60">
             <img 
               src={images[currentThumbImage]} 
               alt={`Thumbnail ${currentThumbImage + 1}`}
