@@ -40,12 +40,16 @@ const Home3 = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">Our Products</h1>
-          <p className="text-gray-600 text-center">Discover our high-quality selection of products</p>
-        </header>
+  <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center animate-pulse">
+    Our Products
+  </h1>
+  <p className="text-gray-600 text-center transition-all duration-500 hover:text-gray-900 hover:scale-105">
+    Discover our high-quality selection of products
+  </p>
+</header>
         
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map(product => (
             <div key={product.id} className="flex flex-col">
               {/* Product Image Box */}

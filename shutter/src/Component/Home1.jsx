@@ -104,7 +104,7 @@ const Home1 = () => {
             {/* Animated Title */}
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 
-                className={`text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center px-4 py-2 bg-black bg-opacity-30 rounded-lg transform transition-all duration-1000 ${
+                className={`text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center px-4 py-2  bg-opacity-30 rounded-lg transform transition-all duration-1000 ${
                   titleVisible && currentIndex === slide.id - 1
                     ? 'translate-y-0 opacity-100'
                     : 'translate-y-8 opacity-0'
@@ -120,7 +120,7 @@ const Home1 = () => {
       {/* Navigation Arrows */}
       <button 
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 focus:outline-none transition-colors duration-300 z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2   bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 focus:outline-none transition-colors duration-300 z-10"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-8 h-8 text-white" />
@@ -128,7 +128,7 @@ const Home1 = () => {
       
       <button 
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 focus:outline-none transition-colors duration-300 z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2  bg-opacity-30 hover:bg-opacity-50 rounded-full p-3 focus:outline-none transition-colors duration-300 z-10"
         aria-label="Next slide"
       >
         <ChevronRight className="w-8 h-8 text-white" />

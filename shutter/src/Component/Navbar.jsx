@@ -23,7 +23,7 @@ const Navbar = () => {
         { label: 'Enterprise Solutions', link: '/enterprise' }
       ]
     },
-    { title: 'Documentation', link: '/docs' },
+    { title: 'Contact Us', link: '/contact' },
     { title: 'Resources', link: '/resources' },
     { title: 'Support', link: '/support' }
   ];
