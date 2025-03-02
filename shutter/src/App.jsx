@@ -7,6 +7,7 @@ import Support from './Component/Support';
 import ContactPage from './Component/ContactPage';
 import AboutUs from './Component/AboutUs';
 import Milestone from './Component/Milestone';
+import Main from './Component/Main';
  
  
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/contact' element={<ContactPage/>}/>
         <Route path='/AboutUs' element={<AboutUs/>}/>
         <Route path='/milestone' element={<Milestone/>}/>
+        <Route path='/main' element={<Main/>}/>
       </Routes>
       <Help/>
       <Footer/>
