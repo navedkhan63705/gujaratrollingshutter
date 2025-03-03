@@ -98,7 +98,7 @@ const Support = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src={supportbg}
+              src="../assets/support3.jpg"
               alt="Getting Started" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />
@@ -131,7 +131,7 @@ const Support = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src={supportbg}
+              src="../assets/support2.jpg"
               alt="Troubleshooting" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />
@@ -165,7 +165,7 @@ const Support = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src={supportbg}
+              src="../assets/support1.jpg"
               alt="Contact Us" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />

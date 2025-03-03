@@ -4,7 +4,6 @@ import supportbg from "../assets/supportBg.jpg";
 
 const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
-  const [currentThumbImage, setCurrentThumbImage] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const products = [
@@ -104,7 +103,7 @@ const Home2 = () => {
     </div>
     
     <div className="flex justify-start">
-      <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+      <button className="bg-orange-400 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
         Learn More
       </button>
     </div>
@@ -119,20 +118,7 @@ const Home2 = () => {
               alt={`Image ${currentMainImage + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-between p-2">
-              <button 
-                onClick={() => handlePrev('main')} 
-                className="bg-black bg-opacity-50 text-white p-2 rounded-full"
-              >
-                ←
-              </button>
-              <button 
-                onClick={() => handleNext('main')} 
-                className="bg-black bg-opacity-50 text-white p-2 rounded-full"
-              >
-                →
-              </button>
-            </div>
+            
             <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 text-xs rounded">
               {currentMainImage + 1} / {images.length}
             </div>
@@ -166,7 +152,7 @@ const Home2 = () => {
                 
                 <div className="flex justify-between items-center mt-3">
                   
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 py-2 rounded-md transition-colors duration-300">
+                  <button className="bg-orange-400 hover:bg-blue-600 text-white text-sm px-3 py-2 rounded-md transition-colors duration-300">
                     Add to Cart
                   </button>
                 </div>
