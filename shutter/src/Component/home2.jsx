@@ -9,33 +9,33 @@ const Home2 = () => {
   const products = [
     {
       id: 1,
-      name: "Premium Headphones",
-      image: "/api/placeholder/300/300",
+      name: "Aluminium Shutter",
+      image: "https://th.bing.com/th/id/R.ac2b6e4c149dcce31a582a7588a9e755?rik=GtRCkttMwv6iJA&riu=http%3a%2f%2fswastikshutters.com%2fassets%2fimg%2fservice-photo%2faluminium.jpg&ehk=l163oyPBJR%2fNDhcPyk7oPJ6Q1rmZaAqyEzrN%2fLt82uQ%3d&risl=&pid=ImgRaw&r=0",
     },
     {
       id: 2,
-      name: "Smart Watch Pro",
-      image: "/api/placeholder/300/300",
+      name: "Mirror Senser Door",
+      image: "https://expertautomationbd.com/wp-content/uploads/2022/05/1.Automatic-Sensor-Sliding-Doorribeng.it_.jpg",
     },
     {
       id: 3,
-      name: "Ultra Thin Laptop",
-      image: "/api/placeholder/300/300",
+      name: "Roof Ceiling",
+      image: "https://thumbs.dreamstime.com/b/led-light-used-modern-construction-subway-station-airport-railway-station-bus-station-shopping-mall-office-shopping-mall-137112675.jpg",
     },
     {
       id: 4,
-      name: "Wireless Charging Pad",
-      image: "/api/placeholder/300/300",
+      name: "Cabines",
+      image: "https://i.pinimg.com/originals/93/6a/3e/936a3e3b8dff4330f2069a235aede6ed.jpg",
     },
     {
       id: 5,
-      name: "4K Smart TV",
-      image: "/api/placeholder/300/300",
+      name: "Nut & Bolt",
+      image: "https://th.bing.com/th?id=OPAC.d3XcwuPd4%2fC%2b0A474C474&w=592&h=550&o=5&pid=21.1",
     },
     {
       id: 6,
-      name: "Portable Bluetooth Speaker",
-      image: "/api/placeholder/300/300",
+      name: "Pllywood Table",
+      image: "https://th.bing.com/th/id/OIP.7hUJv_4xEVTNhZmLMHqY1QHaEK?rs=1&pid=ImgDetMain",
     }
   ];
 
@@ -103,7 +103,7 @@ const Home2 = () => {
     </div>
     
     <div className="flex justify-start">
-      <button className="bg-orange-400 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+      <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
         Learn More
       </button>
     </div>

@@ -62,7 +62,7 @@ const Support = () => {
         {/* Text overlay centered on image */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           <h1 className="text-4xl mt-10 md:text-5xl font-bold text-white mb-6 text-center">
-            <span className="text-blue-300">Customer</span> Support Center
+            <span className="text-orange-300">Customer</span> Support Center
           </h1>
           <p className="text-white max-w-2xl text-center mb-8">
             Get the help you need with our comprehensive support resources
@@ -81,7 +81,7 @@ const Support = () => {
         >
           <div className="md:w-1/2">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mb-6">
                 <span className="text-white text-xl font-bold">1</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Getting Started</h2>
@@ -91,14 +91,14 @@ const Support = () => {
                 navigation. If you're new to our platform, this is the perfect place to start your journey. 
                 Our step-by-step instructions are designed to make your onboarding experience as smooth as possible.
               </p>
-              <button className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+              <button className="mt-6 px-6 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300">
                 Learn More
               </button>
             </div>
           </div>
           <div className="md:w-1/2">
             <img 
-              src="../assets/support3.jpg"
+              src="https://www.forbes.com/advisor/wp-content/uploads/2023/06/customerservice.jpg"
               alt="Getting Started" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />
@@ -114,7 +114,7 @@ const Support = () => {
         >
           <div className="md:w-1/2">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mb-6">
                 <span className="text-white text-xl font-bold">2</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Troubleshooting</h2>
@@ -124,14 +124,14 @@ const Support = () => {
                 to account recovery, find step-by-step troubleshooting guides to resolve your concerns. 
                 If you can't find what you're looking for, our support team is just a click away.
               </p>
-              <button className="mt-6 px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300">
+              <button className="mt-6 px-6 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300">
                 View Guides
               </button>
             </div>
           </div>
           <div className="md:w-1/2">
             <img 
-              src="../assets/support2.jpg"
+              src="https://www.opstart.ca/wp-content/uploads/2017/06/what-is-great-customer-service-1024x780.jpg"
               alt="Troubleshooting" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />
@@ -147,7 +147,7 @@ const Support = () => {
         >
           <div className="md:w-1/2">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mb-6">
                 <span className="text-white text-xl font-bold">3</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Us</h2>
@@ -158,14 +158,14 @@ const Support = () => {
                 For urgent matters, our emergency support line is available 24/7 to ensure 
                 you receive timely assistance whenever you need it.
               </p>
-              <button className="mt-6 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300">
+              <button className="mt-6 px-6 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300">
                 Contact Now
               </button>
             </div>
           </div>
           <div className="md:w-1/2">
             <img 
-              src="../assets/support1.jpg"
+              src="https://cdn.retailbiz.com.au/wp-content/uploads/2020/04/29084642/OpEd-Customers-iStock-504303998.jpg"
               alt="Contact Us" 
               className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-500"
             />

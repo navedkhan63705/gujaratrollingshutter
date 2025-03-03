@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import supportbg from "../assets/supportBg.jpg";
+import supportbg from "../assets/level4.png";
 
 const Home4 = () => {
   // Create ref for the hero section
@@ -52,13 +52,13 @@ const Home4 = () => {
       {/* Text overlay centered on image */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         <h1 className="text-4xl mt-10 md:text-5xl font-bold text-white mb-6 text-center">
-          <span className="text-blue-300 animate-pulse">Customer</span>{" "}
-          <span className="inline-block animate-bounce">Support</span>{" "}
-          <span className="inline-block transition-all duration-700 hover:scale-110 hover:text-yellow-300">Center</span>
+          <span className="text-gray-800 animate-pulse">Customer</span>{" "}
+          <span className="inline-block text-orange-400 animate-bounce">Support</span>{" "}
+          <span className="inline-block transition-all duration-700 hover:scale-110 hover:text-orange-300">Center</span>
         </h1>
         <p className="text-white max-w-2xl text-center mb-8 transition-all duration-500 transform hover:scale-105">
           Get the help you need with our{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
+          <span className="bg-gradient-to-r from-orange-400 to-orange-800 bg-clip-text text-transparent font-bold">
             comprehensive support resources
           </span>
         </p>

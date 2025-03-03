@@ -5,33 +5,33 @@ const Home3 = () => {
   const products = [
     {
       id: 1,
-      name: "Premium Headphones",
-      image: "/api/placeholder/300/300",
+      name: "Manual Shutter",
+      image: "https://5.imimg.com/data5/SELLER/Default/2021/10/XY/JT/SE/20702270/manual-shutter-500x500.jpg",
     },
     {
       id: 2,
-      name: "Smart Watch Pro",
-      image: "/api/placeholder/300/300",
+      name: " Gear Rolling Shutter",
+      image: "https://th.bing.com/th/id/R.9a2baa3a8f848d0a6d54ca4e492ee258?rik=HUxhWK1ItzijtA&riu=http%3a%2f%2fripalrollingshutters.com%2fwp-content%2fuploads%2f2021%2f06%2fWhatsApp-Image-2021-09-22-at-12.51.53-PM.jpeg&ehk=R%2fkluOATCWkT5z1KKZLRb3ZDo%2fxiKlFKVeBLp46lu6Y%3d&risl=&pid=ImgRaw&r=0",
     },
     {
       id: 3,
-      name: "Ultra Thin Laptop",
-      image: "/api/placeholder/300/300",
+      name:  "Motories Rolling Shutter",
+      image: "https://tiimg.tistatic.com/fp/1/008/302/painted-surface-mild-steel-automatic-rolling-shutter-with-motorized-831.jpg",
     },
     {
       id: 4,
-      name: "Wireless Charging Pad",
-      image: "/api/placeholder/300/300",
+      name: "M S Sliding Gate",
+      image: "https://www.mrmtech.in/wp-content/uploads/2023/02/Mild-Steel-Swing-Gates-MR-MSSG46-1.jpg",
     },
     {
       id: 5,
-      name: "4K Smart TV",
-      image: "/api/placeholder/300/300",
+      name: "Fire Resistant Door",
+      image: "https://img4031.weyesimg.com/uploads/lvzznuhf.allweyes.com/images/15350871185123.jpg?imageView2/2/w/1920/q/75",
     },
     {
       id: 6,
-      name: "Portable Bluetooth Speaker",
-      image: "/api/placeholder/300/300",
+      name: "M S Raling",
+      image: "https://th.bing.com/th/id/OIP.Rvk_Bi34bx-CwZGfxTApGgHaHa?rs=1&pid=ImgDetMain",
     }
   ];
 
@@ -65,7 +65,7 @@ const Home3 = () => {
               
               {/* Product Name and View Button Outside Box */}
               <h2 className="text-lg font-medium text-gray-800 mb-2">{product.name}</h2>
-              <button className="flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium">
+              <button className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium">
                 View Product
                 <svg 
                   className="w-4 h-4 ml-1" 
