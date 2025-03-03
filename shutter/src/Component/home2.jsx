@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import supportbg from "../assets/supportBg.jpg";
+ 
 
 const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
@@ -9,53 +10,33 @@ const Home2 = () => {
   const products = [
     {
       id: 1,
-      name: "Wireless Headphones",
-      image: "/api/placeholder/400/300",
-      category: "Electronics"
+      name: "Premium Headphones",
+      image: "/api/placeholder/300/300",
     },
     {
       id: 2,
-      name: "Organic Cotton T-shirt",
-      image: "/api/placeholder/400/300",
-      category: "Clothing"
+      name: "Smart Watch Pro",
+      image: "/api/placeholder/300/300",
     },
     {
       id: 3,
-      name: "Smart Watch Series 5",
-      image: "/api/placeholder/400/300",
-      category: "Electronics"
+      name: "Ultra Thin Laptop",
+      image: "/api/placeholder/300/300",
     },
     {
       id: 4,
-      name: "Leather Wallet",
-      image: "/api/placeholder/400/300",
-      category: "Accessories"
+      name: "Wireless Charging Pad",
+      image: "/api/placeholder/300/300",
     },
     {
       id: 5,
-      name: "Stainless Steel Water Bottle",
-      price: "$24.99",
-      image: "/api/placeholder/400/300",
-      rating: 4.6,
-      category: "Home"
+      name: "4K Smart TV",
+      image: "/api/placeholder/300/300",
     },
     {
       id: 6,
-      name: "Wireless Charging Pad",
-      image: "/api/placeholder/400/300",
-      category: "Electronics"
-    },
-    {
-      id: 7,
-      name: "Bluetooth Speaker",
-      image: "/api/placeholder/400/300",
-      category: "Electronics"
-    },
-    {
-      id: 8,
-      name: "Fitness Tracker Band",
-      image: "/api/placeholder/400/300",
-      category: "Sports"
+      name: "Portable Bluetooth Speaker",
+      image: "/api/placeholder/300/300",
     }
   ];
 
@@ -181,14 +162,11 @@ const Home2 = () => {
                 <span className="text-xs font-semibold text-blue-500 uppercase tracking-wider">{product.category}</span>
                 <h3 className="text-lg font-medium text-gray-800 mt-1 line-clamp-1">{product.name}</h3>
                 
-                <div className="flex items-center mt-1">
-                 
-                  <span className="text-xs text-gray-500 ml-1">({product.rating})</span>
-                </div>
+                
                 
                 <div className="flex justify-between items-center mt-3">
-                  <span className="text-lg font-bold text-gray-900">{product.price}</span>
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 py-1 rounded-md transition-colors duration-300">
+                  
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 py-2 rounded-md transition-colors duration-300">
                     Add to Cart
                   </button>
                 </div>

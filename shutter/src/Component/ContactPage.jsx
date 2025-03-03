@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import supportbg from "../assets/supportBg.jpg";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +28,26 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 ">
+       <div className="w-full h-full flex-shrink-0 relative">
+            <img 
+              src={supportbg} 
+              alt="unavailable" 
+              className="object-cover w-full h-full"
+            />
+            
+            {/* Animated Title */}
+            {/* <div className="absolute inset-0 flex items-center justify-center">
+              <h2 
+                className={`text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center px-4 py-2  bg-opacity-30 rounded-lg transform transition-all duration-1000 ${
+                  titleVisible && currentIndex === slide.id - 1
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-8 opacity-0'
+                }`}
+              >
+                {slide.title}
+              </h2>
+            </div> */}
+          </div>
       {/* Header */}
       <header className="bg-white shadow-sm text-center">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
