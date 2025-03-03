@@ -13,28 +13,21 @@ const Home1 = () => {
   const slides = [
     { 
       id: 1, 
-      url: '', 
+      url: 'https://th.bing.com/th/id/R.389535bfb3b8c36ea8dd53cf18807003?rik=HRkNDAvD8%2bzf0A&riu=http%3a%2f%2fwww.jobcrusher.com%2fwp-content%2fuploads%2ftoolsrusticwoodbackgrounddreamstime_m_439266072.jpg&ehk=nvdgNuDwDx9CvkOrHVdRaraAFjz0YSapVAsyFVG%2fhx4%3d&risl=&pid=ImgRaw&r=0', 
       alt: "Mountain Landscape", 
       title: "Breathtaking Mountain Views",
       color: "bg-blue-900" 
     },
     { 
-      id: 2, 
-      url:  "", 
-      alt: "Ocean Sunset", 
-      title: "Serene Ocean Sunset",
-      color: "bg-orange-900" 
-    },
-    { 
       id: 3, 
-      url: "support3", 
+      url: "https://davidtyler.com/wp-content/uploads/2016/05/tools_cropped.jpg", 
       alt: "Forest Path", 
       title: "Enchanted Forest Path",
       color: "bg-green-900" 
     },
     { 
       id: 4, 
-      url:"supportbg", 
+      url:"https://img.freepik.com/premium-photo/set-plumbing-tools-white_218381-4795.jpg?w=2000", 
       alt: "City Skyline", 
       title: "Modern City Skyline",
       color: "bg-purple-900" 
