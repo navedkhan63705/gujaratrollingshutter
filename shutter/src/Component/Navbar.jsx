@@ -18,7 +18,7 @@ const Navbar = () => {
         { label: 'Product Features', link: '/features' },
         { label: 'Use Cases', link: '/use-cases' },
         { label: 'Testimonials', link: '/testimonials' },
-        { label: 'Pricing', link: '/pricing' }
+        { label: 'Milestone', link: '/milestone' }
       ]
     },
     {
