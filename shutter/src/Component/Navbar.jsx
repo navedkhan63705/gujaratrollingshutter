@@ -17,92 +17,15 @@ const Navbar = () => {
       options: [
         { label: 'Product Features', link: '/features' },
         { label: 'Use Cases', link: '/use-cases' },
-        { label: 'Testimonials', link: '/testimonials' },
+         
         { label: 'Milestone', link: '/milestone' }
       ]
     },
-    {
-      title: 'Products',
-      options: [
-        { 
-          label: 'Shutters', 
-          link: '#',
-          subOptions: [
-            { label: 'Manual Shutters', link: '/shutters/manual' },
-            { label: 'Motorized Shutters', link: '/shutters/motorized' },
-            { label: 'Gear Rolling Shutters', link: '/shutters/manual' },
-            { label: 'Rapid shutter', link: '/shutters/motorized' },
-            { label: 'Aluminium Shutters', link: '/shutters/manual' },
-            { label: 'Stane-less Steel Shutters ', link: '/shutters/motorized' },
-            { label: 'Calvenized Shuuters', link: '/shutters/manual' },
-            { label: 'Calvailum Shutters', link: '/shutters/motorized' },
-            { label: ' Mild Steel Shutters', link: '/shutters/manual' },
-            { label: 'Grill Rolling Shutters', link: '/shutters/motorized' },
-            { label: 'Color Coated Shutters', link: '/shutters/smart' }
-          ] 
-        },
-        { 
-          label: 'Aluminium Section', 
-          link: '#',
-          subOptions: [
-            { label: 'Aluminium Profition', link: '/blinds/venetian' },
-            { label: 'Aluminium Window', link: '/blinds/roman' },
-            { label: 'Aluminium Door', link: '/blinds/roller' }
-          ] 
-        },
-        { 
-          label: 'Gate & Door', 
-          link: '#',
-          subOptions: [
-            { label: 'M S Sliding Gate', link: '/awnings/retractable' },
-            { label: 'S S Sliding Gate', link: '/awnings/fixed' },
-            { label: 'Fire Resistant Door', link: '/awnings/retractable' },
-            { label: 'Sliding Hangar Door', link: '/awnings/fixed' },
-            { label: 'Automation Baners', link: '/awnings/retractable' },
-            { label: 'Mirror Senser Door', link: '/awnings/fixed' },
-            { label: 'Electic Retractable SS Gate', link: '/awnings/freestanding' }
-          ] 
-        },
-        { 
-          label: 'Roof Products',
-          link: '#',
-          subOptions: [
-            { label: 'Roof Ceiling', link: '/awnings/retractable' },
-            { label: 'Roof Ceiling Light', link: '/awnings/fixed' },
-            { label: 'Roof PoP', link: '/awnings/retractable' },
-          ] 
-         },
-         { 
-          label: 'Office Work Station',
-          link: '#',
-          subOptions: [
-            { label: 'Pllywood Table', link: '/awnings/retractable' },
-            { label: 'Comfort Chair', link: '/awnings/fixed' },
-            { label: 'Electric Board in Table', link: '/awnings/retractable' },
-            { label: 'Floor Mating', link: '/awnings/retractable' }
-          ] 
-         },
-         { 
-          label: 'Raling',
-          link: '#',
-          subOptions: [
-            { label: 'M S Raling', link: '/awnings/retractable' },
-            { label: 'S S Raling', link: '/awnings/fixed' },
-          ] 
-         },
-         { 
-          label: 'Supply Companies',
-          link: '#',
-          subOptions: [
-            { label: 'Walls', link: '/awnings/retractable' },
-            { label: 'S S Nuts Bolts', link: '/awnings/fixed' },
-            { label: 'GI Bolt Nuts', link: '/awnings/retractable' }
-           ] 
-         }
-      ]
-    },
-    { title: 'Contact Us', link: '/contact' },
-    { title: 'Support', link: '/support' }
+    {title: 'About Us', link: '/AboutUs' },
+    {title: 'Products',link: '/product'},
+    { title: 'Support', link: '/support' },
+    { title: 'Contact Us', link: '/contact' }
+    
   ];
 
   // Close menus when clicking outside of nav
@@ -230,21 +153,7 @@ const Navbar = () => {
                               </svg>
                             )}
                           </a>
-
-                          {/* Second-level Nested Dropdown */}
-                          {option.subOptions && activeSubmenu === i && (
-                            <div className="absolute left-full top-0 ml-1 w-48 bg-white rounded-md shadow-lg z-20 py-1 transform origin-top-left transition-all duration-200 opacity-100 scale-100 max-h-96 overflow-y-auto">
-                              {option.subOptions.map((subOption, j) => (
-                                <a
-                                  key={j}
-                                  href={subOption.link}
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
-                                >
-                                  {subOption.label}
-                                </a>
-                              ))}
-                            </div>
-                          )}
+ 
                         </div>
                       ))}
                     </div>

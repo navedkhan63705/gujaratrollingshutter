@@ -9,10 +9,10 @@ const ContactPage = () => {
     subject: '',
     message: ''
   });
-  
+
   // Add state for title animation
   const [titleVisible, setTitleVisible] = useState(false);
-  
+
   // Trigger animation when component mounts
   useEffect(() => {
     setTitleVisible(true);
@@ -43,24 +43,23 @@ const ContactPage = () => {
           alt="Business collaboration"
           className="w-full h-full object-cover"
         />
-        
+
         {/* Animated Title - Uncommented and implemented */}
         <div className="absolute inset-0 flex items-center justify-center   bg-opacity-40">
-          <h2 
-            className={`text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center px-6 py-4  bg-opacity-30 rounded-lg transform transition-all duration-1000 ${
-              titleVisible
+          <h2
+            className={`text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center px-6 py-4  bg-opacity-30 rounded-lg transform transition-all duration-1000 ${titleVisible
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-8 opacity-0'
-            }`}
+              }`}
           >
             Let's Connect
           </h2>
         </div>
       </div>
-      
+
       {/* Main content section with negative margin to overlap */}
       <div className="-mt-32 relative z-10">
-        
+
 
         {/* Main Content */}
         <main className="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
@@ -163,15 +162,25 @@ const ContactPage = () => {
                     </div>
                   </div>
                 </form>
-              </div>
-
+              </div> 
               {/* Right Column - Company Location */}
               <div className="md:w-1/2 bg-gray-100">
                 <div className="h-64 bg-gray-300">
                   {/* Map placeholder - in a real implementation, you would integrate Google Maps or similar */}
                   <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                    <img src="/api/placeholder/800/300" alt="Map location" className="w-full h-full object-cover" />
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3706.7505117428614!2d72.9723928!3d21.7124112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be027f9bbeefa71%3A0x9b305eafe172f730!2sGujarat%20Rolling%20Shutter!5e0!3m2!1sen!2sin!4v1741080668444!5m2!1sen!2sin"
+                      width="600"
+                    
+                      height="300"
+                      object-cover
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
+
                 </div>
 
                 <div className="p-8">

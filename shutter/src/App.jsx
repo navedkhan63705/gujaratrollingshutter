@@ -24,6 +24,7 @@ function App() {
         <Route path='/milestone' element={<Milestone/>}/>
         <Route path='/main' element={<Main/>}/>
         <Route path='/product' element={<Product/>}/>
+        <Route path='/product/:speciality' element={<Product/>}/>
       </Routes>
       <Help/>
       <Footer/>
