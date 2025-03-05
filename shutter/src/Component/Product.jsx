@@ -19,8 +19,6 @@ export default function Product() {
     "Supply Companies"
   ];
 
-  // Extended sample product data with subcategories
- 
   const applyFilter = () => {
     if (selectedSpeciality && selectedOption) {
       // Filter by both main category and subcategory

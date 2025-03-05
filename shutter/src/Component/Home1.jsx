@@ -7,19 +7,19 @@ const Home1 = () => {
   const [titleVisible, setTitleVisible] = useState(true);
   const timeoutRef = useRef(null);
   
-  // Sample image data with titles - replace with your actual images
+  
   const slides = [
     { 
       id: 1, 
-      url: 'https://thumbs.dreamstime.com/b/roller-shutter-door-concrete-floor-outside-factory-building-industry-background-shutter-door-factory-132160050.jpg', 
-      alt: "Mountain Landscape", 
-      title: "Breathtaking Mountain Views"
-    },
-    { 
-      id: 2, 
       url: "https://img.freepik.com/premium-photo/empty-parking-garage-background_976047-2588.jpg", 
       alt: "Forest Path", 
       title: "Enchanted Forest Path"
+    },
+    { 
+      id: 2, 
+      url: 'https://img.freepik.com/premium-photo/roller-door-roller-shutter-used-factory-warehouse_1126269-1699.jpg', 
+      alt: "Mountain Landscape", 
+      title: "Breathtaking Mountain Views"
     },
     { 
       id: 3, 
