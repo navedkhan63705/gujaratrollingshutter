@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import supportbg from "../assets/supportBg.jpg";
-// import support1 from "../assets/support1.jpg";
-// import support2 from "../assets/support2.jpg";
-// import support3 from "../assets/support3.jpg";
+ 
 
 
 const Support = () => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {productData , speciality} from '../assets/asset.js';
+import supportbg from "../assets/level4.png";
 
 export default function Product() {
   const { speciality: urlSpeciality } = useParams();
@@ -62,9 +63,35 @@ export default function Product() {
   const currentSpeciality = speciality.find(item => item.title === selectedSpeciality);
 
   return (
-    <div className="p-3 md:p-4 min-h-screen">
-    <p className="text-gray-600 text-lg mb-4">Browse through the product categories.</p>
-    
+    <div className="">
+     <div 
+          
+         className={`relative h-96 transition-all duration-1000 ease-out`}
+         style={{
+           backgroundImage: `url(${supportbg})`,
+           backgroundSize: 'cover',
+           backgroundPosition: 'center',
+         }}
+       >
+         {/* Dark overlay for better text visibility */}
+         <div className="absolute inset-0   bg-opacity-40" style={{
+         }}></div>
+         
+         {/* Text overlay centered on image */}
+         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+           <h1 className="text-4xl mt-10 md:text-5xl font-bold text-white mb-6 text-center">
+             <span className="text-gray-800 animate-pulse">Customer</span>{" "}
+             <span className="inline-block text-orange-400 animate-bounce">Support</span>{" "}
+             <span className="inline-block transition-all duration-700 hover:scale-110 hover:text-orange-300">Center</span>
+           </h1>
+           <p className="text-white max-w-2xl text-center mb-8 transition-all duration-500 transform hover:scale-105">
+             Get the help you need with our{" "}
+             <span className="bg-gradient-to-r from-orange-400 to-orange-800 bg-clip-text text-transparent font-bold">
+               comprehensive support resources
+             </span>
+           </p>
+         </div>
+       </div> 
     {/* Mobile category selector (visible only on small screens) */}
     <div className="block sm:hidden mb-4">
       <select 

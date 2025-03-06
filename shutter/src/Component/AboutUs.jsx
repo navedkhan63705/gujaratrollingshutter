@@ -25,13 +25,10 @@ const AboutUs = () => {
       {/* Hero Section - Full Screen Image */}
       <div className="relative h-screen w-full overflow-hidden">
         <img
-          src={image} 
+          src="https://wallpaperaccess.com/full/5653641.jpg"
           alt="Company Hero" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0    flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white mb-4">Our Story</h1>
-        </div>
       </div>
       
       {/* First Section - Text left, Image right */}
@@ -52,7 +49,7 @@ const AboutUs = () => {
         <div className={`w-full md:w-1/2 px-4 transition-all duration-1000 delay-200 ${isVisible(200) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
           <div className="border-8 border-gray-200 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src={s1}  
+              src="https://www.indiafilings.com/learn/wp-content/uploads/2023/02/How-do-I-check-if-a-company-is-in-MCA.jpg"
               alt="Design Frame 1" 
               className="w-full h-full object-cover"
             />
@@ -79,7 +76,7 @@ const AboutUs = () => {
         <div className={`w-full md:w-1/2 px-4 transition-all duration-1000 delay-200 ${isVisible(600) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
           <div className="border-8 border-gray-200 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src={s1}  
+              src="https://www.marvell.com/content/dam/marvell/en/company/images/heroes/bnr-hero-855x504-company-contact-us.jpg"  
               alt="Design Frame 2" 
               className="w-full h-full object-cover"
             />
@@ -114,7 +111,7 @@ const AboutUs = () => {
       
       {/* Stats Section */}
       <div className="w-full py-20 px-8 bg-gray-900 text-white">
-        <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible(1400) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`max-w-8xl mx-auto transition-all duration-1000 ${isVisible(1400) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl font-bold text-center mb-16">Our Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {/* Years of Excellence */}
