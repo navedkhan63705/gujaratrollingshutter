@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { slides } from '../assets/asset';
 
 const Home1 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,27 +9,7 @@ const Home1 = () => {
   const timeoutRef = useRef(null);
   
   
-  const slides = [
-    { 
-      id: 1, 
-      url: "https://img.freepik.com/premium-photo/empty-parking-garage-background_976047-2588.jpg", 
-      alt: "Forest Path", 
-      title: "Enchanted Forest Path"
-    },
-    { 
-      id: 2, 
-      url: 'https://img.freepik.com/premium-photo/roller-door-roller-shutter-used-factory-warehouse_1126269-1699.jpg', 
-      alt: "Mountain Landscape", 
-      title: "Breathtaking Mountain Views"
-    },
-    { 
-      id: 3, 
-      url: "https://www.avians.co.in/images/banner/motorized-rolling-shutters/MS-GI-Galvalume-Rolling-Shutter/MS-GI-Galvalume-ss-Rolling-Shutter3.jpg", 
-      alt: "City Skyline", 
-      title: "Modern City Skyline"
-    },
-  ];
-
+ 
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);

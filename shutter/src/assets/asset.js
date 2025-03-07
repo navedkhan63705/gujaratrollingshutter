@@ -148,3 +148,66 @@ export const products = [
     image: "https://th.bing.com/th/id/OIP.7hUJv_4xEVTNhZmLMHqY1QHaEK?rs=1&pid=ImgDetMain",
   }
 ];
+export const product = [
+  {
+    id: 1,
+    name: "Manual Shutter",
+    image: "https://5.imimg.com/data5/SELLER/Default/2021/10/XY/JT/SE/20702270/manual-shutter-500x500.jpg",
+  },
+  {
+    id: 2,
+    name: " Gear Rolling Shutter",
+    image: "https://th.bing.com/th/id/R.9a2baa3a8f848d0a6d54ca4e492ee258?rik=HUxhWK1ItzijtA&riu=http%3a%2f%2fripalrollingshutters.com%2fwp-content%2fuploads%2f2021%2f06%2fWhatsApp-Image-2021-09-22-at-12.51.53-PM.jpeg&ehk=R%2fkluOATCWkT5z1KKZLRb3ZDo%2fxiKlFKVeBLp46lu6Y%3d&risl=&pid=ImgRaw&r=0",
+  },
+  {
+    id: 3,
+    name:  "Motories Rolling Shutter",
+    image: "https://tiimg.tistatic.com/fp/1/008/302/painted-surface-mild-steel-automatic-rolling-shutter-with-motorized-831.jpg",
+  },
+  {
+    id: 4,
+    name: "M S Sliding Gate",
+    image: "https://www.mrmtech.in/wp-content/uploads/2023/02/Mild-Steel-Swing-Gates-MR-MSSG46-1.jpg",
+  },
+  {
+    id: 5,
+    name: "Fire Resistant Door",
+    image: "https://img4031.weyesimg.com/uploads/lvzznuhf.allweyes.com/images/15350871185123.jpg?imageView2/2/w/1920/q/75",
+  },
+  {
+    id: 6,
+    name: "M S Raling",
+    image: "https://th.bing.com/th/id/OIP.Rvk_Bi34bx-CwZGfxTApGgHaHa?rs=1&pid=ImgDetMain",
+  }
+];
+export const slides = [
+  { 
+    id: 1, 
+    url: "https://img.freepik.com/premium-photo/empty-parking-garage-background_976047-2588.jpg", 
+    alt: "Forest Path", 
+    title: "Enchanted Forest Path"
+  },
+  { 
+    id: 2, 
+    url: 'https://img.freepik.com/premium-photo/roller-door-roller-shutter-used-factory-warehouse_1126269-1699.jpg', 
+    alt: "Mountain Landscape", 
+    title: "Breathtaking Mountain Views"
+  },
+  { 
+    id: 3, 
+    url: "https://www.avians.co.in/images/banner/motorized-rolling-shutters/MS-GI-Galvalume-Rolling-Shutter/MS-GI-Galvalume-ss-Rolling-Shutter3.jpg", 
+    alt: "City Skyline", 
+    title: "Modern City Skyline"
+  },
+];
+export const images = [
+  "https://rudhar.in/img/sc/industrial-sliding-gate-SC.jpg",
+  "https://cpimg.tistatic.com/08605879/b/4/Manual-Rolling-Shutter.jpg",
+  "https://th.bing.com/th/id/OIP.bGw7pXjkpqxbCOxib0Nd0wHaEP?rs=1&pid=ImgDetMain",
+  "https://5.imimg.com/data5/SELLER/Default/2023/8/335739604/ED/TI/IL/66021474/mild-steel-manual-rolling-shutter-1000x1000.jpg"
+];
+export const paragraphs = [
+  "where we take pride in offering a wide range of high-quality industrial and commercial solutions designed to meet the evolving needs of businesses. Our company specializes in manufacturing durable and innovative products that enhance security, efficiency, and functionality. Whether you're looking for industrial shutters, sliding gates, or custom office furniture, we have the expertise to deliver superior solutions. Every product we develop is designed to provide long-term value, ensuring your business operates smoothly while maintaining safety and efficiency. Our commitment to excellence drives us to continuously improve and innovate, making us a trusted name in the industry.",
+  "One of our key product categories includes industrial shutters, which are essential for securing commercial and industrial spaces. We manufacture various types of shutters, including steel shutters, known for their strength and durability, manual shutters, which offer affordability and ease of use, and motor-operated shutters, which provide effortless control with advanced automation. Additionally, our gear shutters are designed for enhanced safety and smooth operation, while our fire-rated shutters offer critical protection by preventing fire spread in emergency situations. Each of these shutters is crafted using high-quality materials and cutting-edge technology to ensure long-lasting performance, security, and convenience for businesses.",
+  "In addition to shutters, we manufacture high-quality sliding gates, which provide a strong, space-saving security solution for commercial and industrial premises. Our fire gates are specially designed to enhance fire safety, helping to contain flames and smoke in case of emergencies. These products play a crucial role in securing properties and ensuring compliance with safety regulations. Our team ensures that every gate we produce meets the highest industry standards, offering seamless operation, strong build quality, and customizable designs to match the unique requirements of our customers."
+];

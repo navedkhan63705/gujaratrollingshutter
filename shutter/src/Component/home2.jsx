@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import supportbg from "../assets/supportBg.jpg";
-import { products } from '../assets/asset.js';
+import { products, images, paragraphs } from '../assets/asset.js';
 
 const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
@@ -22,10 +21,10 @@ const Home2 = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    
+
     // Initial call
     handleResize();
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -56,13 +55,8 @@ const Home2 = () => {
     alert('Your enquiry has been submitted successfully!');
   };
 
-  // Sample images (using placeholder images)
-  const images = [
-    "https://rudhar.in/img/sc/industrial-sliding-gate-SC.jpg",
-    "https://cpimg.tistatic.com/08605879/b/4/Manual-Rolling-Shutter.jpg",
-    "https://th.bing.com/th/id/OIP.bGw7pXjkpqxbCOxib0Nd0wHaEP?rs=1&pid=ImgDetMain",
-    "https://5.imimg.com/data5/SELLER/Default/2023/8/335739604/ED/TI/IL/66021474/mild-steel-manual-rolling-shutter-1000x1000.jpg"
-  ];
+
+
 
   // Auto scroll effect for products
   useEffect(() => {
@@ -76,7 +70,7 @@ const Home2 = () => {
         return current + 280;
       });
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, [products.length]);
 
@@ -126,12 +120,8 @@ const Home2 = () => {
     }
   };
 
-  const paragraphs = [
-    "where we take pride in offering a wide range of high-quality industrial and commercial solutions designed to meet the evolving needs of businesses. Our company specializes in manufacturing durable and innovative products that enhance security, efficiency, and functionality. Whether you're looking for industrial shutters, sliding gates, or custom office furniture, we have the expertise to deliver superior solutions. Every product we develop is designed to provide long-term value, ensuring your business operates smoothly while maintaining safety and efficiency. Our commitment to excellence drives us to continuously improve and innovate, making us a trusted name in the industry.",
-    "One of our key product categories includes industrial shutters, which are essential for securing commercial and industrial spaces. We manufacture various types of shutters, including steel shutters, known for their strength and durability, manual shutters, which offer affordability and ease of use, and motor-operated shutters, which provide effortless control with advanced automation. Additionally, our gear shutters are designed for enhanced safety and smooth operation, while our fire-rated shutters offer critical protection by preventing fire spread in emergency situations. Each of these shutters is crafted using high-quality materials and cutting-edge technology to ensure long-lasting performance, security, and convenience for businesses.",
-    "In addition to shutters, we manufacture high-quality sliding gates, which provide a strong, space-saving security solution for commercial and industrial premises. Our fire gates are specially designed to enhance fire safety, helping to contain flames and smoke in case of emergencies. These products play a crucial role in securing properties and ensuring compliance with safety regulations. Our team ensures that every gate we produce meets the highest industry standards, offering seamless operation, strong build quality, and customizable designs to match the unique requirements of our customers."
-  ];
-  
+
+
   const visibleParagraphs = getVisibleParagraphs();
 
   return (
@@ -149,9 +139,9 @@ const Home2 = () => {
                   {paragraph}
                 </p>
               ))}
-              
+
               {visibleParagraphs < 3 && (
-                <button 
+                <button
                   className="text-orange-500 hover:text-orange-700 font-medium mt-4 transition-colors duration-200"
                   onClick={() => setWindowWidth(1200)} // Simulate larger screen for demo purposes
                 >
@@ -161,12 +151,12 @@ const Home2 = () => {
             </div>
 
             <div className="flex justify-start">
-              <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-3 px-6   transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 Learn More
               </button>
               <button
                 onClick={() => setShowEnquireForm(true)}
-                className="bg-orange-400 ml-10 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-md transition duration-300"
+                className="bg-orange-400 ml-10 hover:bg-orange-700 text-white font-bold py-3 px-6   transition duration-300"
               >
                 Enquire Now
               </button>
@@ -200,7 +190,7 @@ const Home2 = () => {
               →
             </button>
           </div>
-       
+
 
           {/* Product Cards Container */}
           <div className="relative overflow-hidden">
@@ -211,13 +201,13 @@ const Home2 = () => {
               {products.map((product) => (
                 <div
                   key={product.id}
-                  className="min-w-[250px] max-w-[250px] bg-white rounded-lg shadow-md mx-3 flex-shrink-0 overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+                  className="min-w-[300px] max-w-[350px] bg-white rounded-lg shadow-md mx-3 flex-shrink-0 overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300"
                 >
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-60 overflow-hidden">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                      className="w-full  h-full object-cover object-center hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
@@ -226,8 +216,22 @@ const Home2 = () => {
                     <h3 className="text-lg font-medium text-gray-800 mt-1 line-clamp-1">{product.name}</h3>
 
                     <div className="flex justify-between items-center mt-3">
-                      <button className="bg-orange-400 hover:bg-blue-600 text-white text-sm px-3 py-2 rounded-md transition-colors duration-300">
-                        Add to Cart
+                      <button className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium">
+                        View Product
+                        <svg
+                          className="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          ></path>
+                        </svg>
                       </button>
                     </div>
                   </div>
@@ -237,14 +241,14 @@ const Home2 = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Modal for Enquire Form */}
       {showEnquireForm && (
         <div className="fixed text-black inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 modal-overlay">
           <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">Enquire Now</h2>
-              <button 
+              <button
                 onClick={() => setShowEnquireForm(false)}
                 className="text-gray-500 hover:text-gray-700 focus:outline-none"
               >
@@ -253,7 +257,7 @@ const Home2 = () => {
                 </svg>
               </button>
             </div>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="modal-name" className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
@@ -268,7 +272,7 @@ const Home2 = () => {
                   placeholder="Your Name"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="modal-email" className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                 <input
@@ -282,7 +286,7 @@ const Home2 = () => {
                   placeholder="your.email@example.com"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="modal-phone" className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
                 <input
@@ -296,7 +300,7 @@ const Home2 = () => {
                   placeholder="Your Phone Number"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="requirement" className="block text-sm font-medium text-gray-700 mb-1">Requirement *</label>
                 <select
@@ -314,7 +318,7 @@ const Home2 = () => {
                   <option value="Other">Other</option>
                 </select>
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea
@@ -327,7 +331,7 @@ const Home2 = () => {
                   placeholder="Please provide additional details about your requirements..."
                 ></textarea>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 mt-6">
                 <button
                   type="button"
