@@ -1,11 +1,11 @@
 import React from 'react';
 
-const GujaratLogo = ({ className = "", height = "60" }) => {
+const GujaratLogo = ({ className = "", height = "100" }) => {
   return (
     <svg 
       className={className}
       height={height} 
-      viewBox="0 0 350 100" 
+      viewBox="5 10 450 80" 
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Background hexagon */}
@@ -26,7 +26,7 @@ const GujaratLogo = ({ className = "", height = "60" }) => {
       <text 
         x="155" 
         y="40" 
-        fontSize="22" 
+        fontSize="30" 
         fontFamily="Arial, sans-serif" 
         fontWeight="bold" 
         fill="#000"
@@ -34,7 +34,7 @@ const GujaratLogo = ({ className = "", height = "60" }) => {
       >GUJARAT</text>
       
       <text 
-        x="155" 
+        x="145" 
         y="70" 
         fontSize="22" 
         fontFamily="Arial, sans-serif" 
