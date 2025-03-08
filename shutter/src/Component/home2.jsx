@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { products, images, paragraphs } from '../assets/asset.js';
+import { useNavigate } from "react-router-dom";
 
 const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
@@ -13,6 +14,13 @@ const Home2 = () => {
     message: ''
   });
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+ 
+  const navigate = useNavigate();
+
+  const handleViewClick = (product) => {
+    // Navigate to product page with the specific category
+    navigate(`/product/${product.category}`);
+  };
 
   // Track window size for responsive content
   useEffect(() => {
@@ -37,7 +45,24 @@ const Home2 = () => {
       [name]: value
     }));
   };
-
+  
+   useEffect(() => {
+      // Set the selected speciality from URL parameter when component mounts or URL changes
+      if (urlSpeciality) {
+        setSelectedSpeciality(urlSpeciality);
+      }
+    }, [urlSpeciality]);
+  const handleSpecialityClick = (spec) => {
+    if (selectedSpeciality === spec) {
+      setSelectedSpeciality("");
+      setSelectedOption("");
+      navigate("/product");
+    } else {
+      setSelectedSpeciality(spec);
+      setSelectedOption(""); // Reset subcategory when changing main category
+      navigate(`/product/${spec}`);
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
@@ -54,9 +79,6 @@ const Home2 = () => {
     // You might want to show a success message here
     alert('Your enquiry has been submitted successfully!');
   };
-
-
-
 
   // Auto scroll effect for products
   useEffect(() => {
@@ -119,8 +141,6 @@ const Home2 = () => {
       return 3;
     }
   };
-
-
 
   const visibleParagraphs = getVisibleParagraphs();
 
@@ -216,7 +236,11 @@ const Home2 = () => {
                     <h3 className="text-lg font-medium text-gray-800 mt-1 line-clamp-1">{product.name}</h3>
 
                     <div className="flex justify-between items-center mt-3">
-                      <button className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium">
+                      <button 
+                        onClick={() => handleViewClick(product)}
+                        onChange={(e) => handleSpecialityClick(e.target.value)} 
+                        className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium"
+                      >
                         View Product
                         <svg
                           className="w-4 h-4 ml-1"
