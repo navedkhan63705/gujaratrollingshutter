@@ -24,7 +24,7 @@ export const productData = [
   { _id: '19', name: 'Sliding Hangar Doors', speciality: 'Gate & Door', subCategory: 'Sliding Hangar Doors', image: 'https://via.placeholder.com/150' },
   { _id: '20', name: 'Automatic Barrier', speciality: 'Gate & Door', subCategory: 'Automatic Barrier', image: 'https://via.placeholder.com/150' },
   { _id: '21', name: 'Dock Levelers', speciality: 'Gate & Door', subCategory: 'Dock Levelers', image: 'https://via.placeholder.com/150' },
-  { _id: '22', name: 'Mirror Sensor Door', speciality: 'Gate & Door', subCategory: 'Mirror Sensor Door', image: 'https://via.placeholder.com/150' },
+  { _id: '22', name: 'Mirror Sensor Door', speciality: 'Gate & Door', subCategory: 'Mirror Sensor Door', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
 
 
 

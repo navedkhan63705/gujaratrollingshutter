@@ -6,6 +6,7 @@ const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showEnquireForm, setShowEnquireForm] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,11 +16,11 @@ const Home2 = () => {
   });
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
  
-  const navigate = useNavigate();
+   
 
   const handleViewClick = (product) => {
     // Navigate to product page with the specific category
-    navigate(`/product/${product.category}`);
+    navigate(`/product`);
   };
 
   // Track window size for responsive content
@@ -46,23 +47,8 @@ const Home2 = () => {
     }));
   };
   
-   useEffect(() => {
-      // Set the selected speciality from URL parameter when component mounts or URL changes
-      if (urlSpeciality) {
-        setSelectedSpeciality(urlSpeciality);
-      }
-    }, [urlSpeciality]);
-  const handleSpecialityClick = (spec) => {
-    if (selectedSpeciality === spec) {
-      setSelectedSpeciality("");
-      setSelectedOption("");
-      navigate("/product");
-    } else {
-      setSelectedSpeciality(spec);
-      setSelectedOption(""); // Reset subcategory when changing main category
-      navigate(`/product/${spec}`);
-    }
-  };
+ 
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
@@ -237,8 +223,8 @@ const Home2 = () => {
 
                     <div className="flex justify-between items-center mt-3">
                       <button 
-                        onClick={() => handleViewClick(product)}
-                        onChange={(e) => handleSpecialityClick(e.target.value)} 
+                        value={product.name}
+                        onClick={(e) => handleViewClick(e.target.value)}
                         className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium"
                       >
                         View Product
