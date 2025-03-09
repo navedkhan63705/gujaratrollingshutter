@@ -195,9 +195,9 @@ const Home2 = () => {
           </div>
         </div>
         {/* Left Column - Image Swipers */}
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 ">
           {/* Main Swiper (Now First and Larger) */}
-          <div className="relative overflow-hidden rounded-lg h-150">
+          <div className="relative overflow-hidden rounded-lg h-150 sm:h-130 xs:h-40">
             <img
               src={images[currentMainImage]}
               alt={`Image ${currentMainImage + 1}`}

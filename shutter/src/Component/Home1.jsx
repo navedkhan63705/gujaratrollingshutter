@@ -8,8 +8,6 @@ const Home1 = () => {
   const [titleVisible, setTitleVisible] = useState(true);
   const timeoutRef = useRef(null);
   
-  
- 
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -55,7 +53,7 @@ const Home1 = () => {
   };
 
   return (
-    <div className="w-full h-screen overflow-hidden relative">
+    <div className="w-full  md:h-screen sm:h-200 xs:h-150 overflow-hidden relative">
       {/* Carousel Track */}
       <div 
         className="flex transition-transform duration-1000 ease-in-out h-full w-full" 
@@ -80,8 +78,8 @@ const Home1 = () => {
                 }`}
               >
                 <h2 
-                  className="text-white ml-20 text-3xl md:text-4xl lg:text-5xl font-bold px-6 py-4 
-                               bg-opacity-20 border-r-4 border-t-4 border-b-4  border-none
+                  className="text-white ml-4 sm:ml-8 md:ml-16 lg:ml-20 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4
+                             bg-opacity-20 border-r-4 border-t-4 border-b-4 border-none
                              relative overflow-hidden"
                 >
                   {/* Animated background gradient effect */}
@@ -98,35 +96,32 @@ const Home1 = () => {
         ))}
       </div>
       
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Adjusted for responsive design */}
       <button 
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-opacity-30 hover:bg-opacity-50 
-                  rounded-full p-3 focus:outline-none transition-colors duration-300 z-20"
+        className="absolute left-2 sm:left-3 md:left-4 top-1/2 -translate-y-1/2 bg-opacity-30 hover:bg-opacity-50 
+                  rounded-full p-1 sm:p-2 md:p-3 focus:outline-none transition-colors duration-300 z-20"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-8 h-8 text-white" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
       </button>
       
       <button 
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-opacity-30 hover:bg-opacity-50 
-                  rounded-full p-3 focus:outline-none transition-colors duration-300 z-20"
+        className="absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 bg-opacity-30 hover:bg-opacity-50 
+                  rounded-full p-1 sm:p-2 md:p-3 focus:outline-none transition-colors duration-300 z-20"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-8 h-8 text-white" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
       </button>
       
-    
-      
-      
-      {/* Indicator Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center space-x-3 z-10">
+      {/* Indicator Dots - Made responsive */}
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center space-x-1 sm:space-x-2 md:space-x-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-4 h-4 rounded-full focus:outline-none transition-colors duration-300 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full focus:outline-none transition-colors duration-300 ${
               index === currentIndex ? 'bg-white' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
             }`}
             aria-label={`Go to slide ${index + 1}`}

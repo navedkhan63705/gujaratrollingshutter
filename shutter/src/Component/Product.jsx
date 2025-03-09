@@ -71,7 +71,7 @@ export default function Product() {
   const currentSpeciality = speciality.find(item => item.title === selectedSpeciality);
 
   return (
-    <div className="mt-35 w-screen">
+    <div className="mt-35 w-screen min-h-screen">
       
       {/* Mobile category selector (visible only on small screens) */}
       <div className="block sm:hidden mb-4">
@@ -152,37 +152,47 @@ export default function Product() {
             </div>
           )}
           
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-            {filterDoc.length > 0 ? (
-              filterDoc.slice(0, 10).map((item, index) => (
-                <div
-                  onClick={() => navigate(`/product/details/${item._id}`)}
-                  key={index}
-                  className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
-                >
-                  {/* Aspect ratio container for consistent image sizing */}
-                  <div className="relative pt-[70%]">
-                    <img 
-                      className="absolute top-0 left-0 w-full h-full object-cover bg-orange-50" 
-                      src={item.image} 
-                      alt={item.name} 
-                    />
-                  </div>
-                  <div className="p-3 md:p-4">
-                    <div className="flex items-center justify-center gap-2 text-sm text-green-500 mt-1">
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                      <p>Available</p>
+          {/* Product grid - centered only when subcategory is selected */}
+          <div className={selectedOption ? "flex justify-center w-full" : ""}>
+            <div className={`grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 ${
+              // Adjust grid size based on number of products when in subcategory view
+              selectedOption ? 
+                filterDoc.length === 1 ? "w-64 sm:w-72 md:w-80" : 
+                filterDoc.length === 2 ? "w-full max-w-lg" :
+                filterDoc.length === 3 ? "w-full max-w-2xl" :
+                "w-full" : "w-full"
+            }`}>
+              {filterDoc.length > 0 ? (
+                filterDoc.slice(0, 10).map((item, index) => (
+                  <div
+                    onClick={() => navigate(`/product/details/${item._id}`)}
+                    key={index}
+                    className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
+                  >
+                    {/* Responsive aspect ratio container for consistent image sizing */}
+                    <div className="relative pt-[70%]">
+                      <img 
+                        className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50" 
+                        src={item.image} 
+                        alt={item.name} 
+                      />
                     </div>
-                    <p className="text-gray-900 text-base md:text-lg font-medium line-clamp-2">{item.name}</p>
-                    <p className="text-gray-500 text-xs md:text-sm">{item.subCategory}</p>
+                    <div className="p-3 md:p-4">
+                      <div className="flex items-center justify-center gap-2 text-sm text-green-500 mt-1">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <p>Available</p>
+                      </div>
+                      <p className="text-gray-900 text-base md:text-lg font-medium line-clamp-2">{item.name}</p>
+                      <p className="text-gray-500 text-xs md:text-sm">{item.subCategory}</p>
+                    </div>
                   </div>
+                ))
+              ) : (
+                <div className="col-span-full text-center py-8">
+                  <p className="text-gray-500">No products found for this selection. Please select a category.</p>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-8">
-                <p className="text-gray-500">No products found for this selection. Please select a category.</p>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

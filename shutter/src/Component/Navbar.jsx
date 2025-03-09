@@ -3,7 +3,6 @@ import GujaratLogo from "./GujaratLogo";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState([]);
   const [expandedMobileSubmenus, setExpandedMobileSubmenus] = useState([]);
@@ -52,7 +51,6 @@ const Navbar = () => {
     function handleClickOutside(event) {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setActiveMenu(null);
-        setActiveSubmenu(null);
         setIsMobileMenuOpen(false);
       }
     }
@@ -64,16 +62,14 @@ const Navbar = () => {
   // Desktop menu handlers
   const handleMenuEnter = (index) => {
     setActiveMenu(index);
-    setActiveSubmenu(null);
+    
   };
 
-  const handleSubmenuEnter = (subIndex) => {
-    setActiveSubmenu(subIndex);
-  };
+  
 
   const handleMenuLeave = () => {
     setActiveMenu(null);
-    setActiveSubmenu(null);
+    
   };
 
   // Mobile menu handlers

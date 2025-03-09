@@ -183,19 +183,19 @@ export const product = [
 export const slides = [
   { 
     id: 1, 
-    url: "https://img.freepik.com/premium-photo/empty-parking-garage-background_976047-2588.jpg", 
+    url: "https://files.oaiusercontent.com/file-Xz6nxbsP2uK8KmQkpxvtQZ?se=2025-03-09T16%3A33%3A55Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D337418fe-2c99-429b-8c2c-e1b0353cd859.webp&sig=/D4iZv8StkPG4t97D/UWv4spxY5C6SRcT1z8rwpNbFM%3D", 
     alt: "Forest Path", 
     title: "Enchanted Forest Path"
   },
   { 
     id: 2, 
-    url: 'https://img.freepik.com/premium-photo/roller-door-roller-shutter-used-factory-warehouse_1126269-1699.jpg', 
+    url: 'https://files.oaiusercontent.com/file-QWVkjThqAbYaAiz5xD69F2?se=2025-03-09T16%3A37%3A42Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Ddf7f0037-4ae0-4faf-9a0d-9b72c6c9c5a1.webp&sig=YpU0iPkeWdwELFNhQt/WoNSEFy59rSgaWAk4ftIU%2BQc%3D', 
     alt: "Mountain Landscape", 
     title: "Breathtaking Mountain Views"
   },
   { 
     id: 3, 
-    url: "https://www.avians.co.in/images/banner/motorized-rolling-shutters/MS-GI-Galvalume-Rolling-Shutter/MS-GI-Galvalume-ss-Rolling-Shutter3.jpg", 
+    url: "https://files.oaiusercontent.com/file-PzXzpFeUbrEcmGaxufsmt9?se=2025-03-09T16%3A38%3A19Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D5ac4fffb-ccef-4fb2-8b09-45fd1d7e1678.webp&sig=pY4PClhSv0AOslTjWUJkEgqdO%2BJvU88t7954nzyxzz8%3D", 
     alt: "City Skyline", 
     title: "Modern City Skyline"
   },
