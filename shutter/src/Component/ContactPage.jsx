@@ -45,17 +45,24 @@ const ContactPage = () => {
         />
 
         {/* Animated Title - Uncommented and implemented */}
-        <div className="absolute inset-0 flex items-center justify-center   bg-opacity-40">
+        <div className="absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full">
           <h2
-            className={`text-white text-3xl md:text-5xl lg:text-6xl font-bold text-center px-6 py-4  bg-opacity-30 rounded-lg transform transition-all duration-1000 ${titleVisible
-                ? 'translate-y-0 opacity-100'
-                : 'translate-y-8 opacity-0'
-              }`}
+            className="text-white text-3xl md:text-4xl lg:text-5xl font-bold px-6 py-4 
+               bg-opacity-20 border-r-4 border-t-4 border-b-4 border-none 
+               relative overflow-hidden text-center"
           >
-            Let's Connect
+            {/* Animated background gradient effect */}
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-gray-700 to-gray-900 
+                 animate-pulse opacity-50"
+            ></div>
+            {/* Title text */}
+            <span className="relative z-10">Let's Connect</span>
           </h2>
         </div>
+
       </div>
+
 
       {/* Main content section with negative margin to overlap */}
       <div className="-mt-32 relative z-10">
@@ -154,7 +161,7 @@ const ContactPage = () => {
                     <div>
                       <button
                         type="submit"
-                        className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                       >
                         <Send className="w-4 h-4 mr-2" />
                         Send Message
@@ -162,7 +169,7 @@ const ContactPage = () => {
                     </div>
                   </div>
                 </form>
-              </div> 
+              </div>
               {/* Right Column - Company Location */}
               <div className="md:w-1/2 bg-gray-100">
                 <div className="h-64 bg-gray-300">
@@ -171,7 +178,7 @@ const ContactPage = () => {
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3706.7505117428614!2d72.9723928!3d21.7124112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be027f9bbeefa71%3A0x9b305eafe172f730!2sGujarat%20Rolling%20Shutter!5e0!3m2!1sen!2sin!4v1741080668444!5m2!1sen!2sin"
                       width="600"
-                    
+
                       height="300"
                       object-cover
                       style={{ border: 0 }}
@@ -192,24 +199,13 @@ const ContactPage = () => {
                       <div>
                         <p className="font-medium text-gray-700">Address</p>
                         <address className="not-italic text-gray-600">
-                          Example Company Inc.<br />
-                          123 Business Avenue, Suite 100<br />
-                          San Francisco, CA 94107<br />
-                          United States
+                          Shalimar Complex,<br />
+                          3, Dahej Bypass Rd, <br />
+                          near Sherpura, Madina Park, Bharuch,<br />
+                          Gujarat 392015
                         </address>
                       </div>
                     </div>
-
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800 mb-2">How to reach us</h3>
-                      <p className="text-gray-600 mb-2">
-                        Our office is conveniently located in downtown San Francisco, just a 5-minute walk from the Central Station.
-                      </p>
-                      <p className="text-gray-600">
-                        Parking is available in the building's garage. Visitors can use the guest parking area on level P1.
-                      </p>
-                    </div>
-
                     <div>
                       <h3 className="text-lg font-medium text-gray-800 mb-2">Nearby landmarks</h3>
                       <ul className="list-disc list-inside text-gray-600">

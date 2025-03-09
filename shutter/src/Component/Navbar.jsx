@@ -143,7 +143,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             {/* Logo Section */}
-            <div className="flex items-center">
+            <div className="flex  items-center">
               <a href="/" className="flex items-center">
                 <GujaratLogo height="50" className="w-auto" />
               </a>

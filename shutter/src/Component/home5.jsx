@@ -23,12 +23,12 @@ export const Home5 = () => {
 
       {/* Right Section */}
       <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <div className="mb-6">
-          <h1 className="text-4xl font-bold text-orange-600 mb-2">PAN GUJARAT</h1>
-          <p className="text-3xl font-bolt text-white">India</p>
+        <div className="mb-6 ">
+          <h1 className="text-4xl bg-orange-500 ml-20 mb-10 rounded-full font-bold text-white mb-2 inline-block px-4 py-2">PAN GUJARAT</h1>
+          <p className="text-3xl font-bolt pl-5 text-white">India</p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 pl-5">
           <div className="flex items-start gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

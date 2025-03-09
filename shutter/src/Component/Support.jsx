@@ -83,15 +83,13 @@ const Support = () => {
                 <span className="text-white text-xl font-bold">1</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Getting Started</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Welcome to our support center! We're here to help you get the most out of our product. 
-                This guide will walk you through the initial setup process, account creation, and basic 
-                navigation. If you're new to our platform, this is the perfect place to start your journey. 
-                Our step-by-step instructions are designed to make your onboarding experience as smooth as possible.
+              <p className="text-gray-600 font-serif leading-relaxed">
+              Welcome to the support page of Gujarat Rolling Shutter! We are here to help you get started with our high-quality security solutions,
+               including rolling shutters, sliding gates, automatic shutters, office table cabins, and fire gates. If you are a new customer,
+                we recommend reviewing our product catalog and installation guides to understand the features and benefits of each solution.
+                Our team is available to assist you in choosing the right product based on your specific requirements.
+               For detailed setup instructions, you can refer to our user manuals or visit our online knowledge base for step-by-step guidance.
               </p>
-              <button className="mt-6 px-6 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300">
-                Learn More
-              </button>
             </div>
           </div>
           <div className="md:w-1/2">
@@ -116,15 +114,12 @@ const Support = () => {
                 <span className="text-white text-xl font-bold">2</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Troubleshooting</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Encountering an issue? Don't worry, we've got you covered. This section addresses 
-                common problems our users face and provides quick solutions. From connection issues 
-                to account recovery, find step-by-step troubleshooting guides to resolve your concerns. 
-                If you can't find what you're looking for, our support team is just a click away.
+              <p className="text-gray-600 font-serif leading-relaxed">
+              If you encounter any issues with our products, we have a comprehensive troubleshooting guide to help you resolve common problems quickly.
+               Whether it’s an automatic shutter not functioning properly, a sliding gate getting stuck, or any other technical concern,
+                we provide practical solutions to address these issues. Start by checking our FAQs and troubleshooting section, which cover basic fixes and maintenance tips. If the problem persists,
+               you can reach out to our support team for further assistance. We also offer on-site service and repair options to ensure your product remains in optimal condition.
               </p>
-              <button className="mt-6 px-6 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300">
-                View Guides
-              </button>
             </div>
           </div>
           <div className="md:w-1/2">
@@ -149,16 +144,12 @@ const Support = () => {
                 <span className="text-white text-xl font-bold">3</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Us</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Need personalized assistance? Our dedicated support team is ready to help you 
-                with any questions or concerns. Reach out through live chat, email, or phone 
-                support. We prioritize your inquiries and aim to respond within 24 hours. 
-                For urgent matters, our emergency support line is available 24/7 to ensure 
-                you receive timely assistance whenever you need it.
+              <p className="text-gray-600 font-serif leading-relaxed">
+              We value our customers and are always ready to assist you with any questions or concerns.
+               If you need further support, feel free to contact our customer service team. You can reach us via phone,
+               email, or by filling out the support request form on our website. Our support representatives are available during business hours to provide timely and effective solutions. For urgent inquiries, we also offer priority support to address critical issues as quickly as possible. At Gujarat Rolling Shutter,
+               customer satisfaction is our priority, and we are committed to ensuring that you receive the best service experience.
               </p>
-              <button className="mt-6 px-6 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300">
-                Contact Now
-              </button>
             </div>
           </div>
           <div className="md:w-1/2">
