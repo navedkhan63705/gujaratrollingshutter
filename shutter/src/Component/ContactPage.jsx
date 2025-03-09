@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import bg from "../assets/Contact.png";
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
+  const [titleVisible, setTitleVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
-
-  // Add state for title animation
-  const [titleVisible, setTitleVisible] = useState(false);
 
   // Trigger animation when component mounts
   useEffect(() => {
@@ -28,10 +28,39 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message
+    };
+    
+    // EmailJS send method
+    emailjs.send(
+      'service_1qawa3s',
+      'template_1c79hsj',
+      templateParams,
+      'bxKrI6moY7XtsyEHY'
+    )
+      .then((response) => {
+        console.log('Email successfully sent!', response);
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        alert('Your message has been sent successfully!');
+      })
+      .catch((err) => {
+        console.error('Failed to send email:', err);
+        setSubmitError('Failed to send your message. Please try again later.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -44,12 +73,12 @@ const ContactPage = () => {
           className="w-full h-full object-cover"
         />
 
-        {/* Animated Title - Uncommented and implemented */}
+        {/* Animated Title */}
         <div className="absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full">
           <h2
-            className="text-white text-3xl md:text-4xl lg:text-5xl font-bold px-6 py-4 
+            className={`text-white text-3xl md:text-4xl lg:text-5xl font-bold px-6 py-4 
                bg-opacity-20 border-r-4 border-t-4 border-b-4 border-none 
-               relative overflow-hidden text-center"
+               relative overflow-hidden text-center ${titleVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}
           >
             {/* Animated background gradient effect */}
             <div
@@ -60,14 +89,10 @@ const ContactPage = () => {
             <span className="relative z-10">Let's Connect</span>
           </h2>
         </div>
-
       </div>
-
 
       {/* Main content section with negative margin to overlap */}
       <div className="-mt-32 relative z-10">
-
-
         {/* Main Content */}
         <main className="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-b-lg shadow-md overflow-hidden">
@@ -82,7 +107,7 @@ const ContactPage = () => {
                     <Mail className="w-5 h-5 text-blue-500 mt-1 mr-3" />
                     <div>
                       <p className="font-medium text-gray-700">Email</p>
-                      <p className="text-gray-600">info@examplecompany.com</p>
+                      <p className="text-gray-600">gujaratrollingshutter2525@gmail.com</p>
                     </div>
                   </div>
 
@@ -90,7 +115,7 @@ const ContactPage = () => {
                     <Phone className="w-5 h-5 text-blue-500 mt-1 mr-3" />
                     <div>
                       <p className="font-medium text-gray-700">Phone</p>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                      <p className="text-gray-600">+91 9427877196</p>
                     </div>
                   </div>
 
@@ -98,7 +123,7 @@ const ContactPage = () => {
                     <Clock className="w-5 h-5 text-blue-500 mt-1 mr-3" />
                     <div>
                       <p className="font-medium text-gray-700">Business Hours</p>
-                      <p className="text-gray-600">Monday - Friday: 9AM - 5PM</p>
+                      <p className="text-gray-600">Monday - Saturday: 9AM - 7PM</p>
                     </div>
                   </div>
                 </div>
@@ -127,20 +152,7 @@ const ContactPage = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm p-2 border"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Subject</label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm p-2 border"
+                        className="mt-1 block w-full border-gray-300 text-black rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm p-2 border"
                         required
                       />
                     </div>
@@ -157,37 +169,60 @@ const ContactPage = () => {
                         required
                       ></textarea>
                     </div>
+                    
+                    {submitError && (
+                      <div className="rounded-md bg-red-50 p-4">
+                        <div className="flex">
+                          <div className="ml-3">
+                            <h3 className="text-sm font-medium text-red-800">Error</h3>
+                            <div className="text-sm text-red-700">{submitError}</div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
 
                     <div>
                       <button
                         type="submit"
                         className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        disabled={isSubmitting}
                       >
-                        <Send className="w-4 h-4 mr-2" />
-                        Send Message
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-4 h-4 mr-2" />
+                            Send Message
+                          </>
+                        )}
                       </button>
                     </div>
                   </div>
                 </form>
               </div>
+              
               {/* Right Column - Company Location */}
               <div className="md:w-1/2 bg-gray-100">
                 <div className="h-64 bg-gray-300">
-                  {/* Map placeholder - in a real implementation, you would integrate Google Maps or similar */}
+                  {/* Map integration */}
                   <div className="w-full h-full flex items-center justify-center bg-gray-200">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3706.7505117428614!2d72.9723928!3d21.7124112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be027f9bbeefa71%3A0x9b305eafe172f730!2sGujarat%20Rolling%20Shutter!5e0!3m2!1sen!2sin!4v1741080668444!5m2!1sen!2sin"
-                      width="600"
-
-                      height="300"
-                      object-cover
+                      width="100%"
+                      height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
+                      title="Company location"
                     ></iframe>
                   </div>
-
                 </div>
 
                 <div className="p-8">

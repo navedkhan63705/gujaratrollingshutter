@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { products, images, paragraphs } from '../assets/asset.js';
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 
 const Home2 = () => {
   const [currentMainImage, setCurrentMainImage] = useState(0);
@@ -15,9 +16,9 @@ const Home2 = () => {
     message: ''
   });
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
  
-   
-
   const handleViewClick = (product) => {
     // Navigate to product page with the specific category
     navigate(`/product`);
@@ -47,23 +48,47 @@ const Home2 = () => {
     }));
   };
   
- 
- 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    // Reset form and close modal
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      requirement: '',
-      message: ''
-    });
-    setShowEnquireForm(false);
-    // You might want to show a success message here
-    alert('Your enquiry has been submitted successfully!');
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    // Prepare the template parameters for EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      requirement: formData.requirement,
+      message: formData.message
+    };
+    
+    // Replace with your EmailJS service ID, template ID, and public key
+    emailjs.send(
+      'service_1qawa3s', // e.g. 'service_1234abcd'
+      'template_1c79hsj', // e.g. 'template_1234abcd'
+      templateParams,
+      'bxKrI6moY7XtsyEHY' // e.g. 'user_1234abcd'
+    )
+      .then((response) => {
+        console.log('Email successfully sent!', response);
+        // Reset form and close modal
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          requirement: '',
+          message: ''
+        });
+        setShowEnquireForm(false);
+        alert('Your enquiry has been submitted successfully!');
+      })
+      .catch((err) => {
+        console.error('Failed to send email:', err);
+        setSubmitError('Failed to send your enquiry. Please try again later.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   // Auto scroll effect for products
@@ -342,19 +367,42 @@ const Home2 = () => {
                 ></textarea>
               </div>
 
+              {submitError && (
+                <div className="rounded-md bg-red-50 p-4">
+                  <div className="flex">
+                    <div className="ml-3">
+                      <h3 className="text-sm font-medium text-red-800">Error</h3>
+                      <div className="text-sm text-red-700">{submitError}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 mt-6">
                 <button
                   type="button"
                   onClick={() => setShowEnquireForm(false)}
                   className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                  disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                  className="w-full sm:w-auto px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 flex items-center justify-center"
+                  disabled={isSubmitting}
                 >
-                  Submit Enquiry
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting...
+                    </>
+                  ) : (
+                    'Submit Enquiry'
+                  )}
                 </button>
               </div>
             </form>
