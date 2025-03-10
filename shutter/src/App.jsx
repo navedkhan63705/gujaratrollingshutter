@@ -9,6 +9,7 @@ import AboutUs from './Component/AboutUs';
 import Milestone from './Component/Milestone';
 import Main from './Component/Main';
 import Product from './Component/Product';
+import  Enquire  from './Component/Enquire';
  
  
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/milestone' element={<Milestone/>}/>
         <Route path='/main' element={<Main/>}/>
         <Route path='/product' element={<Product/>}/>
+        <Route path='/enquire' element={<Enquire/>}/>
         <Route path='/product/:speciality' element={<Product/>}/>
       </Routes>
       <Help/>

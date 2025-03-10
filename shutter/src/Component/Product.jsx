@@ -71,7 +71,7 @@ export default function Product() {
   const currentSpeciality = speciality.find(item => item.title === selectedSpeciality);
 
   return (
-    <div className="mt-35 w-screen min-h-screen">
+    <div className="mt-35 mb-5 w-screen min-h-screen">
       
       {/* Mobile category selector (visible only on small screens) */}
       <div className="block sm:hidden mb-4">
@@ -165,8 +165,7 @@ export default function Product() {
               {filterDoc.length > 0 ? (
                 filterDoc.slice(0, 10).map((item, index) => (
                   <div
-                    onClick={() => navigate(`/product/details/${item._id}`)}
-                    key={index}
+                    
                     className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
                   >
                     {/* Responsive aspect ratio container for consistent image sizing */}
