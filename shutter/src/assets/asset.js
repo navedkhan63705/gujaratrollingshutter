@@ -1,26 +1,45 @@
+import fire_shutter from './fire_shutter.jpg'
+import floor_mating from './floor_mating.jpg'
+import gear_shutter from './gear_shutter.jpg'
+import gear_shutter1 from './gear_shutter1.jpg'
+import large_shutters from './large_shutters.jpg'
+import manual_shutter from './manual_shutter.jpg'
+import manual_shutter2 from './manual_shutter2.jpg'
+import office_cabin from './office_cabin.jpg'
+import normal_shutter from './normal_shutter.jpg'
+// import pallywood_table from './pallywood_table.jpg'
+import sideAngel_shutter from './sideAngel_shutter.jpg'
+import shop_rolling_shutter from './shop_rolling_shutter.webp'
+import mall_shutter from './mall_shutter.jpg'
+import roof_celing from './roof_ceiling.jpg'
+import AluminiumGate from './AluminiumGate.jpg'
+ 
+
+
+
 export const productData = [
   { _id: '1', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
-  { _id: '2', name: 'Motorized Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: 'https://via.placeholder.com/150' },
-  { _id: '3', name: 'Gear Rolling Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: 'https://via.placeholder.com/150' },
-  { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '5', name: 'Aluminium Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '6', name: 'Stainless Steel Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '9', name: 'Color Coated Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '10', name: 'Mild Steel Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image: 'https://via.placeholder.com/150' },
-  { _id: '11', name: 'Grill Rolling Shutter', speciality: 'Shutter', subCategory: 'Grill Rolling Shutter', image: 'https://via.placeholder.com/150' },
+  { _id: '2', name: 'Motorized Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: fire_shutter },
+  { _id: '3', name: 'Gear Rolling Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: gear_shutter },
+  { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image:  normal_shutter },
+  { _id: '5', name: 'Aluminium Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: manual_shutter2 },
+  { _id: '6', name: 'Stainless Steel Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: manual_shutter },
+  { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: manual_shutter2 },
+  { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: gear_shutter1},
+  { _id: '9', name: 'Color Coated Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image:shop_rolling_shutter},
+  { _id: '10', name: 'Mild Steel Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image:  sideAngel_shutter },
+  { _id: '11', name: 'Grill Rolling Shutter', speciality: 'Shutter', subCategory: 'Grill Rolling Shutter', image:normal_shutter },
 
 
   { _id: '12', name: 'Aluminium Partition', speciality: 'Aluminium Section', subCategory: 'Aluminium Partition', image: 'https://via.placeholder.com/150' },
   { _id: '13', name: 'Aluminium Window', speciality: 'Aluminium Section', subCategory: 'Aluminium Window', image: 'https://via.placeholder.com/150' },
-  { _id: '14', name: 'Aluminium Door', speciality: 'Aluminium Section', subCategory: 'Aluminium Door', image: 'https://via.placeholder.com/150' },
+  { _id: '14', name: 'Aluminium Door', speciality: 'Aluminium Section', subCategory: 'Aluminium Door', image: AluminiumGate },
 
 
   { _id: '15', name: 'SS Sliding Gate', speciality: 'Gate & Door', subCategory: 'SS Sliding Gate', image: 'https://via.placeholder.com/150' },
   { _id: '16', name: 'MS Sliding Gate', speciality: 'Gate & Door', subCategory: 'MS Sliding Gate', image: 'https://via.placeholder.com/150' },
   { _id: '17', name: 'Electric Retractable SS Gate', speciality: 'Gate & Door', subCategory: 'Electric Retractable SS Gate', image: 'https://via.placeholder.com/150' },
-  { _id: '18', name: 'Fire Resistant Door', speciality: 'Gate & Door', subCategory: 'Fire Resistant Door', image: 'https://via.placeholder.com/150' },
+  { _id: '18', name: 'Fire Resistant Door', speciality: 'Gate & Door', subCategory: 'Fire Resistant Door', image: fire_shutter },
   { _id: '19', name: 'Sliding Hangar Doors', speciality: 'Gate & Door', subCategory: 'Sliding Hangar Doors', image: 'https://via.placeholder.com/150' },
   { _id: '20', name: 'Automatic Barrier', speciality: 'Gate & Door', subCategory: 'Automatic Barrier', image: 'https://via.placeholder.com/150' },
   { _id: '21', name: 'Dock Levelers', speciality: 'Gate & Door', subCategory: 'Dock Levelers', image: 'https://via.placeholder.com/150' },
@@ -28,7 +47,7 @@ export const productData = [
 
 
 
-  { _id: '23', name: 'Roof Ceiling', speciality: 'Roof Product', subCategory: 'Roof Ceiling', image: 'https://via.placeholder.com/150' },
+  { _id: '23', name: 'Roof Ceiling', speciality: 'Roof Product', subCategory: 'Roof Ceiling', image: roof_celing },
   { _id: '24', name: 'Roof Ceiling Light', speciality: 'Roof Product', subCategory: 'Roof Ceiling Light', image: 'https://via.placeholder.com/150' },
   { _id: '25', name: 'Roof PoP', speciality: 'Roof Product', subCategory: 'Roof PoP', image: 'https://via.placeholder.com/150' },
 
@@ -203,7 +222,7 @@ export const slides = [
 export const images = [
   "https://rudhar.in/img/sc/industrial-sliding-gate-SC.jpg",
   "https://cpimg.tistatic.com/08605879/b/4/Manual-Rolling-Shutter.jpg",
-  "https://th.bing.com/th/id/OIP.bGw7pXjkpqxbCOxib0Nd0wHaEP?rs=1&pid=ImgDetMain",
+   mall_shutter,
   "https://5.imimg.com/data5/SELLER/Default/2023/8/335739604/ED/TI/IL/66021474/mild-steel-manual-rolling-shutter-1000x1000.jpg"
 ];
 export const paragraphs = [
