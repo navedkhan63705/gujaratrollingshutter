@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import supportbg from "../assets/level4.png";
+import { useNavigate } from "react-router-dom";
 
 const Home4 = () => {
   // Create ref for the hero section
@@ -7,7 +8,7 @@ const Home4 = () => {
   // State for tracking visibility
   const [heroVisible, setHeroVisible] = useState(false);
   // Placeholder for background image URL (replace with your actual image path)
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Set up Intersection Observer to detect when element enters viewport
@@ -34,11 +35,10 @@ const Home4 = () => {
   }, []);
 
   return (
-    <div 
-      ref={heroRef} 
-      className={`relative h-96 transition-all duration-1000 ease-out ${
-        heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-      }`}
+    <div
+      ref={heroRef}
+      className={`relative h-96 transition-all duration-1000 ease-out ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+        }`}
       style={{
         backgroundImage: `url(${supportbg})`,
         backgroundSize: 'cover',
@@ -48,7 +48,7 @@ const Home4 = () => {
       {/* Dark overlay for better text visibility */}
       <div className="absolute inset-0   bg-opacity-40" style={{
       }}></div>
-      
+
       {/* Text overlay centered on image */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         <h1 className="text-4xl mt-10 md:text-5xl font-bold text-white mb-6 text-center">
@@ -58,10 +58,16 @@ const Home4 = () => {
         </h1>
         <p className="text-white max-w-2xl text-center mb-8 transition-all duration-500 transform hover:scale-105">
           Get the help you need with our{" "}
-          <span className="bg-gradient-to-r from-orange-400 to-orange-800 bg-clip-text text-transparent font-bold">
+          <span className="bg-gradient-to-r from-orange-400 to-gray-800 bg-clip-text text-transparent font-bold hover:opacity-90">
             comprehensive support resources
           </span>
         </p>
+        <button
+          onClick={() => navigate("/support")}
+          className="px-4 py-2  text-white rounded hover:text-orange-500"
+        >
+          Support
+        </button>
       </div>
     </div>
   );

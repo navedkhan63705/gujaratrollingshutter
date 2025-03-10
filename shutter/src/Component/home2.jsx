@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { products, images, paragraphs } from '../assets/asset.js';
+import { products, images, paragraphs} from '../assets/asset.js';
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 
@@ -208,14 +208,14 @@ const Home2 = () => {
             {/* Navigation arrows for manual control */}
             <button
               onClick={() => handlePrev('main')}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity duration-300"
+              className="absolute left-2 top-1/2 text-4xl transform -translate-y-1/2 bg-opacity-50 text-orange p-2 rounded-full hover:bg-opacity-70 transition-opacity duration-300"
               aria-label="Previous image"
             >
               ←
             </button>
             <button
               onClick={() => handleNext('main')}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity duration-300"
+              className="absolute right-2 top-1/2 text-4xl transform -translate-y-1/2 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity duration-300"
               aria-label="Next image"
             >
               →

@@ -53,14 +53,14 @@ const Home1 = () => {
   };
 
   return (
-    <div className="w-full  md:h-screen sm:h-200 xs:h-150 overflow-hidden relative">
+    <div className="w-full    overflow-hidden relative">
       {/* Carousel Track */}
       <div 
         className="flex transition-transform duration-1000 ease-in-out h-full w-full" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div key={slide.id} className="w-full h-full flex-shrink-0 relative">
+          <div key={slide.id} className="w-full h-full md:h-screen sm:h-200 xs:h-250 flex-shrink-0 relative">
             <div className={`absolute inset-0 opacity-40`}></div>
             <img 
               src={slide.url} 

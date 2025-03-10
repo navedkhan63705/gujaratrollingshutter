@@ -31,7 +31,7 @@ const GujaratLogo = ({ className = "text-white", height = "100" }) => {
         fontSize="30" 
         fontFamily="Arial, sans-serif" 
         fontWeight="bold" 
-        fill="white"
+        fill="black"
         letterSpacing="0.5"
       >GUJARAT</text>
       
@@ -41,7 +41,7 @@ const GujaratLogo = ({ className = "text-white", height = "100" }) => {
         fontSize="22" 
         fontFamily="Arial, sans-serif" 
         fontWeight="bold" 
-        fill="white"
+        fill="black"
         letterSpacing="0.5"
       >ROLLING SHUTTER</text>
     </svg>

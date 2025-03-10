@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import GujaratLogo from "./GujaratLogo";
+import { menuItems } from '../assets/asset.js';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -13,17 +14,22 @@ const Navbar = () => {
   const navRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
-  // Change background color and height on scroll
+
   useEffect(() => {
+    // Set initial state based on current scroll position
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setBgColor("bg-orange-400"); // Change to darker color
+        setBgColor("bg-orange-500 dark:bg-orange-400"); // Solid color (light/dark)
         setNavHeight("h-[6rem]"); // Reduce height on scroll
       } else {
-        setBgColor("bg-orange-250");
-        setNavHeight("h-[8rem]");
+        setBgColor("bg-orange-500/50 dark:bg-orange-400/50 backdrop-blur-lg"); // Blurred (light/dark)
+        setNavHeight("h-[6rem]");
       }
+      
     };
+
+    // Run once on mount to set initial state
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -62,14 +68,14 @@ const Navbar = () => {
   // Desktop menu handlers
   const handleMenuEnter = (index) => {
     setActiveMenu(index);
-    
+
   };
 
-  
+
 
   const handleMenuLeave = () => {
     setActiveMenu(null);
-    
+
   };
 
   // Mobile menu handlers
@@ -94,44 +100,9 @@ const Navbar = () => {
     );
   };
 
-  const menuItems = [
-    {
-      title: "Overview",
-      options: [
-        { label: "Product Features", link: "/features" },
-        { label: "Use Cases", link: "/use-cases" },
-        { label: "Milestone", link: "/milestone" },
-      ],
-    },
-    { title: "About Us", link: "/AboutUs" },
-    { title: "Products", link: "/product" },
-    { title: "Support", link: "/support" },
-    { title: "Contact Us", link: "/contact" },
-  ];
-
-  // Custom scrollbar styles
-  const scrollbarStyles = `
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 8px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: white;
-      border-radius: 10px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background-color: #f97316; /* orange-500 */
-      border-radius: 10px;
-      border: 2px solid white;
-    }
-    .custom-scrollbar {
-      scrollbar-width: thin;
-      scrollbar-color: #f97316 white;
-    }
-  `;
-
   return (
     <>
-      <style>{scrollbarStyles}</style>
+
       <nav
         ref={navRef}
         className={`w-full fixed top-0 z-[997] shadow-md transition-all duration-500 flex items-center ${bgColor} ${navHeight}`}
@@ -150,14 +121,14 @@ const Navbar = () => {
               <div className="flex space-x-4 xl:space-x-8">
                 {menuItems.map((item, index) => (
                   <div key={index} className="relative group" onMouseEnter={() => handleMenuEnter(index)} onMouseLeave={handleMenuLeave}>
-                    <a href={item.link || "#"} className="text-white hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                    <a href={item.link || "#"} className="text-black  text-lg hover:text-orange-500 px-3 py-2 rounded-md font-medium transition-colors duration-200">
                       {item.title}
                     </a>
                     {/* Dropdown */}
                     {item.options && activeMenu === index && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 py-1 transition-opacity duration-200">
+                      <div className="absolute left-0 mt-2 w-48 bg-white text-sm rounded-md shadow-lg z-10 py-1 transition-opacity duration-200">
                         {item.options.map((option, i) => (
-                          <a key={i} href={option.link} className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors">
+                          <a key={i} href={option.link} className="block px-4 py-2 text-sm text-black hover:bg-orange-100 transition-colors">
                             {option.label}
                           </a>
                         ))}
@@ -170,7 +141,10 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center">
-              <button onClick={toggleMobileMenu} className="text-black hover:text-orange-400 transition-colors duration-200">
+              <button
+                onClick={toggleMobileMenu}
+                className="text-black text-3xl hover:text-orange-400 transition-colors duration-200"
+              >
                 {isMobileMenuOpen ? "✖" : "☰"}
               </button>
             </div>
@@ -192,20 +166,7 @@ const Navbar = () => {
               scrollbarColor: '#f97316 white',
             }}
           >
-            <style jsx>{`
-      div::-webkit-scrollbar {
-        width: 8px;
-      }
-      div::-webkit-scrollbar-track {
-        background: white;
-        border-radius: 10px;
-      }
-      div::-webkit-scrollbar-thumb {
-        background-color: #f97316;
-        border-radius: 10px;
-        border: 2px solid white;
-      }
-    `}</style>
+
 
             {menuItems.map((item, index) => (
               <div key={index} className="border-b border-gray-200 last:border-b-0">

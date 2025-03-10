@@ -13,9 +13,25 @@ import shop_rolling_shutter from './shop_rolling_shutter.webp'
 import mall_shutter from './mall_shutter.jpg'
 import roof_celing from './roof_ceiling.jpg'
 import AluminiumGate from './AluminiumGate.jpg'
- 
+import shutter from './shutter.jpg'
+ import motor_shutter from './motter_shutter.jpg'
+ import ss_sliding_gate from './ss_sliding_gate.webp'
+ import shutter_gate from './shutter_gate.jpg'
 
-
+export const menuItems = [
+  {
+    title: "Overview",
+    options: [
+      { label: "Product Features", link: "/features" },
+      { label: "Use Cases", link: "/use-cases" },
+      { label: "Milestone", link: "/milestone" },
+    ],
+  },
+  { title: "About Us", link: "/AboutUs" },
+  { title: "Products", link: "/product" },
+  { title: "Support", link: "/support" },
+  { title: "Contact Us", link: "/contact" },
+];
 
 export const productData = [
   { _id: '1', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
@@ -139,7 +155,7 @@ export const products = [
   {
     id: 1,
     name: "Aluminium Shutter",
-    image: "https://th.bing.com/th/id/R.ac2b6e4c149dcce31a582a7588a9e755?rik=GtRCkttMwv6iJA&riu=http%3a%2f%2fswastikshutters.com%2fassets%2fimg%2fservice-photo%2faluminium.jpg&ehk=l163oyPBJR%2fNDhcPyk7oPJ6Q1rmZaAqyEzrN%2fLt82uQ%3d&risl=&pid=ImgRaw&r=0",
+    image: shutter 
   },
   {
     id: 2,
@@ -171,7 +187,7 @@ export const product = [
   {
     id: 1,
     name: "Manual Shutter",
-    image: "https://5.imimg.com/data5/SELLER/Default/2021/10/XY/JT/SE/20702270/manual-shutter-500x500.jpg",
+    image: shutter_gate
   },
   {
     id: 2,
@@ -191,7 +207,7 @@ export const product = [
   {
     id: 5,
     name: "Fire Resistant Door",
-    image: "https://img4031.weyesimg.com/uploads/lvzznuhf.allweyes.com/images/15350871185123.jpg?imageView2/2/w/1920/q/75",
+    image: fire_shutter,
   },
   {
     id: 6,
@@ -220,10 +236,10 @@ export const slides = [
   },
 ];
 export const images = [
-  "https://rudhar.in/img/sc/industrial-sliding-gate-SC.jpg",
+   ss_sliding_gate,
   "https://cpimg.tistatic.com/08605879/b/4/Manual-Rolling-Shutter.jpg",
    mall_shutter,
-  "https://5.imimg.com/data5/SELLER/Default/2023/8/335739604/ED/TI/IL/66021474/mild-steel-manual-rolling-shutter-1000x1000.jpg"
+  motor_shutter
 ];
 export const paragraphs = [
   "where we take pride in offering a wide range of high-quality industrial and commercial solutions designed to meet the evolving needs of businesses. Our company specializes in manufacturing durable and innovative products that enhance security, efficiency, and functionality. Whether you're looking for industrial shutters, sliding gates, or custom office furniture, we have the expertise to deliver superior solutions. Every product we develop is designed to provide long-term value, ensuring your business operates smoothly while maintaining safety and efficiency. Our commitment to excellence drives us to continuously improve and innovate, making us a trusted name in the industry.",
