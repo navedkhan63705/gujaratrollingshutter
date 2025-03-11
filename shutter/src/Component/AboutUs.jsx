@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'; 
-import s1 from "../assets/support1.jpg";
+import s1 from "../assets/image_copy.png";
  
-
 const AboutUs = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [titleVisible, setTitleVisible] = useState(false);
+  
+  useEffect(() => {
+    setTitleVisible(true);
+  }, []);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +28,23 @@ const AboutUs = () => {
       {/* Hero Section - Full Screen Image */}
       <div className="relative h-screen w-full overflow-hidden">
         <img
-          src="https://files.oaiusercontent.com/file-D3oFe1PyRWwQx8yywSwLd6?se=2025-03-09T16%3A29%3A57Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3De8fc883c-c679-43fe-a633-b9a8ca67a760.webp&sig=PKLRGujLpjphxkEv%2BV2aB68lYvd54q1KeJBILh4XT4A%3D"
+          src={s1}
           alt="Company Hero" 
           className="w-full h-full object-cover"
         />
+        
+        {/* Hero Title */}
+        <div className="absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full">
+          <h2
+            className={`text-white text-3xl md:text-4xl lg:text-5xl font-bold px-6 py-4 
+               bg-opacity-20 border-none relative overflow-hidden text-center
+               ${titleVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}
+          >
+            {/* Animated background gradient effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-700 to-gray-900 animate-pulse opacity-50"></div>
+            <span className="relative z-10">About Us</span>
+          </h2>
+        </div>
       </div>
       
       {/* First Section - Text left, Image right */}
@@ -85,7 +102,7 @@ const AboutUs = () => {
         <div className={`w-full md:w-1/2 px-4 transition-all duration-1000 delay-200 ${isVisible(1000) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
           <div className="border-8 border-gray-200 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://th.bing.com/th/id/R.a146e1b93fad74d10b34c68101947010?rik=ttmdvRaHe1XrLg&riu=http%3a%2f%2fwww.nrsb.org%2fwp-content%2fuploads%2f2018%2f08%2fOurTeam.jpg&ehk=83Mazj0UySw8A3mpOEmZ3na4cT1ysovihJzGz5vBMNU%3d&risl=&pid=ImgRaw&r=0https://thumbs.dreamstime.com/b/welcome-to-our-team-symbol-concept-words-welcome-to-our-team-wooden-blocks-beautiful-grey-background-business-welcome-to-270795113.jpg" 
+              src="https://th.bing.com/th/id/R.a146e1b93fad74d10b34c68101947010?rik=ttmdvRaHe1XrLg&riu=http%3a%2f%2fwww.nrsb.org%2fwp-content%2fuploads%2f2018%2f08%2fOurTeam.jpg&ehk=83Mazj0UySw8A3mpOEmZ3na4cT1ysovihJzGz5vBMNU%3d&risl=&pid=ImgRaw&r=0" 
               alt="Design Frame 3" 
               className="w-full h-full object-cover"
             />
@@ -96,7 +113,7 @@ const AboutUs = () => {
       {/* Stats Section */}
       <div className="w-full py-20 px-8 bg-gray-900 text-white">
         <div className={`max-w-8xl mx-auto transition-all duration-1000 ${isVisible(1400) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl font-extrabold text-white  text-center mb-16">Our Impact</h2>
+          <h2 className="text-3xl font-extrabold text-white text-center mb-16">Our Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {/* Years of Excellence */}
             <div className="p-4">
@@ -125,7 +142,7 @@ const AboutUs = () => {
             {/* Support Data */}
             <div className="p-4">
               <div className="text-5xl font-bold text-orange-400 mb-2">24/7</div>
-              <div className="text-xl ">Customer Support</div>
+              <div className="text-xl">Customer Support</div>
             </div>
           </div>
         </div>

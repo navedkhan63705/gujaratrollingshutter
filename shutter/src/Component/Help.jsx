@@ -1,8 +1,35 @@
 import React, { useState } from 'react';
-import {product} from '../assets/asset';
+import { useNavigate } from 'react-router-dom';
 
 const Help = () => {
   const [hoveredButton, setHoveredButton] = useState(null);
+  const navigate = useNavigate();
+
+  // Contact information
+  const contactInfo = {
+    email: 'navedkh637505@gmail.com', // Replace with your email
+    phone: '6375057045',
+    whatsapp: '6375057045'
+  };
+
+  // Handle email button click - opens Gmail
+  const handleEmailClick = () => {
+    const subject = encodeURIComponent('Inquiry from Website');
+    const body = encodeURIComponent('Hello,\n\nI am contacting you regarding ');
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${contactInfo.email}&su=${subject}&body=${body}`, '_blank');
+  };
+
+  // Handle phone button click - direct call
+  const handlePhoneClick = () => {
+    // Using tel: protocol to initiate a direct call
+    window.location.href = `tel:${contactInfo.phone}`;
+  };
+
+  // Handle WhatsApp button click
+  const handleWhatsAppClick = () => {
+    // Opening WhatsApp with the specified number
+    window.open(`https://wa.me/${contactInfo.whatsapp}`, '_blank');
+  };
 
   return (
     <div className="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2">
@@ -11,6 +38,7 @@ const Help = () => {
         className={`flex items-center justify-end cursor-pointer overflow-hidden transition-all duration-300 ease-in-out rounded-l-full text-white bg-black hover:bg-orange-500 ${hoveredButton === 'enquire' ? 'w-40' : 'w-12'}`}
         onMouseEnter={() => setHoveredButton('enquire')}
         onMouseLeave={() => setHoveredButton(null)}
+        onClick={() => navigate('./enquire')}
         aria-label="Enquire Now"
       >
         <span 
@@ -45,6 +73,7 @@ const Help = () => {
         className={`flex items-center justify-end cursor-pointer overflow-hidden transition-all duration-300 ease-in-out rounded-l-full text-white bg-black hover:bg-orange-500 ${hoveredButton === 'mail' ? 'w-40' : 'w-12'}`}
         onMouseEnter={() => setHoveredButton('mail')}
         onMouseLeave={() => setHoveredButton(null)}
+        onClick={handleEmailClick}
         aria-label="Email Us"
       >
         <span 
@@ -79,6 +108,7 @@ const Help = () => {
         className={`flex items-center justify-end cursor-pointer overflow-hidden transition-all duration-300 ease-in-out rounded-l-full text-white bg-black hover:bg-orange-500 ${hoveredButton === 'phone' ? 'w-40' : 'w-12'}`}
         onMouseEnter={() => setHoveredButton('phone')}
         onMouseLeave={() => setHoveredButton(null)}
+        onClick={handlePhoneClick}
         aria-label="Call Us"
       >
         <span 
@@ -113,6 +143,7 @@ const Help = () => {
         className={`flex items-center justify-end cursor-pointer overflow-hidden transition-all duration-300 ease-in-out rounded-l-full text-white bg-black hover:bg-orange-500 ${hoveredButton === 'whatsapp' ? 'w-40' : 'w-12'}`}
         onMouseEnter={() => setHoveredButton('whatsapp')}
         onMouseLeave={() => setHoveredButton(null)}
+        onClick={handleWhatsAppClick}
         aria-label="WhatsApp"
       >
         <span 

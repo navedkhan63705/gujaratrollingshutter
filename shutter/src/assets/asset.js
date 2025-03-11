@@ -20,6 +20,41 @@ import shutter from './shutter.jpg'
  import home1 from './home1.webp'
  import home2 from './home2.webp'
  import home3 from './home3.webp'
+ import about from './image_copy.png'
+
+ export const milestones = [
+  {
+    id: 1,
+    year: "2018",
+    title: "Company Founded",
+    description: "Our journey began with a simple idea and a passionate team determined to make a difference in the industry."
+  },
+  {
+    id: 2,
+    year: "2020",
+    title: "First Major Product Launch",
+    description: "After months of development and testing, we successfully launched our flagship product to overwhelming market response."
+  },
+  {
+    id: 3, 
+    year: "2021",
+    title: "International Expansion",
+    description: "We expanded our operations to Europe and Asia, bringing our solutions to a global audience and establishing key partnerships."
+  },
+  {
+    id: 4,
+    year: "2023",
+    title: "Innovation Award",
+    description: "Our dedication to excellence was recognized with the prestigious Industry Innovation Award, cementing our position as market leaders."
+  },
+  {
+    id: 5,
+    year: "2025",
+    title: "Sustainable Future Initiative",
+    description: "We launched our commitment to sustainability with a comprehensive program to reduce our carbon footprint and promote eco-friendly practices."
+  }
+];
+
 
 export const menuItems = [
   {

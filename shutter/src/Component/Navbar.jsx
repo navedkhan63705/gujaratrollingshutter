@@ -121,7 +121,7 @@ const Navbar = () => {
               <div className="flex space-x-4 xl:space-x-8">
                 {menuItems.map((item, index) => (
                   <div key={index} className="relative group" onMouseEnter={() => handleMenuEnter(index)} onMouseLeave={handleMenuLeave}>
-                    <a href={item.link || "#"} className="text-black  text-lg hover:text-orange-500 px-3 py-2 rounded-md font-medium transition-colors duration-200">
+                    <a href={item.link || "#"} className="text-black  text-lg hover:text-white px-3 py-2 rounded-md font-medium transition-colors duration-200">
                       {item.title}
                     </a>
                     {/* Dropdown */}

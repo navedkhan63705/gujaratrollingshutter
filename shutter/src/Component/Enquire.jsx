@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { useNavigate } from 'react-router-dom';
 
 export const Enquire = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState('');
+    const navigate =useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -40,7 +42,7 @@ export const Enquire = () => {
                 requirement: '',
                 message: ''
             });
-            setShowEnquireForm(false);
+             
             alert('Your enquiry has been submitted successfully!');
         })
         .catch((err) => {
@@ -65,15 +67,6 @@ export const Enquire = () => {
             <div className="fixed text-black inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
                     <div className="flex justify-between items-center mb-6">
-                        <h2 className="text-2xl font-bold text-gray-800">Enquire Now</h2>
-                        <button
-                            onClick={() => setShowEnquireForm(false)}
-                            className="text-gray-500 hover:text-gray-700 focus:outline-none"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
@@ -112,7 +105,7 @@ export const Enquire = () => {
                         )}
 
                         <div className="flex justify-end space-x-3 mt-6">
-                            <button type="button" onClick={() => setShowEnquireForm(false)} className="px-4 py-2 border rounded-md bg-gray-50">Cancel</button>
+                            <button type="button" onClick={() => navigate('/')} className="px-4 py-2 border rounded-md bg-gray-50">Cancel</button>
                             <button type="submit" className="px-4 py-2 rounded-md bg-orange-500 text-white flex items-center justify-center" disabled={isSubmitting}>
                                 {isSubmitting ? (
                                     <>

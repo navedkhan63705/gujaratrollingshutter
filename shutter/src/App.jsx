@@ -9,7 +9,8 @@ import AboutUs from './Component/AboutUs';
 import Milestone from './Component/Milestone';
 import Main from './Component/Main';
 import Product from './Component/Product';
-import  Enquire  from './Component/Enquire';
+import { Enquire } from './Component/Enquire';
+ 
  
  
 
