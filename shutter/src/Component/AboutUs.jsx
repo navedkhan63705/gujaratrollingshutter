@@ -123,7 +123,7 @@ const AboutUs = () => {
             
             {/* Cities with Pan-India Presence */}
             <div className="p-4">
-              <div className="text-5xl font-bold text-orange-400 mb-2">20+</div>
+              <div className="text-5xl font-bold text-orange-400 mb-2">25+</div>
               <div className="text-xl">Cities in Gujarat</div>
             </div>
             

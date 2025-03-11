@@ -7,14 +7,14 @@ const Help = () => {
 
   // Contact information
   const contactInfo = {
-    email: 'navedkh637505@gmail.com', // Replace with your email
-    phone: '6375057045',
-    whatsapp: '6375057045'
+    email: 'gujaratrollingshutter2525@gmail.com',  
+    phone: '9024441665',
+    whatsapp: '9024441665'
   };
 
   // Handle email button click - opens Gmail
   const handleEmailClick = () => {
-    const subject = encodeURIComponent('Inquiry from Website');
+    const subject = encodeURIComponent('Inquiry from Shutter');
     const body = encodeURIComponent('Hello,\n\nI am contacting you regarding ');
     window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${contactInfo.email}&su=${subject}&body=${body}`, '_blank');
   };

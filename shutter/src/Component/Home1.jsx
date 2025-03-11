@@ -4,7 +4,6 @@ import { slides } from '../assets/asset';
 
 const Home1 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [titleVisible, setTitleVisible] = useState(true);
   const timeoutRef = useRef(null);
   
@@ -21,18 +20,12 @@ const Home1 = () => {
     setTitleVisible(false);
     setTimeout(() => setTitleVisible(true), 50);
     
-    if (isPlaying) {
-      timeoutRef.current = setTimeout(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 5000); // Change slide every 5 seconds
-    }
+     
     
     return () => {
       resetTimeout();
     };
-  }, [currentIndex, isPlaying, slides.length]);
+  }, [currentIndex,  slides.length]);
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
@@ -48,24 +41,22 @@ const Home1 = () => {
     setCurrentIndex(newIndex);
   };
 
-  const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
-  };
+ 
 
   return (
-    <div className="w-full    overflow-hidden relative">
+    <div className="w-full overflow-hidden relative">
       {/* Carousel Track */}
       <div 
-        className="flex transition-transform duration-1000 ease-in-out h-full w-full" 
+        className="flex transition-transform duration-1000 ease-in-out h-full w-full sm:h-[60vh] md:h-screen" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div key={slide.id} className="w-full h-full md:h-screen sm:h-200 xs:h-250 flex-shrink-0 relative">
+          <div key={slide.id} className="w-full h-full flex-shrink-0 relative">
             <div className={`absolute inset-0 opacity-40`}></div>
             <img 
               src={slide.url} 
               alt={slide.alt} 
-              className="object-cover w-full h-full"
+              className="object-container w-full h-full"
             />
             
             {/* Left-aligned Title with Border and Gray Background Animation */}

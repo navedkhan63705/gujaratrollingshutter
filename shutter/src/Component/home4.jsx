@@ -64,12 +64,17 @@ const Home4 = () => {
         </p>
         <button
           onClick={() => navigate("/support")}
-          className="px-4 py-2  text-white rounded hover:text-orange-500"
+          className="px-4 py-2 text-2xl text-gray-800 hover:underline font-bold hover:text-orange-500 flex items-center"
         >
           Support
+          <span className="inline-block ml-2 text-3xl text-gray-800  hover:text-orange-500 transition-colors duration-300">
+            →
+          </span>
         </button>
-      </div>
+    
+       
     </div>
+    </div >
   );
 };
 

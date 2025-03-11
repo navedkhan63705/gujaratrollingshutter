@@ -62,12 +62,12 @@ const Home2 = () => {
       message: formData.message
     };
     
-    // Replace with your EmailJS service ID, template ID, and public key
+     
     emailjs.send(
-      'service_1qawa3s', // e.g. 'service_1234abcd'
-      'template_1c79hsj', // e.g. 'template_1234abcd'
+      'service_1qawa3s',  
+      'template_1c79hsj',  
       templateParams,
-      'bxKrI6moY7XtsyEHY' // e.g. 'user_1234abcd'
+      'bxKrI6moY7XtsyEHY'  
     )
       .then((response) => {
         console.log('Email successfully sent!', response);

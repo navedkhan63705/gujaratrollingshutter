@@ -258,19 +258,19 @@ export const slides = [
     id: 1, 
     url: home1, 
     alt: "Forest Path", 
-    title: "Enchanted Forest Path"
+    title: "Smart Automatic Shutters"
   },
   { 
     id: 2, 
     url:home2, 
     alt: "Mountain Landscape", 
-    title: "Breathtaking Mountain Views"
+    title: "Secure & Stylish Shutters"
   },
   { 
     id: 3, 
     url: home3, 
     alt: "City Skyline", 
-    title: "Modern City Skyline"
+    title: "Smooth & Secure Sliding Gates"
   },
 ];
 export const images = [

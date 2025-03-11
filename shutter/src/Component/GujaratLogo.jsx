@@ -21,7 +21,7 @@ const GujaratLogo = ({ className = "text-white", height = "100" }) => {
         d="M85,40 C90,35 93,38 100,35 C105,33 108,36 112,33 C116,30 120,32 123,35 C126,38 130,36 133,42 C136,48 140,45 138,52 C136,59 140,62 138,67 C136,72 133,73 128,71 C123,69 118,71 113,68 C108,65 103,67 98,63 C93,59 89,61 84,58 C80,55 79,52 80,48 C81,44 80,45 85,40 Z" 
         fill="black"
         stroke='white'
-        stroke-width="2"
+        strokeWidth="2"
       />
       
       {/* Text with better positioning and size */}
