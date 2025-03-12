@@ -10,6 +10,8 @@ import Milestone from './Component/Milestone';
 import Main from './Component/Main';
 import Product from './Component/Product';
 import { Enquire } from './Component/Enquire';
+import  Service  from './Component/Service';
+import Features from './Component/Features';
  
  
  
@@ -28,6 +30,8 @@ function App() {
         <Route path='/product' element={<Product/>}/>
         <Route path='/enquire' element={<Enquire/>}/>
         <Route path='/product/:speciality' element={<Product/>}/>
+        <Route path='/service' element={<Service/>}/>
+        <Route path='/features' element={<Features/>}/>
       </Routes>
       <Help/>
       <Footer/>

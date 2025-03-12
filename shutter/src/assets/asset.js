@@ -2,27 +2,35 @@ import fire_shutter from './fire_shutter.jpg'
 import floor_mating from './floor_mating.jpg'
 import gear_shutter from './gear_shutter.jpg'
 import gear_shutter1 from './gear_shutter1.jpg'
-import large_shutters from './large_shutters.jpg'
 import manual_shutter from './manual_shutter.jpg'
 import manual_shutter2 from './manual_shutter2.jpg'
-import office_cabin from './office_cabin.jpg'
 import normal_shutter from './normal_shutter.jpg'
-// import pallywood_table from './pallywood_table.jpg'
+import pallywood_table from './pllywood_table.jpg'
 import sideAngel_shutter from './sideAngel_shutter.jpg'
 import shop_rolling_shutter from './shop_rolling_shutter.webp'
 import mall_shutter from './mall_shutter.jpg'
 import roof_celing from './roof_ceiling.jpg'
 import AluminiumGate from './AluminiumGate.jpg'
 import shutter from './shutter.jpg'
- import motor_shutter from './motter_shutter.jpg'
- import ss_sliding_gate from './ss_sliding_gate.webp'
- import shutter_gate from './shutter_gate.jpg'
- import home1 from './home1.webp'
- import home2 from './home2.webp'
- import home3 from './home3.webp'
- import about from './image_copy.png'
+import motor_shutter from './motter_shutter.jpg'
+import ss_sliding_gate from './ss_sliding_gate.webp'
+import shutter_gate from './shutter_gate.jpg'
+import home1 from './home1.webp'
+import home2 from './home2.webp'
+import home3 from './home3.webp'
+import aluminium_windows from './aluminium_windows.jpg'
+import aluminium_partition from './Aluminium_partition.png'
+import ms_sliding_gate from './ms_sliding_gate.png'
+import electric_retractable from "./electric_auto_sliding.avif"
+import Sliding_Hnager_Door from './sliding_hanger_door.png'
+import automatic_barrier from './Automatic_barriar.png'
+import Dock_Levelers from './dock_levelers.png'
+import Mirror_Senser_Door from './mirror_senser_door.avif'
+import electric_board_table from './electric_board_table.jpg'
+import MS_Raling from './MS_raling.png'
+import SS_Raling from './SS_Raling.png'
 
- export const milestones = [
+export const milestones = [
   {
     id: 1,
     year: "2018",
@@ -36,7 +44,7 @@ import shutter from './shutter.jpg'
     description: "After months of development and testing, we successfully launched our flagship product to overwhelming market response."
   },
   {
-    id: 3, 
+    id: 3,
     year: "2021",
     title: "International Expansion",
     description: "We expanded our operations to Europe and Asia, bringing our solutions to a global audience and establishing key partnerships."
@@ -60,8 +68,8 @@ export const menuItems = [
   {
     title: "Overview",
     options: [
-      { label: "Product Features", link: "/features" },
-      { label: "Use Cases", link: "/use-cases" },
+      { label: "Product Features ", link: "/features" },
+      { label: "Service", link: "/service" },
       { label: "Milestone", link: "/milestone" },
     ],
   },
@@ -75,29 +83,29 @@ export const productData = [
   { _id: '1', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
   { _id: '2', name: 'Motorized Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: fire_shutter },
   { _id: '3', name: 'Gear Rolling Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: gear_shutter },
-  { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image:  normal_shutter },
+  { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image: normal_shutter },
   { _id: '5', name: 'Aluminium Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: manual_shutter2 },
   { _id: '6', name: 'Stainless Steel Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: manual_shutter },
   { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: manual_shutter2 },
-  { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: gear_shutter1},
-  { _id: '9', name: 'Color Coated Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image:shop_rolling_shutter},
-  { _id: '10', name: 'Mild Steel Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image:  sideAngel_shutter },
-  { _id: '11', name: 'Grill Rolling Shutter', speciality: 'Shutter', subCategory: 'Grill Rolling Shutter', image:normal_shutter },
+  { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: gear_shutter1 },
+  { _id: '9', name: 'Color Coated Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image: shop_rolling_shutter },
+  { _id: '10', name: 'Mild Steel Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image: sideAngel_shutter },
+  { _id: '11', name: 'Grill Rolling Shutter', speciality: 'Shutter', subCategory: 'Grill Rolling Shutter', image: normal_shutter },
 
 
-  { _id: '12', name: 'Aluminium Partition', speciality: 'Aluminium Section', subCategory: 'Aluminium Partition', image: 'https://via.placeholder.com/150' },
-  { _id: '13', name: 'Aluminium Window', speciality: 'Aluminium Section', subCategory: 'Aluminium Window', image: 'https://via.placeholder.com/150' },
+  { _id: '12', name: 'Aluminium Partition', speciality: 'Aluminium Section', subCategory: 'Aluminium Partition', image: aluminium_partition },
+  { _id: '13', name: 'Aluminium Window', speciality: 'Aluminium Section', subCategory: 'Aluminium Window', image: aluminium_windows },
   { _id: '14', name: 'Aluminium Door', speciality: 'Aluminium Section', subCategory: 'Aluminium Door', image: AluminiumGate },
 
 
-  { _id: '15', name: 'SS Sliding Gate', speciality: 'Gate & Door', subCategory: 'SS Sliding Gate', image: 'https://via.placeholder.com/150' },
-  { _id: '16', name: 'MS Sliding Gate', speciality: 'Gate & Door', subCategory: 'MS Sliding Gate', image: 'https://via.placeholder.com/150' },
-  { _id: '17', name: 'Electric Retractable SS Gate', speciality: 'Gate & Door', subCategory: 'Electric Retractable SS Gate', image: 'https://via.placeholder.com/150' },
-  { _id: '18', name: 'Fire Resistant Door', speciality: 'Gate & Door', subCategory: 'Fire Resistant Door', image: fire_shutter },
-  { _id: '19', name: 'Sliding Hangar Doors', speciality: 'Gate & Door', subCategory: 'Sliding Hangar Doors', image: 'https://via.placeholder.com/150' },
-  { _id: '20', name: 'Automatic Barrier', speciality: 'Gate & Door', subCategory: 'Automatic Barrier', image: 'https://via.placeholder.com/150' },
-  { _id: '21', name: 'Dock Levelers', speciality: 'Gate & Door', subCategory: 'Dock Levelers', image: 'https://via.placeholder.com/150' },
-  { _id: '22', name: 'Mirror Sensor Door', speciality: 'Gate & Door', subCategory: 'Mirror Sensor Door', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
+  { _id: '15', name: 'SS Sliding Gate', speciality: 'Gates & Door', subCategory: 'SS Sliding Gate', image: ss_sliding_gate },
+  { _id: '16', name: 'MS Sliding Gate', speciality: 'Gates & Door', subCategory: 'MS Sliding Gate', image: ms_sliding_gate },
+  { _id: '17', name: 'Electric Retractable SS Gate', speciality: 'Gates & Door', subCategory: 'Electric Retractable SS Gate', image: electric_retractable },
+  { _id: '18', name: 'Fire Resistant Door', speciality: 'Gates & Door', subCategory: 'Fire Resistant Door', image: fire_shutter },
+  { _id: '19', name: 'Sliding Hangar Doors', speciality: 'Gates & Door', subCategory: 'Sliding Hangar Doors', image: Sliding_Hnager_Door },
+  { _id: '20', name: 'Automatic Barrier', speciality: 'Gates & Door', subCategory: 'Automatic Barrier', image: automatic_barrier },
+  { _id: '21', name: 'Dock Levelers', speciality: 'Gates & Door', subCategory: 'Dock Levelers', image: Dock_Levelers },
+  { _id: '22', name: 'Mirror Sensor Door', speciality: 'Gates & Door', subCategory: 'Mirror Sensor Door', image: Mirror_Senser_Door },
 
 
 
@@ -106,41 +114,41 @@ export const productData = [
   { _id: '25', name: 'Roof PoP', speciality: 'Roof Product', subCategory: 'Roof PoP', image: 'https://via.placeholder.com/150' },
 
 
-  { _id: '26', name: 'Pllywood Table', speciality: 'Office Work Station', subCategory: 'Pllywood Table', image: 'https://via.placeholder.com/150' },
+  { _id: '26', name: 'Pllywood Table', speciality: 'Office Work Station', subCategory: 'Pllywood Table', image: pallywood_table },
   { _id: '27', name: 'Comfort Chair', speciality: 'Office Work Station', subCategory: 'Comfort Chair', image: 'https://via.placeholder.com/150' },
-  { _id: '28', name: 'Electric Board in Table', speciality: 'Office Work Station', subCategory: 'Electric Board in Table', image: 'https://via.placeholder.com/150' },
-  { _id: '29', name: 'Floor Mating', speciality: 'Office Work Station', subCategory: 'Floor Mating', image: 'https://via.placeholder.com/150' },
+  { _id: '28', name: 'Electric Board in Table', speciality: 'Office Work Station', subCategory: 'Electric Board in Table', image: electric_board_table },
+  { _id: '29', name: 'Floor Mating', speciality: 'Office Work Station', subCategory: 'Floor Mating', image: floor_mating },
 
 
-  { _id: '30', name: 'M S Raling', speciality: 'Raling', subCategory: 'M S Raling', image: 'https://via.placeholder.com/150' },
-  { _id: '31', name: 'S S Raling', speciality: 'Raling', subCategory: 'S S Raling', image: 'https://via.placeholder.com/150' },
+  { _id: '30', name: 'M S Raling', speciality: 'Raling', subCategory: 'M S Raling', image: MS_Raling },
+  { _id: '31', name: 'S S Raling', speciality: 'Raling', subCategory: 'S S Raling', image: SS_Raling },
 
 
   { _id: '32', name: 'Product Suppliers', speciality: 'Supply Companies', subCategory: 'Product Suppliers', image: 'https://via.placeholder.com/150' },
   { _id: '33', name: 'Service Providers', speciality: 'Supply Companies', subCategory: 'Service Providers', image: 'https://via.placeholder.com/150' }
- ];
+];
 export const speciality = [
   {
     title: 'Shutter',
     Options: [
-      { label: 'Manual Shutters'},
-      { label: 'Motorized Shutters'},
-      { label: 'Gear Rolling Shutters'},
-      { label: 'Rapid Shutter'},
-      { label: 'Aluminium Shutter'},
+      { label: 'Manual Shutters' },
+      { label: 'Motorized Shutters' },
+      { label: 'Gear Rolling Shutters' },
+      { label: 'Rapid Shutter' },
+      { label: 'Aluminium Shutter' },
       { label: 'Stainless Steel Shutter', link: '/shutters/motorized' },
       { label: 'Galvanized Shutter', link: '/shutters/manual' },
       { label: 'Galvalume Shutter', link: '/shutters/manual' },
       { label: 'Grill Rolling Shutter', link: '/shutters/motorized' },
       { label: 'Mild Steel Shutter', link: '/shutters/motorized' },
-      { label: 'Color Coated Shutter', link: '/shutters/smart' } 
+      { label: 'Color Coated Shutter', link: '/shutters/smart' }
     ]
   },
   {
     title: 'Aluminium Section',
     Options: [
-      { label: 'Aluminium Partition'  },
-      { label: 'Aluminium Window'  },
+      { label: 'Aluminium Partition' },
+      { label: 'Aluminium Window' },
       { label: 'Aluminium Door' }
     ]
   },
@@ -148,7 +156,7 @@ export const speciality = [
     title: 'Gates & Door',
     Options: [
       { label: 'SS Sliding Gate', link: '/awnings/retractable' },
-      { label: 'MS Sliding Gate', link: '/awnings/fixed' }, 
+      { label: 'MS Sliding Gate', link: '/awnings/fixed' },
       { label: 'Fire Resistant Door', link: '/awnings/retractable' },
       { label: 'Electric Retractable SS Gate', link: '/awnings/retractable' },
       { label: 'Sliding Hangar Doors', link: '/awnings/fixed' },
@@ -193,7 +201,7 @@ export const products = [
   {
     id: 1,
     name: "Aluminium Shutter",
-    image: shutter 
+    image: shutter
   },
   {
     id: 2,
@@ -234,7 +242,7 @@ export const product = [
   },
   {
     id: 3,
-    name:  "Motories Rolling Shutter",
+    name: "Motories Rolling Shutter",
     image: "https://tiimg.tistatic.com/fp/1/008/302/painted-surface-mild-steel-automatic-rolling-shutter-with-motorized-831.jpg",
   },
   {
@@ -254,29 +262,29 @@ export const product = [
   }
 ];
 export const slides = [
-  { 
-    id: 1, 
-    url: home1, 
-    alt: "Forest Path", 
+  {
+    id: 1,
+    url: home1,
+    alt: "Forest Path",
     title: "Smart Automatic Shutters"
   },
-  { 
-    id: 2, 
-    url:home2, 
-    alt: "Mountain Landscape", 
+  {
+    id: 2,
+    url: home2,
+    alt: "Mountain Landscape",
     title: "Secure & Stylish Shutters"
   },
-  { 
-    id: 3, 
-    url: home3, 
-    alt: "City Skyline", 
+  {
+    id: 3,
+    url: home3,
+    alt: "City Skyline",
     title: "Smooth & Secure Sliding Gates"
   },
 ];
 export const images = [
-   ss_sliding_gate,
+  ss_sliding_gate,
   "https://cpimg.tistatic.com/08605879/b/4/Manual-Rolling-Shutter.jpg",
-   mall_shutter,
+  mall_shutter,
   motor_shutter
 ];
 export const paragraphs = [
