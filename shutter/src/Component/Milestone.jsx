@@ -97,7 +97,7 @@ const Milestone = () => {
                   {isMobile ? (
                     <div className="w-8 md:w-5/12"></div>
                   ) : (
-                    index % 2 === 0 ? null : <div className="w-5/12"></div>
+                    index % 2 === 0 ? null : <div></div>
                   )}
                   
                   {/* Text content with border animation on hover */}

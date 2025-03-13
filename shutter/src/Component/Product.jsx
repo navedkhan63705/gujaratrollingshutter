@@ -15,8 +15,8 @@ export default function Product() {
     "Gates & Door",
     "Roof Product",
     "Office Work Station",
-    "Raling",
-    "Supply Companies"
+    "Raling"
+     
   ];
 
   const applyFilter = () => {
@@ -72,11 +72,11 @@ export default function Product() {
 
   return (
     <div className="mt-35 mb-5 w-screen min-h-screen">
-      
+
       {/* Mobile category selector (visible only on small screens) */}
       <div className="block sm:hidden mb-4">
-        <select 
-          value={selectedSpeciality} 
+        <select
+          value={selectedSpeciality}
           onChange={(e) => handleSpecialityClick(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded bg-white text-black"
         >
@@ -85,11 +85,11 @@ export default function Product() {
             <option key={spec} value={spec}>{spec}</option>
           ))}
         </select>
-        
+
         {/* Mobile subcategory selector (shows only when category is selected) */}
         {selectedSpeciality && currentSpeciality && currentSpeciality.Options && (
-          <select 
-            value={selectedOption} 
+          <select
+            value={selectedOption}
             onChange={(e) => handleOptionClick(e.target.value)}
             className="w-full p-2 mt-2 border border-gray-300 rounded bg-white text-black"
           >
@@ -100,7 +100,7 @@ export default function Product() {
           </select>
         )}
       </div>
-      
+
       <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-5 mt-3 md:mt-5">
         {/* Main categories - hidden on mobile */}
         <div className="hidden sm:flex sm:flex-col gap-3 text-sm text-gray-600 w-60 flex-shrink-0">
@@ -113,7 +113,7 @@ export default function Product() {
               >
                 {spec}
               </p>
-              
+
               {/* Show subcategories when this speciality is selected */}
               {selectedSpeciality === spec && currentSpeciality && currentSpeciality.Options && (
                 <div className="ml-6 mt-2 mb-2">
@@ -132,7 +132,7 @@ export default function Product() {
             </div>
           ))}
         </div>
-    
+
         {/* Product display area */}
         <div className="w-full">
           {/* Active filters display */}
@@ -151,29 +151,28 @@ export default function Product() {
               )}
             </div>
           )}
-          
+
           {/* Product grid - centered only when subcategory is selected */}
           <div className={selectedOption ? "flex justify-center w-full" : ""}>
-            <div className={`grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 ${
-              // Adjust grid size based on number of products when in subcategory view
-              selectedOption ? 
-                filterDoc.length === 1 ? "w-64 sm:w-72 md:w-80" : 
-                filterDoc.length === 2 ? "w-full max-w-lg" :
-                filterDoc.length === 3 ? "w-full max-w-2xl" :
-                "w-full" : "w-full"
-            }`}>
+      <div className={`grid gap-3 md:gap-4 w-full 
+        ${filterDoc.length === 1 ? "grid-cols-1 md:grid-cols-2" :
+          filterDoc.length === 2 ? "grid-cols-2 md:grid-cols-3" :
+            filterDoc.length === 3 ? "grid-cols-1   md:grid-cols-3 lg:grid-cols-3" :
+              "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}
+      >
               {filterDoc.length > 0 ? (
                 filterDoc.slice(0, 10).map((item, index) => (
                   <div
-                    
                     className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
                   >
                     {/* Responsive aspect ratio container for consistent image sizing */}
                     <div className="relative pt-[70%]">
-                      <img 
-                        className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50" 
-                        src={item.image} 
-                        alt={item.name} 
+                      <img
+                        onClick={()=>handleSpecialityClick(e.target.value)}
+                        className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
+                        src={item.image}
+                        alt={item.name}
+                        value={item.name}
                       />
                     </div>
                     <div className="p-3 md:p-4">

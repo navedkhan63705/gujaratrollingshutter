@@ -124,8 +124,7 @@ export const productData = [
   { _id: '31', name: 'S S Raling', speciality: 'Raling', subCategory: 'S S Raling', image: SS_Raling },
 
 
-  { _id: '32', name: 'Product Suppliers', speciality: 'Supply Companies', subCategory: 'Product Suppliers', image: 'https://via.placeholder.com/150' },
-  { _id: '33', name: 'Service Providers', speciality: 'Supply Companies', subCategory: 'Service Providers', image: 'https://via.placeholder.com/150' }
+  
 ];
 export const speciality = [
   {
@@ -189,13 +188,6 @@ export const speciality = [
       { label: 'S S Raling', link: '/awnings/fixed' }
     ]
   },
-  {
-    title: 'Supply Companies',
-    Options: [
-      { label: 'Product Suppliers', link: '/suppliers/products' },
-      { label: 'Service Providers', link: '/suppliers/services' }
-    ]
-  }
 ];
 export const products = [
   {
@@ -238,7 +230,7 @@ export const product = [
   {
     id: 2,
     name: " Gear Rolling Shutter",
-    image: "https://th.bing.com/th/id/R.9a2baa3a8f848d0a6d54ca4e492ee258?rik=HUxhWK1ItzijtA&riu=http%3a%2f%2fripalrollingshutters.com%2fwp-content%2fuploads%2f2021%2f06%2fWhatsApp-Image-2021-09-22-at-12.51.53-PM.jpeg&ehk=R%2fkluOATCWkT5z1KKZLRb3ZDo%2fxiKlFKVeBLp46lu6Y%3d&risl=&pid=ImgRaw&r=0",
+    image: sideAngel_shutter,
   },
   {
     id: 3,
