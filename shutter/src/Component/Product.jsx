@@ -169,6 +169,7 @@ export default function Product() {
                     <div className="relative pt-[70%]">
                       <img
                         onClick={()=>handleSpecialityClick(e.target.value)}
+
                         className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
                         src={item.image}
                         alt={item.name}

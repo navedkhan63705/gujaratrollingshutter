@@ -56,7 +56,7 @@ const Home1 = () => {
             <img 
               src={slide.url} 
               alt={slide.alt} 
-              className="object-container w-full h-full"
+              className="object-cover w-full h-full"
             />
             
             {/* Left-aligned Title with Border and Gray Background Animation */}

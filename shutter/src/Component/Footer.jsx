@@ -65,6 +65,8 @@ const Footer = () => {
                   <li><a href="/AboutUs" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">About Us</a></li>
                   <li><a href="/product" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">Products</a></li>
                   <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">Contact Us</a></li>
+                  <li><a href="/service" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">Serivce</a></li>
+                  <li><a href="/features" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">Features & Uses</a></li>
                 </ul>
               </div>
 
@@ -114,13 +116,6 @@ const Footer = () => {
       <div className="bg-gray-950 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-xs sm:text-sm">© 2025 Gujarat Rolling Shutter. All rights reserved.</p>
-          <div className="mt-2 md:mt-0">
-            <ul className="flex space-x-4 sm:space-x-6 text-xs sm:text-sm">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Sitemap</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </footer>

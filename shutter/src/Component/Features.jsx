@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Features = () => {
+  const navigate = useNavigate();
   // Features data
   const features = [
     { 
@@ -69,8 +71,7 @@ const Features = () => {
   ];
 
   // Additional benefits
-  const benefits = [
-    "5-Year Warranty", 
+  const benefits = [ 
     "Free Installation", 
     "24/7 Support",
     "Annual Maintenance Plans",
@@ -79,8 +80,8 @@ const Features = () => {
   ];
 
   return (
-    <div className="bg-white py-15">
-      <div className="container mx-auto px-4">
+    <div className="bg-white py-15 ">
+      <div className="container mx-auto mt-12 px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-orange-500 mb-4">Premium Features</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -122,7 +123,7 @@ const Features = () => {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-md transition duration-300">
+          <button onClick={()=>{navigate('/contact')}} className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-md transition duration-300">
             Request a Free Consultation
           </button>
         </div>

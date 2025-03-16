@@ -5,11 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Home3 = () => {
   const navigate = useNavigate();
-  const handleViewClick = (product) => {
-    // Navigate to product page with the specific category
-    navigate(`/product`);
-  };
-
+ 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <div className="max-w-6xl mx-auto ">
@@ -48,7 +44,7 @@ const Home3 = () => {
 
               {/* Product Name and View Button Outside Box */}
               <h2 className="text-lg font-medium text-gray-800 mb-2">{product.name}</h2>
-              <button onClick={(e) => handleViewClick(e.target.value)} className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium">
+              <button onClick={() => navigate(`/product`)} className="flex items-center text-orange-400 hover:text-orange-700 transition-colors font-medium">
                 View Product
                 <svg
                   className="w-4 h-4 ml-1"

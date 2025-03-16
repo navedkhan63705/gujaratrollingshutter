@@ -170,11 +170,6 @@ const Service = () => {
       description: "Our expert team completes most installations within 2 working days"
     },
     {
-      icon: <ShieldIcon />,
-      title: "10-Year Warranty",
-      description: "All our products come with Gujarat's best warranty coverage"
-    },
-    {
       icon: <TruckIcon />,
       title: "Free Delivery",
       description: "Complimentary delivery across Gujarat state on all orders"
@@ -306,7 +301,7 @@ const Service = () => {
             <p className="text-gray-600 max-w-2xl mx-auto">With over 35 years of experience, we've built our reputation on quality, reliability, and exceptional service.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, idx) => (
               <div key={idx} className="bg-white rounded-lg p-6 shadow-lg">
                 <div className="flex items-center mb-4">
@@ -362,9 +357,6 @@ const Service = () => {
               <PhoneIcon />
               Call Now: +91 9024441665
             </a>
-            <button className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-amber-600 transition-colors">
-              Request Callback
-            </button>
           </div>
         </div>
       </section>

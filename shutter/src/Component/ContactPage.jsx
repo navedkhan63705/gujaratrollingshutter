@@ -112,7 +112,7 @@ const ContactPage = () => {
                 </div>
 
                 {/* Contact Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 block text-sm font-medium text-black">
                   {/* Name Field */}
                   <FormField
                     id="name"
@@ -123,7 +123,7 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="text-black placeholder-gray-500"
+                    className="placeholder-gray-500"
                   />
 
                   {/* Email Field */}
@@ -136,7 +136,7 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="text-black placeholder-gray-500"
+                    className="placeholder-gray-500"
                   />
 
                   {/* Message Field */}
@@ -195,7 +195,7 @@ const ContactPage = () => {
 
               {/* Right Column - Company Location */}
               <div className="md:w-1/2 bg-gray-100">
-                <div className="h-64 bg-gray-300">
+                <div className="h-100 bg-gray-300">
                   {/* Map integration */}
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3706.7505117428614!2d72.9723928!3d21.7124112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be027f9bbeefa71%3A0x9b305eafe172f730!2sGujarat%20Rolling%20Shutter!5e0!3m2!1sen!2sin!4v1741080668444!5m2!1sen!2sin"
@@ -214,7 +214,7 @@ const ContactPage = () => {
 
                   <div className="space-y-4">
                     <div className="flex items-start">
-                      <MapPin className="w-5 h-5 text-orange-500 mt-1 mr-3" />
+                      <MapPin className="w-5 h- text-orange-500 mt-1 mr-3" />
                       <div>
                         <p className="font-medium text-gray-700">Address</p>
                         <address className="not-italic text-gray-600">
@@ -225,14 +225,7 @@ const ContactPage = () => {
                         </address>
                       </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800 mb-2">Nearby landmarks</h3>
-                      <ul className="list-disc list-inside text-gray-600">
-                        <li>Central Park (0.3 miles)</li>
-                        <li>Business District Shopping Center (0.5 miles)</li>
-                        <li>Grand Hotel (0.7 miles)</li>
-                      </ul>
-                    </div>
+                    
                   </div>
                 </div>
               </div>

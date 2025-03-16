@@ -12,6 +12,7 @@ import Product from './Component/Product';
 import { Enquire } from './Component/Enquire';
 import  Service  from './Component/Service';
 import Features from './Component/Features';
+import  ProductDetails  from './Component/ProductDetails';
  
  
  
@@ -32,6 +33,7 @@ function App() {
         <Route path='/product/:speciality' element={<Product/>}/>
         <Route path='/service' element={<Service/>}/>
         <Route path='/features' element={<Features/>}/>
+        <Route path='/product/:speciality' element={<ProductDetails/>}/>
       </Routes>
       <Help/>
       <Footer/>

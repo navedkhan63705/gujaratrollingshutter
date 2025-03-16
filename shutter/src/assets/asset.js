@@ -67,15 +67,16 @@ export const milestones = [
 export const menuItems = [
   {
     title: "Overview",
+    link: "/",
     options: [
-      { label: "Product Features ", link: "/features" },
-      { label: "Service", link: "/service" },
+      { label: "Support", link: "/support" },
+      { label: "About Us", link: "/AboutUs" },
       { label: "Milestone", link: "/milestone" },
     ],
   },
-  { title: "About Us", link: "/AboutUs" },
+  { title: "Service", link: "/service" },
   { title: "Products", link: "/product" },
-  { title: "Support", link: "/support" },
+  { title: "Features", link: "/features" },
   { title: "Contact Us", link: "/contact" },
 ];
 

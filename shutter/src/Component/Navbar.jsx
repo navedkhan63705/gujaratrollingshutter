@@ -6,13 +6,12 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState([]);
-  const [expandedMobileSubmenus, setExpandedMobileSubmenus] = useState([]);
   const [bgColor, setBgColor] = useState("bg-orange-250"); // Initial background color
   const [navHeight, setNavHeight] = useState("h-[7rem]"); // Initial height
-  const [scrollbarVisible, setScrollbarVisible] = useState(false);
+  
 
   const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
+  
 
 
   useEffect(() => {
@@ -20,10 +19,10 @@ const Navbar = () => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setBgColor("bg-orange-500 dark:bg-orange-400"); // Solid color (light/dark)
-        setNavHeight("h-[6rem]"); // Reduce height on scroll
+        setNavHeight("h-[4rem]"); // Reduce height on scroll
       } else {
         setBgColor("bg-orange-500/50 dark:bg-orange-400/50 backdrop-blur-lg"); // Blurred (light/dark)
-        setNavHeight("h-[6rem]");
+        setNavHeight("h-[5rem]");
       }
       
     };
@@ -35,23 +34,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Check if mobile menu needs scrollbar
-  useEffect(() => {
-    if (isMobileMenuOpen && mobileMenuRef.current) {
-      const checkScrollHeight = () => {
-        const menuContent = mobileMenuRef.current;
-        if (menuContent) {
-          setScrollbarVisible(menuContent.scrollHeight > menuContent.clientHeight);
-        }
-      };
-
-      checkScrollHeight();
-      window.addEventListener('resize', checkScrollHeight);
-
-      return () => window.removeEventListener('resize', checkScrollHeight);
-    }
-  }, [isMobileMenuOpen, expandedMobileMenus]);
-
+ 
   // Close menus when clicking outside of nav
   useEffect(() => {
     function handleClickOutside(event) {
@@ -87,19 +70,10 @@ const Navbar = () => {
     setExpandedMobileMenus((prev) =>
       prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]
     );
-    // Reset submenus when collapsing a menu
-    if (expandedMobileMenus.includes(index)) {
-      setExpandedMobileSubmenus([]);
-    }
+   
   };
 
-  const toggleMobileNestedSubmenu = (menuIndex, submenuIndex) => {
-    const key = `${menuIndex}-${submenuIndex}`;
-    setExpandedMobileSubmenus((prev) =>
-      prev.includes(key) ? prev.filter((item) => item !== key) : [...prev, key]
-    );
-  };
-
+   
   return (
     <>
 
