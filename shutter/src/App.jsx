@@ -37,6 +37,7 @@ function App() {
         <Route path='/service' element={<Service/>}/>
         <Route path='/features' element={<Features/>}/>
         <Route path="/product/:speciality/details/:productName" element={<ProductDetails />} />
+        <Route path="/product//details/:productName" element={<ProductDetails />} />
         <Route path="/inquiry/:speciality/:productName" element={<Inquiry />} />
       </Routes>
       <Help/>

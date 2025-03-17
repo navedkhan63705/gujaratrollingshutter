@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import supportbg from "../assets/level4.png";
 import { useNavigate } from "react-router-dom";
+ 
 
 const Home4 = () => {
   // Create ref for the hero section
@@ -9,6 +10,7 @@ const Home4 = () => {
   const [heroVisible, setHeroVisible] = useState(false);
   // Placeholder for background image URL (replace with your actual image path)
   const navigate = useNavigate();
+ 
 
   useEffect(() => {
     // Set up Intersection Observer to detect when element enters viewport

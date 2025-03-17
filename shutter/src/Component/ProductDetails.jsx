@@ -34,7 +34,7 @@ export default function ProductDetails() {
     navigate(`/inquiry/${speciality}/${productName}`);
   };
 
-  // Mock images array (in a real app, this would come from the product data)
+  // Create images array from product data
   const productImages = product ? [
     product.image,
     product.image, // Duplicate for demo purposes
@@ -226,12 +226,6 @@ export default function ProductDetails() {
             <div className="flex">
               <button className="px-6 py-3 border-b-2 border-orange-500 text-orange-600 font-medium">
                 Details
-              </button>
-              <button className="px-6 py-3 text-gray-500 hover:text-gray-700">
-                Applications
-              </button>
-              <button className="px-6 py-3 text-gray-500 hover:text-gray-700">
-                Installation
               </button>
             </div>
           </div>

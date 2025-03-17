@@ -35,10 +35,12 @@ export default function Product() {
 
   // Update filters when URL parameter changes
   useEffect(() => {
-    // Set the selected speciality from URL parameter when component mounts or URL changes
     if (urlSpeciality) {
       setSelectedSpeciality(urlSpeciality);
     }
+    // Apply filter when component mounts or URL changes
+    applyFilter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlSpeciality]);
 
   // Apply filters when selection changes
@@ -49,10 +51,12 @@ export default function Product() {
 
   const handleSpecialityClick = (spec) => {
     if (selectedSpeciality === spec) {
+      // Clear the selection if clicked again
       setSelectedSpeciality("");
       setSelectedOption("");
       navigate("/product");
     } else {
+      // Set new speciality and navigate
       setSelectedSpeciality(spec);
       setSelectedOption(""); // Reset subcategory when changing main category
       navigate(`/product/${spec}`);
@@ -67,8 +71,10 @@ export default function Product() {
     }
   };
 
-  const handleProductClick = (productName) => {
-    navigate(`/product/${selectedSpeciality}/details/${productName}`);
+  const handleProductClick = (productName, productSpeciality) => {
+    // Use the product's own speciality if no speciality is selected
+    const navigateSpeciality = selectedSpeciality || productSpeciality;
+    navigate(`/product/${navigateSpeciality}/details/${productName}`);
   };
 
   // Find current speciality object based on selection
@@ -169,11 +175,11 @@ export default function Product() {
                   <div
                     key={index}
                     className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
+                    onClick={() => handleProductClick(item.name, item.speciality)}
                   >
                     {/* Responsive aspect ratio container for consistent image sizing */}
                     <div className="relative pt-[70%]">
                       <img
-                        onClick={() => handleProductClick(item.name)}
                         className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
                         src={item.image}
                         alt={item.name}
