@@ -16,7 +16,6 @@ export default function Product() {
     "Roof Product",
     "Office Work Station",
     "Raling"
-     
   ];
 
   const applyFilter = () => {
@@ -45,6 +44,7 @@ export default function Product() {
   // Apply filters when selection changes
   useEffect(() => {
     applyFilter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSpeciality, selectedOption]);
 
   const handleSpecialityClick = (spec) => {
@@ -65,6 +65,10 @@ export default function Product() {
     } else {
       setSelectedOption(option);
     }
+  };
+
+  const handleProductClick = (productName) => {
+    navigate(`/product/${selectedSpeciality}/details/${productName}`);
   };
 
   // Find current speciality object based on selection
@@ -154,26 +158,25 @@ export default function Product() {
 
           {/* Product grid - centered only when subcategory is selected */}
           <div className={selectedOption ? "flex justify-center w-full" : ""}>
-      <div className={`grid gap-3 md:gap-4 w-full 
-        ${filterDoc.length === 1 ? "grid-cols-1 md:grid-cols-2" :
-          filterDoc.length === 2 ? "grid-cols-2 md:grid-cols-3" :
-            filterDoc.length === 3 ? "grid-cols-1   md:grid-cols-3 lg:grid-cols-3" :
-              "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}
-      >
+            <div className={`grid gap-3 md:gap-4 w-full 
+              ${filterDoc.length === 1 ? "grid-cols-1 md:grid-cols-2" :
+                filterDoc.length === 2 ? "grid-cols-2 md:grid-cols-3" :
+                  filterDoc.length === 3 ? "grid-cols-1 md:grid-cols-3 lg:grid-cols-3" :
+                    "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}
+            >
               {filterDoc.length > 0 ? (
                 filterDoc.slice(0, 10).map((item, index) => (
                   <div
+                    key={index}
                     className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
                   >
                     {/* Responsive aspect ratio container for consistent image sizing */}
                     <div className="relative pt-[70%]">
                       <img
-                        onClick={()=>handleSpecialityClick(e.target.value)}
-
+                        onClick={() => handleProductClick(item.name)}
                         className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
                         src={item.image}
                         alt={item.name}
-                        value={item.name}
                       />
                     </div>
                     <div className="p-3 md:p-4">

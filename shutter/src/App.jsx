@@ -13,6 +13,8 @@ import { Enquire } from './Component/Enquire';
 import  Service  from './Component/Service';
 import Features from './Component/Features';
 import  ProductDetails  from './Component/ProductDetails';
+import Inquiry from './Component/Inquiry';
+import Contact from './Component/Contect';
  
  
  
@@ -25,6 +27,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/support' element={<Support/>} />
         <Route path='/contact' element={<ContactPage/>}/>
+        <Route path='/contactd' element={<Contact/>}/>
         <Route path='/AboutUs' element={<AboutUs/>}/>
         <Route path='/milestone' element={<Milestone/>}/>
         <Route path='/main' element={<Main/>}/>
@@ -33,7 +36,8 @@ function App() {
         <Route path='/product/:speciality' element={<Product/>}/>
         <Route path='/service' element={<Service/>}/>
         <Route path='/features' element={<Features/>}/>
-        <Route path='/product/:speciality' element={<ProductDetails/>}/>
+        <Route path="/product/:speciality/details/:productName" element={<ProductDetails />} />
+        <Route path="/inquiry/:speciality/:productName" element={<Inquiry />} />
       </Routes>
       <Help/>
       <Footer/>
