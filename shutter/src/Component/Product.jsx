@@ -171,7 +171,7 @@ export default function Product() {
                     "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}
             >
               {filterDoc.length > 0 ? (
-                filterDoc.slice(0, 10).map((item, index) => (
+                filterDoc.slice(0, 12).map((item, index) => (
                   <div
                     key={index}
                     className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
@@ -179,19 +179,31 @@ export default function Product() {
                   >
                     {/* Responsive aspect ratio container for consistent image sizing */}
                     <div className="relative pt-[70%]">
-                      <img
-                        className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
-                        src={item.image}
-                        alt={item.name}
-                      />
+                      {item.video ? (
+                        <video
+                          className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
+                          src={item.video}
+                          autoPlay
+                          loop
+                          muted
+                          controls
+                        />
+                      ) : (
+                        <img
+                          className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
+                          src={item.image}
+                          alt={item.name}
+                        />
+                      )}
                     </div>
+
                     <div className="p-3 md:p-4">
                       <div className="flex items-center justify-center gap-2 text-sm text-green-500 mt-1">
                         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                         <p>Available</p>
                       </div>
                       <p className="text-gray-900 text-base md:text-lg font-medium line-clamp-2">{item.name}</p>
-                      <p className="text-gray-500 text-xs md:text-sm">{item.subCategory}</p>
+
                     </div>
                   </div>
                 ))

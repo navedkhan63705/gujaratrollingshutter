@@ -14,7 +14,7 @@ export default function ProductDetails() {
     const foundProduct = productData.find(
       (item) => item.name === productName && item.speciality === speciality
     );
-    
+
     if (foundProduct) {
       setProduct(foundProduct);
       // Simulate loading time
@@ -54,8 +54,8 @@ export default function ProductDetails() {
       <div className="min-h-screen flex flex-col items-center justify-center p-4">
         <h1 className="text-2xl font-semibold text-gray-800 mb-4">Product Not Found</h1>
         <p className="text-gray-600 mb-6">The product you're looking for doesn't exist or has been removed.</p>
-        <button 
-          onClick={handleGoBack} 
+        <button
+          onClick={handleGoBack}
           className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
         >
           Go Back
@@ -108,31 +108,56 @@ export default function ProductDetails() {
             {/* Main Image */}
             <div className="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 mb-4">
               <div className="relative pt-[100%]">
-                <img
-                  src={productImages[selectedImage]}
-                  alt={product.name}
-                  className="absolute top-0 left-0 w-full h-full object-contain p-4"
-                />
+                {product.video ? (
+                  <video
+                    className="absolute top-0 left-0 w-full h-full object-contain p-2"
+                    src={product.video}
+
+                    autoPlay
+                    loop
+                    muted
+                    controls
+                  />
+                ) : (
+                  <img
+                    src={product.image}
+                    alt=""
+                    className="absolute top-0 left-0 w-full h-full object-contain p-2"
+                  />
+                )}
               </div>
+
             </div>
-            
+
             {/* Thumbnail Images */}
             <div className="grid grid-cols-4 gap-2">
               {productImages.map((img, index) => (
                 <div
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`border rounded-md overflow-hidden cursor-pointer ${
-                    selectedImage === index ? 'border-orange-500' : 'border-gray-200'
-                  }`}
+                  className={`border rounded-md overflow-hidden cursor-pointer ${selectedImage === index ? 'border-orange-500' : 'border-gray-200'
+                    }`}
                 >
                   <div className="relative pt-[100%]">
-                    <img
-                      src={img}
-                      alt={`${product.name} thumbnail ${index + 1}`}
-                      className="absolute top-0 left-0 w-full h-full object-contain p-2"
-                    />
+                    {product.video ? (
+                      <video
+                        className="absolute top-0 left-0 w-full h-full object-contain p-2"
+                        src={product.video}
+                        alt={`${product.name} thumbnail ${index + 1}`}
+                        autoPlay
+                        loop
+                        muted
+                        controls
+                      />
+                    ) : (
+                      <img
+                        src={product.image}
+                        alt={`${product.name} thumbnail ${index + 1}`}
+                        className="absolute top-0 left-0 w-full h-full object-contain p-2"
+                      />
+                    )}
                   </div>
+
                 </div>
               ))}
             </div>
@@ -151,18 +176,18 @@ export default function ProductDetails() {
 
             <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
             <p className="text-gray-600 mb-4">{product.subCategory}</p>
-            
+
             {/* Price information if available */}
             {product.price && (
               <div className="text-2xl font-semibold text-gray-900 mb-6">
                 ₹{typeof product.price === 'number' ? product.price.toLocaleString() : product.price}
               </div>
             )}
-            
+
             <div className="mb-6">
               <h2 className="text-xl font-semibold mb-2">Description</h2>
               <p className="text-gray-600">
-                {product.description || 
+                {product.description ||
                   `This premium ${product.name} from our ${product.speciality} collection offers the perfect blend of style and functionality. Crafted with high-quality materials to ensure durability and long-lasting performance.`}
               </p>
             </div>
@@ -185,32 +210,32 @@ export default function ProductDetails() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-gray-50 p-3 rounded">
                   <span className="text-gray-500 text-sm">Material</span>
-                  <p className="font-medium">{product.material || "Premium Aluminum"}</p>
+                  <p className="font-medium text-black">{product.material || "Premium Aluminum"}</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded">
                   <span className="text-gray-500 text-sm">Finish</span>
-                  <p className="font-medium">{product.finish || "Powder Coated"}</p>
+                  <p className="font-medium text-black">{product.finish || "Powder Coated"}</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded">
                   <span className="text-gray-500 text-sm">Dimensions</span>
-                  <p className="font-medium">{product.dimensions || "Customizable"}</p>
+                  <p className="font-medium text-black">{product.dimensions || "Customizable"}</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded">
                   <span className="text-gray-500 text-sm">Weight</span>
-                  <p className="font-medium">{product.weight || "Varies by size"}</p>
+                  <p className="font-medium text-black">{product.weight || "Varies by size"}</p>
                 </div>
               </div>
             </div>
 
             {/* Call to Action Buttons */}
             <div className="flex flex-wrap gap-4 mt-6">
-              <button 
+              <button
                 onClick={handleInquiry}
                 className="px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition font-medium"
               >
                 Request Quote
               </button>
-              <button 
+              <button
                 onClick={() => navigate(`/contactd?product=${productName}`)}
                 className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition font-medium"
               >
@@ -229,21 +254,21 @@ export default function ProductDetails() {
               </button>
             </div>
           </div>
-          
+
           <div className="py-6">
             <h3 className="text-xl font-semibold mb-4">Product Details</h3>
             <p className="text-gray-600 mb-4">
-              Our {product.name} is a premium solution designed for durability and performance. 
-              Each product is manufactured with high-grade materials to ensure longevity and 
+              Our {product.name} is a premium solution designed for durability and performance.
+              Each product is manufactured with high-grade materials to ensure longevity and
               resistance to wear and tear.
             </p>
             <p className="text-gray-600 mb-4">
-              The {product.name} is available in various finishes and colors to match your 
-              aesthetic preferences. We also offer customization options to fit your specific 
+              The {product.name} is available in various finishes and colors to match your
+              aesthetic preferences. We also offer customization options to fit your specific
               requirements.
             </p>
             <p className="text-gray-600">
-              All our products undergo rigorous quality checks to ensure they meet the highest 
+              All our products undergo rigorous quality checks to ensure they meet the highest
               standards of craftsmanship and performance.
             </p>
           </div>
