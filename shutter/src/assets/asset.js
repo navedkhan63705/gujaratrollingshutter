@@ -1,4 +1,5 @@
 import fire_shutter from './fire_shutter.jpg'
+import fire_door from './fire_resistant_door.webp'
 import floor_mating from './floor_mating.jpg'
 import gear_shutter from './gear_shutter.jpg'
 import gear_shutter1 from './gear_shutter1.jpg'
@@ -29,39 +30,58 @@ import Mirror_Senser_Door from './mirror_senser_door.avif'
 import electric_board_table from './electric_board_table.jpg'
 import MS_Raling from './MS_raling.png'
 import SS_Raling from './SS_Raling.png'
+import gnfc from './GNFC.jpg'
+import adani_power from './adani_power.jpg'
+import aditya_birla from './aditya_birla_group.jpg'
+import ongc from './ongc.webp'
+import reliance from './reliance.webp'
 
+export const mileimage=[
+  gnfc,
+  adani_power,
+  aditya_birla,
+  ongc,
+  reliance
+]
 export const milestones = [
   {
     id: 1,
-    year: "2018",
+    year: "1982",
     title: "Company Founded",
-    description: "Our journey began with a simple idea and a passionate team determined to make a difference in the industry."
+    description: "Our company was established with a vision to revolutionize the energy sector in India. Starting with a small team of dedicated professionals, we laid the foundation for what would become one of the country's leading industrial conglomerates.",
+    image: "",
   },
   {
     id: 2,
-    year: "2020",
-    title: "First Major Product Launch",
-    description: "After months of development and testing, we successfully launched our flagship product to overwhelming market response."
+    year: "2000",
+    title: "Adani Power",
+    description: "Formed a strategic partnership with Adani Power, marking our entry into the power generation sector. This collaboration enabled us to expand our operations and establish a significant presence in the energy market throughout Western India.",
+    image: adani_power,
   },
   {
     id: 3,
-    year: "2021",
-    title: "International Expansion",
-    description: "We expanded our operations to Europe and Asia, bringing our solutions to a global audience and establishing key partnerships."
+    year: "2008",
+    title: "Reliance",
+    description: "Joined forces with Reliance Industries to develop innovative solutions for the petrochemical industry. This milestone partnership accelerated our growth and helped us implement cutting-edge technologies across our operations.",
+    image: reliance,
   },
   {
     id: 4,
-    year: "2023",
-    title: "Innovation Award",
-    description: "Our dedication to excellence was recognized with the prestigious Industry Innovation Award, cementing our position as market leaders."
+    year: "2015",
+    title: "Aditya Birla Group",
+    description: "Collaborated with the Aditya Birla Group to enhance our manufacturing capabilities and expand into new markets. This partnership strengthened our position in the industrial sector and opened new avenues for sustainable growth.",
+    image: aditya_birla,
   },
   {
     id: 5,
-    year: "2025",
-    title: "Sustainable Future Initiative",
-    description: "We launched our commitment to sustainability with a comprehensive program to reduce our carbon footprint and promote eco-friendly practices."
+    year: "2024",
+    title: "Aditya Birla Group",
+    description: "Renewed and expanded our partnership with the Aditya Birla Group, focusing on sustainability and digital transformation. This collaboration represents our commitment to innovation and environmental responsibility in the modern business landscape.",
+    image: aditya_birla,
+ 
   }
-];
+]
+
 
 
 export const menuItems = [
@@ -81,13 +101,13 @@ export const menuItems = [
 ];
 
 export const productData = [
-  { _id: '1', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
+  { _id: '1', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: "" },
   { _id: '2', name: 'Motorized Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: fire_shutter },
   { _id: '3', name: 'Gear Rolling Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: gear_shutter },
   { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image: normal_shutter },
   { _id: '5', name: 'Aluminium Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: manual_shutter2 },
   { _id: '6', name: 'Stainless Steel Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: manual_shutter },
-  { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: manual_shutter2 },
+  { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
   { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: gear_shutter1 },
   { _id: '9', name: 'Color Coated Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image: shop_rolling_shutter },
   { _id: '10', name: 'Mild Steel Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image: sideAngel_shutter },
@@ -102,7 +122,7 @@ export const productData = [
   { _id: '15', name: 'SS Sliding Gate', speciality: 'Gates & Door', subCategory: 'SS Sliding Gate', image: ss_sliding_gate },
   { _id: '16', name: 'MS Sliding Gate', speciality: 'Gates & Door', subCategory: 'MS Sliding Gate', image: ms_sliding_gate },
   { _id: '17', name: 'Electric Retractable SS Gate', speciality: 'Gates & Door', subCategory: 'Electric Retractable SS Gate', image: electric_retractable },
-  { _id: '18', name: 'Fire Resistant Door', speciality: 'Gates & Door', subCategory: 'Fire Resistant Door', image: fire_shutter },
+  { _id: '18', name: 'Fire Resistant Door', speciality: 'Gates & Door', subCategory: 'Fire Resistant Door', image: fire_door},
   { _id: '19', name: 'Sliding Hangar Doors', speciality: 'Gates & Door', subCategory: 'Sliding Hangar Doors', image: Sliding_Hnager_Door },
   { _id: '20', name: 'Automatic Barrier', speciality: 'Gates & Door', subCategory: 'Automatic Barrier', image: automatic_barrier },
   { _id: '21', name: 'Dock Levelers', speciality: 'Gates & Door', subCategory: 'Dock Levelers', image: Dock_Levelers },

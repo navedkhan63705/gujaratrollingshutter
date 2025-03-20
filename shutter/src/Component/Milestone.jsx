@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { milestones } from '../assets/asset';
+import { milestones, mileimage } from '../assets/asset';
 
 const Milestone = () => {
   const [visible, setVisible] = useState(false);
@@ -47,15 +47,15 @@ const Milestone = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:mt-8 py-8 md:mt-12 md:py-16">
+    <div className="max-w-6xl mx-auto px-4 sm:mt-8 py-8 md:mt-12 md:py-16">
 
       {/* Header section with animation */}
-      <div className={`transition-all duration-1000  ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+      <div className={`transition-all duration-1000 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
         <h1 className="text-3xl md:text-4xl font-bold text-center text-black mb-4 md:mb-6">
-          <span className="relative inline-block  ">
+          <span className="relative inline-block">
             Our Journey
             <span 
-              className="absolute -bottom-2    left-0 w-full h-1 bg-orange-400 rounded-full transform scale-x-0 transition-transform duration-700 ease-out delay-300" 
+              className="absolute -bottom-2 left-0 w-full h-1 bg-orange-400 rounded-full transform scale-x-0 transition-transform duration-700 ease-out delay-300" 
               style={{ transform: visible ? 'scaleX(1)' : 'scaleX(0)' }}
             ></span>
           </span>
@@ -82,7 +82,7 @@ const Milestone = () => {
         </div>
         
         {/* Milestone items */}
-        <div className="space-y-12 md:space-y-24">
+        <div className="space-y-16 md:space-y-32">
           {milestones.map((milestone, index) => {
             const isActive = activeIndex === index;
             return (
@@ -104,15 +104,34 @@ const Milestone = () => {
                   <div 
                     className={`${isMobile ? 'w-11/12 text-left pl-6' : 'w-5/12'} relative bg-white shadow-lg p-4 md:p-6 rounded-lg transition-all duration-300 
                       ${!isMobile && index % 2 === 0 ? 'text-right pr-8 mr-4' : 'text-left pl-8 ml-4'}
-                      ${isActive ? 'bg-white shadow-lg' : 'bg-transparent'}`}
+                      ${isActive ? 'bg-white shadow-xl' : 'bg-white shadow-md'}`}
                     style={{ 
-                      borderImage: isActive ? 'linear-gradient(45deg, #f97316, #fb923c) 1' : 'linear-gradient(45deg, transparent, transparent) 1',
-                      transition: 'border-image 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease'
+                      borderLeft: isActive ? '4px solid #f97316' : '1px solid #f97316',
+                      borderRight: isActive ? '4px solid #f97316' : '1px solid #f97316',
+                      transition: 'all 0.5s ease'
                     }}
                   >
-                    <div className="mb-1 text-orange-400 font-bold text-xl md:text-2xl group-hover:text-orange-500 transition-colors duration-300">{milestone.year}</div>
-                    <h3 className="text-xl md:text-3xl text-black font-semibold mb-1 md:mb-2 transition-all duration-300 group-hover:translate-x-1">{milestone.title}</h3>
-                    <p className="text-gray-600 text-sm md:text-xl transition-colors duration-300 group-hover:text-gray-800">
+                    <div className="mb-2 text-orange-400 font-bold text-xl md:text-2xl group-hover:text-orange-500 transition-colors duration-300">
+                      {milestone.year}
+                    </div>
+                    
+                    <h3 className="text-xl md:text-3xl text-black font-semibold mb-3 md:mb-4 transition-all duration-300 group-hover:translate-x-1">
+                      {milestone.title}
+                    </h3>
+                    
+                    {/* Image display */}
+                    {milestone.image && (
+                      <div className="mb-4 overflow-hidden rounded-lg shadow-md transition-all duration-300 group-hover:shadow-lg">
+                        <img 
+                          src={milestone.image} 
+                          alt={milestone.title} 
+                          className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
+                          style={{ maxHeight: '100px' }}
+                        />
+                      </div>
+                    )}
+                    
+                    <p className="text-gray-600 text-sm md:text-lg transition-colors duration-300 group-hover:text-gray-800">
                       {isMobile 
                         ? milestone.description.length > 100 
                           ? `${milestone.description.substring(0, 100)}...` 
@@ -120,6 +139,11 @@ const Milestone = () => {
                         : milestone.description
                       }
                     </p>
+                    
+                    {/* Order badge */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-400 flex items-center justify-center shadow-lg z-10 transition-all duration-300 group-hover:scale-110">
+                      <span className="text-white font-bold text-sm md:text-lg">{milestone.id}</span>
+                    </div>
                     
                     {/* Corner decorations - visible only on desktop */}
                     {!isMobile && (
@@ -157,6 +181,22 @@ const Milestone = () => {
           <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-orange-100 flex items-center justify-center">
             <div className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-orange-400 animate-pulse"></div>
           </div>
+        </div>
+
+      </div>
+     
+      {/* Partners section */}
+      <div className="mt-20 text-center">
+        <p className="text-4xl font-bold text-gray-800 mb-6">Worked with</p>
+        <div className="flex justify-center items-center flex-wrap">
+          {mileimage.map((logo, index) => (
+            <img 
+              key={index}
+              src={logo} 
+              alt={`Partner ${index + 1}`} 
+              className="h-32 md:h-40 lg:h-48 object-contain m-4"
+            />
+          ))}
         </div>
       </div>
     </div>
