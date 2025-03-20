@@ -9,7 +9,7 @@ import sideAngel_shutter from './sideAngel_shutter.jpg'
 import shop_rolling_shutter from './color_coat_shutter.jpg'
 import office_chair from './chair_office.jpg'
 import fire_door from './fire_resistant_door.webp'
-import poli_carbonate from './poli_carbonate.mp4'
+// import poli_carbonate from './poli_carbonate.mp4'
 import floor_mating from './floor_matting.png'
 import grill_rolling_s from './grill_rolling_shutter.jpg'
 import gear_shutter1 from './Gear_shutter.jpg'
@@ -108,7 +108,7 @@ export const productData = [
    
    
   { _id: '0', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: manual_shutter },
-  { _id: '1', name: 'Poli_carbonate', speciality: 'Shutter', subCategory: 'Poli_carbonate',  video: poli_carbonate },
+  // { _id: '1', name: 'Poli_carbonate', speciality: 'Shutter', subCategory: 'Poli_carbonate',  video: poli_carbonate },
   { _id: '2', name: 'Motorized Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: motor_shutter },
   { _id: '3', name: 'Gear Rolling Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: gear_shutter1  },
   { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image: fire_shutter },
