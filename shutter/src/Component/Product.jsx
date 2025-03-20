@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { productData, speciality } from '../assets/asset.js';
+import { productData, speciality } from "../assets/asset.js";
 
 export default function Product() {
   const { speciality: urlSpeciality } = useParams();
   const [filterDoc, setFilterDoc] = useState([]);
-  const [selectedSpeciality, setSelectedSpeciality] = useState(urlSpeciality || "");
+  const [selectedSpeciality, setSelectedSpeciality] = useState(
+    urlSpeciality || ""
+  );
   const [selectedOption, setSelectedOption] = useState("");
   const navigate = useNavigate();
 
@@ -15,18 +17,24 @@ export default function Product() {
     "Gates & Door",
     "Roof Product",
     "Office Work Station",
-    "Raling"
+    "Raling",
   ];
 
   const applyFilter = () => {
     if (selectedSpeciality && selectedOption) {
       // Filter by both main category and subcategory
-      setFilterDoc(productData.filter(
-        (doc) => doc.speciality === selectedSpeciality && doc.subCategory === selectedOption
-      ));
+      setFilterDoc(
+        productData.filter(
+          (doc) =>
+            doc.speciality === selectedSpeciality &&
+            doc.subCategory === selectedOption
+        )
+      );
     } else if (selectedSpeciality) {
       // Filter by main category only
-      setFilterDoc(productData.filter((doc) => doc.speciality === selectedSpeciality));
+      setFilterDoc(
+        productData.filter((doc) => doc.speciality === selectedSpeciality)
+      );
     } else {
       // No filter, show all products
       setFilterDoc(productData);
@@ -78,11 +86,12 @@ export default function Product() {
   };
 
   // Find current speciality object based on selection
-  const currentSpeciality = speciality.find(item => item.title === selectedSpeciality);
+  const currentSpeciality = speciality.find(
+    (item) => item.title === selectedSpeciality
+  );
 
   return (
     <div className="mt-35 mb-5 w-screen min-h-screen">
-
       {/* Mobile category selector (visible only on small screens) */}
       <div className="block sm:hidden mb-4">
         <select
@@ -92,23 +101,29 @@ export default function Product() {
         >
           <option value="">All Categories</option>
           {Products.map((spec) => (
-            <option key={spec} value={spec}>{spec}</option>
+            <option key={spec} value={spec}>
+              {spec}
+            </option>
           ))}
         </select>
 
         {/* Mobile subcategory selector (shows only when category is selected) */}
-        {selectedSpeciality && currentSpeciality && currentSpeciality.Options && (
-          <select
-            value={selectedOption}
-            onChange={(e) => handleOptionClick(e.target.value)}
-            className="w-full p-2 mt-2 border border-gray-300 rounded bg-white text-black"
-          >
-            <option value="">All {selectedSpeciality} Products</option>
-            {currentSpeciality.Options.map((option, idx) => (
-              <option key={idx} value={option.label}>{option.label}</option>
-            ))}
-          </select>
-        )}
+        {selectedSpeciality &&
+          currentSpeciality &&
+          currentSpeciality.Options && (
+            <select
+              value={selectedOption}
+              onChange={(e) => handleOptionClick(e.target.value)}
+              className="w-full p-2 mt-2 border border-gray-300 rounded bg-white text-black"
+            >
+              <option value="">All {selectedSpeciality} Products</option>
+              {currentSpeciality.Options.map((option, idx) => (
+                <option key={idx} value={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          )}
       </div>
 
       <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-5 mt-3 md:mt-5">
@@ -119,26 +134,36 @@ export default function Product() {
               <p
                 onClick={() => handleSpecialityClick(spec)}
                 className={`w-full pl-3 py-1.5 pr-5 border border-gray-300 rounded transition cursor-pointer 
-                  ${selectedSpeciality === spec ? "bg-orange-100 text-black font-medium" : ""}`}
+                  ${
+                    selectedSpeciality === spec
+                      ? "bg-orange-100 text-black font-medium"
+                      : ""
+                  }`}
               >
                 {spec}
               </p>
 
               {/* Show subcategories when this speciality is selected */}
-              {selectedSpeciality === spec && currentSpeciality && currentSpeciality.Options && (
-                <div className="ml-6 mt-2 mb-2">
-                  {currentSpeciality.Options.map((option, idx) => (
-                    <p
-                      key={idx}
-                      onClick={() => handleOptionClick(option.label)}
-                      className={`pl-3 py-1 pr-4 mb-1 border-l-2 transition cursor-pointer 
-                        ${selectedOption === option.label ? "border-orange-500 text-orange-600 font-medium" : "border-gray-200"}`}
-                    >
-                      {option.label}
-                    </p>
-                  ))}
-                </div>
-              )}
+              {selectedSpeciality === spec &&
+                currentSpeciality &&
+                currentSpeciality.Options && (
+                  <div className="ml-6 mt-2 mb-2">
+                    {currentSpeciality.Options.map((option, idx) => (
+                      <p
+                        key={idx}
+                        onClick={() => handleOptionClick(option.label)}
+                        className={`pl-3 py-1 pr-4 mb-1 border-l-2 transition cursor-pointer 
+                        ${
+                          selectedOption === option.label
+                            ? "border-orange-500 text-orange-600 font-medium"
+                            : "border-gray-200"
+                        }`}
+                      >
+                        {option.label}
+                      </p>
+                    ))}
+                  </div>
+                )}
             </div>
           ))}
         </div>
@@ -164,40 +189,61 @@ export default function Product() {
 
           {/* Product grid - centered only when subcategory is selected */}
           <div className={selectedOption ? "flex justify-center w-full" : ""}>
-            <div className={`grid gap-3 md:gap-4 w-full 
-              ${filterDoc.length === 1 ? "grid-cols-1 md:grid-cols-2" :
-                filterDoc.length === 2 ? "grid-cols-2 md:grid-cols-3" :
-                  filterDoc.length === 3 ? "grid-cols-1 md:grid-cols-3 lg:grid-cols-3" :
-                    "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}
+            <div
+              className={`grid gap-3 md:gap-4 w-full 
+              ${
+                filterDoc.length === 1
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : filterDoc.length === 2
+                  ? "grid-cols-2 md:grid-cols-3"
+                  : filterDoc.length === 3
+                  ? "grid-cols-1 md:grid-cols-3 lg:grid-cols-3"
+                  : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+              }`}
             >
               {filterDoc.length > 0 ? (
-                filterDoc.slice(0, 10).map((item, index) => (
+                filterDoc.slice(0, 12).map((item, index) => (
                   <div
                     key={index}
                     className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500"
-                    onClick={() => handleProductClick(item.name, item.speciality)}
+                    onClick={() =>
+                      handleProductClick(item.name, item.speciality)
+                    }
                   >
                     {/* Responsive aspect ratio container for consistent image sizing */}
                     <div className="relative pt-[70%]">
-                      <img
-                        className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover bg-orange-50"
-                        src={item.image}
-                        alt={item.name}
-                      />
+                    {item.video ? (
+                        <video
+                          src={item.video}
+                          controls
+                          className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover  bg-orange-50 p-4"
+                        />
+                      ) : (
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="absolute top-0 left-0 w-full h-full object-contain p-4  sm:object-cover  bg-orange-50"
+                        />
+                      )}
                     </div>
                     <div className="p-3 md:p-4">
                       <div className="flex items-center justify-center gap-2 text-sm text-green-500 mt-1">
                         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                         <p>Available</p>
                       </div>
-                      <p className="text-gray-900 text-base md:text-lg font-medium line-clamp-2">{item.name}</p>
-                      <p className="text-gray-500 text-xs md:text-sm">{item.subCategory}</p>
+                      <p className="text-gray-900 text-base md:text-lg font-medium line-clamp-2">
+                        {item.name}
+                      </p>
+                      
                     </div>
                   </div>
                 ))
               ) : (
                 <div className="col-span-full text-center py-8">
-                  <p className="text-gray-500">No products found for this selection. Please select a category.</p>
+                  <p className="text-gray-500">
+                    No products found for this selection. Please select a
+                    category.
+                  </p>
                 </div>
               )}
             </div>

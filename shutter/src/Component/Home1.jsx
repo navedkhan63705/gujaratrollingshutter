@@ -7,6 +7,8 @@ const Home1 = () => {
   const [titleVisible, setTitleVisible] = useState(true);
   const timeoutRef = useRef(null);
   
+  // Remove isPaused state to ensure continuous scrolling
+  
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -20,12 +22,16 @@ const Home1 = () => {
     setTitleVisible(false);
     setTimeout(() => setTitleVisible(true), 50);
     
-     
+    // Always auto-scroll regardless of hover state
+    timeoutRef.current = setTimeout(() => {
+      const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+      setCurrentIndex(newIndex);
+    }, 5000); // 5 seconds per slide
     
     return () => {
       resetTimeout();
     };
-  }, [currentIndex,  slides.length]);
+  }, [currentIndex, slides.length]);
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
@@ -41,7 +47,7 @@ const Home1 = () => {
     setCurrentIndex(newIndex);
   };
 
- 
+  // Remove mouse enter/leave handlers that were pausing the carousel
 
   return (
     <div className="w-full overflow-hidden relative">
@@ -52,7 +58,7 @@ const Home1 = () => {
       >
         {slides.map((slide, index) => (
           <div key={slide.id} className="w-full h-full flex-shrink-0 relative">
-            <div className={`absolute inset-0 opacity-40`}></div>
+            <div className="absolute inset-0 opacity-40"></div>
             <img 
               src={slide.url} 
               alt={slide.alt} 
@@ -118,6 +124,25 @@ const Home1 = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+      
+      {/* Auto-scrolling indicator - Always showing progress */}
+      <div className="absolute top-4 right-4 z-10">
+        <div className="w-12 h-1 bg-white rounded-full overflow-hidden">
+          <div 
+            className="h-full bg-blue-500" 
+            style={{
+              width: '100%',
+              animation: 'countdown 5s linear infinite'
+            }}
+          ></div>
+        </div>
+        <style jsx>{`
+          @keyframes countdown {
+            from { width: 100%; }
+            to { width: 0%; }
+          }
+        `}</style>
       </div>
     </div>
   );
