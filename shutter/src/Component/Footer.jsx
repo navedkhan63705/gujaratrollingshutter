@@ -80,8 +80,10 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <span className="text-gray-400 text-sm sm:text-base">
-                      123 Industrial Area, Rajkot,<br />
-                      Gujarat 360001, India
+                          Shalimar Complex,<br />
+                          3, Dahej Bypass Rd, <br />
+                          near Sherpura, Madina Park, Bharuch,<br />
+                          Gujarat 392015
                     </span>
                   </li>
                   <li className="flex items-center">
