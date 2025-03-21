@@ -3,23 +3,24 @@ import fire_shutter from './fire_shutter.jpg'
 // import gear_shutter from './gear_shutter.jpg'
 // import gear_shutter1 from './gear_shutter1.jpg'
 import manual_shutter from './manual_shutter.jpg'
-import normal_shutter from './normal_shutter.jpg'
 import pallywood_table from './pllywood_table.jpg'
 import sideAngel_shutter from './sideAngel_shutter.jpg'
 import shop_rolling_shutter from './color_coat_shutter.jpg'
 import office_chair from './chair_office.jpg'
+import steel_shutter from './steel_shutter.jpg'
 import fire_door from './fire_resistant_door.webp'
 // import poli_carbonate from './poli_carbonate.mp4'
 import floor_mating from './floor_matting.png'
 import grill_rolling_s from './grill_rolling_shutter.jpg'
 import gear_shutter1 from './Gear_shutter .jpg'
 import gear_shutter2 from './gear_shutter2.jpg'
-import manual_shutter2 from './manual_shutter2.jpg'
+import manual_shutter_main from './manual_main_shutter.jpg'
 import mall_shutter from './mall_shutter.jpg'
 import roof_celing from './roof_ceiling.jpg'
 import AluminiumGate from './AluminiumGate.jpg'
 import aluminium_partition from './Aluminium_partition.png'
 import aluminium_windows from './aluminium_windows.jpg'
+import Cabin from './Cabin.jpg'
 import shutter from './shutter.jpg'
 import ms_shutter from './ms_shutter1.jpg'
 import ms_sliding_gate from './ms_sliding_gate.png'
@@ -37,12 +38,13 @@ import motor_shutter from './motter_shutter_1.jpg'
 import ss_sliding_gate from './ss_sliding.jpg'
 import aditya_birla from './aditya_birla_group.jpg'
 import adani_power from './adani_power.jpg'
-import reliance from './reliance.webp'
+import reliance from './reliance.jpg'
 import ongc from './ongc.webp'
 import torrent  from './torrent_power.jpg'
 import home1 from './home1.webp'
 import home2 from './home2.webp'
 import home3 from './home3.webp'
+import roof_light from './ceiling_lights-500x500.webp'
 
 export const mileimage = [
   ongc,
@@ -56,35 +58,35 @@ export const milestones = [
     id: 1,
     year: "1982",
     title: "Company Founded",
-    description: "Our company was established with a vision to revolutionize the energy sector in India. Starting with a small team of dedicated professionals, we laid the foundation for what would become one of the country's leading industrial conglomerates.",
+    description: "Gujarat Rolling Shutter was established in 1982 with a vision to deliver high-quality security and closure solutions for commercial and residential properties across Gujarat. Starting as a small workshop with a handful of skilled craftsmen, the company quickly built a reputation for durability and reliability in the rolling shutter industry.",
     image: "",
   },
   {
     id: 2,
     year: "2000",
     title: "Adani Power",
-    description: "Formed a strategic partnership with Adani Power, marking our entry into the power generation sector. This collaboration enabled us to expand our operations and establish a significant presence in the energy market throughout Western India.",
+    description: "Secured our first major order from Adani Power, demonstrating our capability to meet industrial security requirements for one of India's largest power generation companies. Our successful delivery of custom industrial rolling shutters established our reputation for handling large-scale projects.",
     image: adani_power,
   },
   {
     id: 3,
     year: "2008",
     title: "Reliance",
-    description: "Joined forces with Reliance Industries to develop innovative solutions for the petrochemical industry. This milestone partnership accelerated our growth and helped us implement cutting-edge technologies across our operations.",
+    description: "Selected by Reliance Industries to provide specialized security solutions for their petrochemical facilities, developing innovative, heat-resistant shutters for challenging environments.",
     image: reliance,
   },
   {
     id: 4,
     year: "2015",
-    title: "Aditya Birla Group",
-    description: "Collaborated with the Aditya Birla Group to enhance our manufacturing capabilities and expand into new markets. This partnership strengthened our position in the industrial sector and opened new avenues for sustainable growth.",
-    image: aditya_birla,
+    title: "Torrent Power",
+    description: "Secured a major contract with Torrent Power to supply specialized rolling shutters for their power facilities across Gujarat. Delivered heat-resistant security solutions meeting strict safety protocols, showcasing our manufacturing capabilities and establishing us as a trusted supplier for critical infrastructure.",
+    image:  torrent,
   },
   {
     id: 5,
     year: "2024",
     title: "Aditya Birla Group",
-    description: "Renewed and expanded our partnership with the Aditya Birla Group, focusing on sustainability and digital transformation. This collaboration represents our commitment to innovation and environmental responsibility in the modern business landscape.",
+    description: "Secured renewed business providing advanced automated security systems with sustainability features, reflecting our evolution into a modern solutions provider.",
     image: aditya_birla,
   }
 ]
@@ -107,15 +109,15 @@ export const menuItems = [
 export const productData = [ 
    
    
-  { _id: '0', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: manual_shutter },
+  { _id: '0', name: 'Manual Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: manual_shutter_main },
   // { _id: '1', name: 'Poli_carbonate', speciality: 'Shutter', subCategory: 'Poli_carbonate',  video: poli_carbonate },
   { _id: '2', name: 'Motorized Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: motor_shutter },
   { _id: '3', name: 'Gear Rolling Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: gear_shutter1  },
   { _id: '4', name: 'Rapid Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image: fire_shutter },
-  { _id: '5', name: 'Aluminium Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: manual_shutter2 },
-  { _id: '6', name: 'Stainless Steel Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: manual_shutter },
-  { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: 'https://www.overheaddoors.com/wp-content/uploads/2018/01/Allura-653-Powdercoat-Perforated-brown-2560x1709.jpeg' },
-  { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: gear_shutter1 },
+  { _id: '5', name: 'Aluminium Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: "https://5.imimg.com/data5/TB/RU/MY-5065725/ss-rolling-shutter-250x250.jpg" },
+  { _id: '6', name: 'Stainless Steel Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: steel_shutter },
+  { _id: '7', name: 'Galvanized Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: gear_shutter1 },
+  { _id: '8', name: 'Galvalume Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: "https://5.imimg.com/data5/SELLER/Default/2023/9/340190222/YT/VB/UU/19877864/galvalume-motorized-rolling-shutters-1000x1000.jpg"},
   { _id: '9', name: 'Color Coated Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image: shop_rolling_shutter },
   { _id: '10', name: 'Mild Steel Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image: ms_shutter },
   { _id: '11', name: 'Grill Rolling Shutter', speciality: 'Shutter', subCategory: 'Grill Rolling Shutter', image: grill_rolling_s },
@@ -140,21 +142,20 @@ export const productData = [
 
 
   { _id: '23', name: 'Roof Ceiling', speciality: 'Roof Product', subCategory: 'Roof Ceiling', image: roof_celing },
-  { _id: '24', name: 'Roof Ceiling Light', speciality: 'Roof Product', subCategory: 'Roof Ceiling Light', image: 'https://via.placeholder.com/150' },
-  { _id: '25', name: 'Roof PoP', speciality: 'Roof Product', subCategory: 'Roof PoP', image: 'https://via.placeholder.com/150' },
+  { _id: '24', name: 'Roof Ceiling Light', speciality: 'Roof Product', subCategory: 'Roof Ceiling Light', image: roof_light },
 
 
  
   
   { _id: '26', name: 'Plywood Table', speciality: 'Office Work Station', subCategory: 'Plywood Table', image: pallywood_table },
   { _id: '27', name: 'Comfort Chair', speciality: 'Office Work Station', subCategory: 'Comfort Chair', image: office_chair },
-  
   { _id: '28', name: 'Electric Board in Table', speciality: 'Office Work Station', subCategory: 'Electric Board in Table', image: electric_board_table },
   { _id: '29', name: 'Floor Mating', speciality: 'Office Work Station', subCategory: 'Floor Mating', image: floor_mating },
+  { _id: '30', name: 'Cabin', speciality: 'Office Work Station', subCategory: 'Cabin', image: Cabin },
 
 
-  { _id: '30', name: 'M S Raling', speciality: 'Raling', subCategory: 'M S Raling', image: MS_Raling },
-  { _id: '31', name: 'S S Raling', speciality: 'Raling', subCategory: 'S S Raling', image: SS_Raling },
+  { _id: '31', name: 'M S Raling', speciality: 'Raling', subCategory: 'M S Raling', image: MS_Raling },
+  { _id: '32', name: 'S S Raling', speciality: 'Raling', subCategory: 'S S Raling', image: SS_Raling },
 
 
   
@@ -211,7 +212,8 @@ export const speciality = [
       { label: 'Pllywood Table', link: '/awnings/retractable' },
       { label: 'Comfort Chair', link: '/awnings/fixed' },
       { label: 'Electric Board in Table', link: '/awnings/retractable' },
-      { label: 'Floor Mating', link: '/awnings/retractable' }
+      { label: 'Floor Mating', link: '/awnings/retractable' },
+      { label: 'Cabin', link: '/awnings/retractable' }
     ]
   },
   {

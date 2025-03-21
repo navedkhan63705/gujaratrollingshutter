@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { productData } from "../assets/asset.js";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const navigate = useNavigate();
@@ -50,39 +51,41 @@ export default function Contact() {
     }
   };
 
-  // Form validation
-  const validateForm = () => {
-    const errors = {};
-
-    if (!formData.name.trim()) {
-      errors.name = "Name is required";
-    }
-
-    if (!formData.email.trim()) {
-      errors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Email is invalid";
-    }
-
-    if (!formData.subject.trim()) {
-      errors.subject = "Subject is required";
-    }
-
-    if (!formData.message.trim()) {
-      errors.message = "Message is required";
-    }
-
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
-
   // Form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    };
+    emailjs
+      .send(
+        "service_1qawa3s",
+        "template_1c79hsj",
+        templateParams,
+        "bxKrI6moY7XtsyEHY"
+      )
+      .then((response) => {
+        console.log("Email successfully sent!", response);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          requirement: "",
+          message: "",
+        });
+        alert("Your enquiry has been submitted successfully!");
+      })
+      .catch((err) => {
+        console.error("Failed to send email:", err);
+        setSubmitError("Failed to send your enquiry. Please try again later.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
 
     setIsSubmitting(true);
 
@@ -211,47 +214,116 @@ export default function Contact() {
                       </div>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                      <FormInput
-                        type="text"
-                        id="name"
-                        name="name"
-                        label="Full Name"
-                        value={formData.name}
-                        required={true}
-                      />
-                      <FormInput
-                        type="email"
-                        id="email"
-                        name="email"
-                        label="Email Address"
-                        value={formData.email}
-                        required={true}
-                      />
+                    <div className="grid text-black grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className={`w-full px-4 py-2 border ${
+                            formErrors.name
+                              ? "border-red-500"
+                              : "border-gray-300"
+                          } rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500`}
+                          required
+                        />
+                        {formErrors.name && (
+                          <p className="mt-1 text-sm text-red-500">
+                            {formErrors.name}
+                          </p>
+                        )}
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className={`w-full px-4 py-2 border ${
+                            formErrors.email
+                              ? "border-red-500"
+                              : "border-gray-300"
+                          } rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500`}
+                          required
+                        />
+                        {formErrors.email && (
+                          <p className="mt-1 text-sm text-red-500">
+                            {formErrors.email}
+                          </p>
+                        )}
+                      </div>
                     </div>
 
-                    <div className="mb-4">
-                      <FormInput
+                    <div className="mb-4 text-black">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
+                        Phone Number
+                      </label>
+                      <input
                         type="tel"
                         id="phone"
                         name="phone"
-                        label="Phone Number"
                         value={formData.phone}
+                        onChange={handleChange}
+                        className={`w-full px-4 py-2 border ${
+                          formErrors.phone
+                            ? "border-red-500"
+                            : "border-gray-300"
+                        } rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500`}
                       />
+                      {formErrors.phone && (
+                        <p className="mt-1 text-sm text-red-500">
+                          {formErrors.phone}
+                        </p>
+                      )}
                     </div>
 
-                    <div className="mb-4">
-                      <FormInput
+                    <div className="mb-4 text-black">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
+                        Subject *
+                      </label>
+                      <input
                         type="text"
                         id="subject"
                         name="subject"
-                        label="Subject"
                         value={formData.subject}
-                        required={true}
+                        onChange={handleChange}
+                        className={`w-full px-4 py-2 border ${
+                          formErrors.subject
+                            ? "border-red-500"
+                            : "border-gray-300"
+                        } rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500`}
+                        required
                       />
+                      {formErrors.subject && (
+                        <p className="mt-1 text-sm text-red-500">
+                          {formErrors.subject}
+                        </p>
+                      )}
                     </div>
 
-                    <div className="mb-6">
+                    <div className="mb-6 text-black">
                       <label
                         htmlFor="message"
                         className="block text-sm font-medium text-gray-700 mb-1"

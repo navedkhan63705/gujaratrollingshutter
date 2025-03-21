@@ -42,7 +42,6 @@ export const Enquire = () => {
                 requirement: '',
                 message: ''
             });
-             
             alert('Your enquiry has been submitted successfully!');
         })
         .catch((err) => {

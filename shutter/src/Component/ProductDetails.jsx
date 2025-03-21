@@ -71,7 +71,7 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="mt-35 mb-5 w-full min-h-screen bg-white">
+    <div className="mt-25 mb-5 w-full min-h-screen bg-white">
       {/* Breadcrumb Navigation */}
       <div className="max-w-7xl mx-auto px-4 py-4 bg-gray-50 rounded-md">
         <nav className="flex" aria-label="Breadcrumb">
@@ -213,38 +213,6 @@ export default function ProductDetails() {
                 <li>Warranty included</li>
               </ul>
             </div>
-
-            {/* Specifications */}
-            <div className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">Specifications</h2>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-gray-50 p-3 rounded">
-                  <span className="text-gray-500 text-sm">Material</span>
-                  <p className="font-medium text-black">
-                    {product.material || "Premium Aluminum"}
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded">
-                  <span className="text-gray-500 text-sm">Finish</span>
-                  <p className="font-medium">
-                    {product.finish || "Powder Coated"}
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded">
-                  <span className="text-gray-500 text-sm">Dimensions</span>
-                  <p className="font-medium text-black">
-                    {product.dimensions || "Customizable"}
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded">
-                  <span className="text-gray-500 text-sm">Weight</span>
-                  <p className="font-medium text-black">
-                    {product.weight || "Varies by size"}
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Call to Action Buttons */}
             <div className="flex flex-wrap gap-4 mt-6">
               <button

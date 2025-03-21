@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { productData } from '../assets/asset.js';
+import emailjs from 'emailjs-com';
 
 export default function Inquiry() {
   const { speciality, productName } = useParams();
@@ -40,6 +41,40 @@ export default function Inquiry() {
     e.preventDefault();
     setIsSubmitting(true);
     
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      requirement: formData.requirements,
+      message: formData.message,
+      required:formData.quantity
+  };
+  emailjs.send(
+    'service_1qawa3s', 
+    'template_1c79hsj', 
+    templateParams,
+    'bxKrI6moY7XtsyEHY'
+)
+.then((response) => {
+    console.log('Email successfully sent!', response);
+    setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        requirement: '',
+        message: '',
+        quantity:'1'
+    });
+     
+    alert('Your enquiry has been submitted successfully!');
+})
+.catch((err) => {
+    console.error('Failed to send email:', err);
+    setSubmitError('Failed to send your enquiry. Please try again later.');
+})
+.finally(() => {
+    setIsSubmitting(false);
+});
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
@@ -114,7 +149,7 @@ export default function Inquiry() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
+                      className="w-full p-2 border text-black border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
                     />
                   </div>
                   
@@ -127,7 +162,7 @@ export default function Inquiry() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
+                      className="w-full p-2 border text-black border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
                     />
                   </div>
                   
@@ -140,7 +175,7 @@ export default function Inquiry() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
+                      className="w-full p-2 border text-black border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
                     />
                   </div>
                   
@@ -152,7 +187,7 @@ export default function Inquiry() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
+                      className="w-full p-2 border text-black border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
                     />
                   </div>
                   
@@ -163,7 +198,7 @@ export default function Inquiry() {
                       name="quantity"
                       value={formData.quantity}
                       onChange={handleChange}
-                      className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
+                      className="w-full p-2 border text-black border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
                     >
                       <option value="1">1 unit</option>
                       <option value="2-5">2-5 units</option>
@@ -185,7 +220,7 @@ export default function Inquiry() {
                       onChange={handleChange}
                       rows="5"
                       placeholder="Please specify any custom requirements, dimensions, or questions you have about the product..."
-                      className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
+                      className="w-full p-2 border text-black border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400"
                     ></textarea>
                   </div>
                 </div>

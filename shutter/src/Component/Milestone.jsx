@@ -126,7 +126,7 @@ const Milestone = () => {
                           src={milestone.image} 
                           alt={milestone.title} 
                           className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
-                          style={{ maxHeight: '100px' }}
+                          style={{ maxHeight: '170px' }}
                         />
                       </div>
                     )}
@@ -194,7 +194,7 @@ const Milestone = () => {
               key={index}
               src={logo} 
               alt={`Partner ${index + 1}`} 
-              className="h-32 md:h-40 lg:h-48 object-contain m-4"
+              className="h-42 md:h-50 lg:h-48 object-contain m-4"
             />
           ))}
         </div>
