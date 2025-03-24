@@ -74,10 +74,10 @@ const Home1 = () => {
                     : '-translate-x-full opacity-0'
                 }`}
               >
-                <h2 
+                <h1
                   className="text-white ml-4 sm:ml-8 md:ml-16 lg:ml-20 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4
-                             bg-opacity-20 border-r-4 border-t-4 border-b-4 border-none
-                             relative overflow-hidden"
+                              bg-opacity-20 border-r-4 border-t-4 border-b-4 border-none
+                              relative overflow-hidden"
                 >
                   {/* Animated background gradient effect */}
                   <div 
@@ -86,7 +86,7 @@ const Home1 = () => {
                   ></div>
                   {/* Title text */}
                   <span className="relative z-10">{slide.title}</span>
-                </h2>
+                </h1>
               </div>
             </div>
           </div>

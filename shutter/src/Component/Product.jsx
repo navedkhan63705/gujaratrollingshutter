@@ -13,10 +13,10 @@ export default function Product() {
 
   const Products = [
     "Shutter",
-    "Aluminium Section",
-    "Gates & Door",
-    "Roof Product",
-    "Office Work Station",
+    "Aluminium-Section",
+    "Doors",
+    "Roof-Product",
+    "Office-Work-Station",
     "Raling",
   ];
 

@@ -41,9 +41,9 @@ const Home3 = () => {
           <div className="flex justify-center mt-4">
             <hr className="w-100 border-2 mb-3 border-orange-500" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center animate-pulse ">
+          <h3 className="text-3xl font-bold text-gray-800 mb-2 text-center animate-pulse ">
             Our Products
-          </h1>
+          </h3>
           <p className="text-gray-600 text-center transition-all duration-500 hover:text-gray-900 hover:scale-105">
             Discover our high-quality selection of products
           </p>

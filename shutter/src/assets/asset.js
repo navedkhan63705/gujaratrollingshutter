@@ -107,55 +107,59 @@ export const menuItems = [
 ];
 
 export const productData = [ 
-   
-   
-  { _id: '0', name: 'Manual-Shutter', speciality: 'Shutter', subCategory: 'Manual Shutters', image: manual_shutter_main },
+   { _id: '0', name: 'Manual-Shutter', speciality: 'Shutter', subCategory: 'Manual-Shutters', image: manual_shutter_main },
   // { _id: '1', name: 'Poli_carbonate', speciality: 'Shutter', subCategory: 'Poli_carbonate',  video: poli_carbonate },
-  { _id: '2', name: 'Motorized-Shutter', speciality: 'Shutter', subCategory: 'Motorized Shutters', image: motor_shutter },
-  { _id: '3', name: 'Gear-Rolling-Shutter', speciality: 'Shutter', subCategory: 'Gear Rolling Shutters', image: gear_shutter1  },
-  { _id: '4', name: 'Rapid-Shutter', speciality: 'Shutter', subCategory: 'Rapid Shutter', image: fire_shutter },
-  { _id: '5', name: 'Aluminium-Shutter', speciality: 'Shutter', subCategory: 'Aluminium Shutter', image: "https://5.imimg.com/data5/TB/RU/MY-5065725/ss-rolling-shutter-250x250.jpg" },
-  { _id: '6', name: 'Stainless-Steel-Shutter', speciality: 'Shutter', subCategory: 'Stainless Steel Shutter', image: steel_shutter },
-  { _id: '7', name: 'Galvanized-Shutter', speciality: 'Shutter', subCategory: 'Galvanized Shutter', image: gear_shutter1 },
-  { _id: '8', name: 'Galvalume-Shutter', speciality: 'Shutter', subCategory: 'Galvalume Shutter', image: "https://5.imimg.com/data5/SELLER/Default/2023/9/340190222/YT/VB/UU/19877864/galvalume-motorized-rolling-shutters-1000x1000.jpg"},
-  { _id: '9', name: 'Color-Coated-Shutter', speciality: 'Shutter', subCategory: 'Color Coated Shutter', image: shop_rolling_shutter },
-  { _id: '10', name: 'Mild-Steel-Shutter', speciality: 'Shutter', subCategory: 'Mild Steel Shutter', image: ms_shutter },
-  { _id: '11', name: 'Grill-Rolling-Shutter', speciality: 'Shutter', subCategory: 'Grill Rolling Shutter', image: grill_rolling_s },
- 
-
-  { _id: '12', name: 'Aluminium-Partition', speciality: 'Aluminium Section', subCategory: 'Aluminium Partition', image: aluminium_partition },
-  { _id: '13', name: 'Aluminium-Window', speciality: 'Aluminium Section', subCategory: 'Aluminium Window', image: aluminium_windows },
-  { _id: '14', name: 'Aluminium-Door', speciality: 'Aluminium Section', subCategory: 'Aluminium Door', image: AluminiumGate },
+  { _id: '2', name: 'Motorized-Shutter', speciality: 'Shutter', subCategory: 'Motorized-Shutters', image: motor_shutter },
+  { _id: '3', name: 'Gear-Rolling-Shutter', speciality: 'Shutter', subCategory: 'Gear-Rolling-Shutters', image: gear_shutter1  },
+  { _id: '4', name: 'Rapid-Shutter', speciality: 'Shutter', subCategory: 'Rapid-Shutter', image: fire_shutter },
+  { _id: '5', name: 'Aluminium-Shutter', speciality: 'Shutter', subCategory: 'Aluminium-Shutter', image: "https://5.imimg.com/data5/TB/RU/MY-5065725/ss-rolling-shutter-250x250.jpg" },
+  { _id: '6', name: 'Stainless-Steel-Shutter', speciality: 'Shutter', subCategory: 'Stainless-Steel-Shutter', image: steel_shutter },
+  { _id: '7', name: 'Galvanized-Shutter', speciality: 'Shutter', subCategory: 'Galvanized-Shutter', image: "https://gipaltech.com/wp-content/uploads/2022/08/galvanized-insulated-rolling-shutter-500x500-1.webp" },
+  { _id: '8', name: 'Galvalume-Shutter', speciality: 'Shutter', subCategory: 'Galvalume-Shutter', image: "https://5.imimg.com/data5/SELLER/Default/2023/9/340190222/YT/VB/UU/19877864/galvalume-motorized-rolling-shutters-1000x1000.jpg"},
+  { _id: '9', name: 'Color-Coated-Shutter', speciality: 'Shutter', subCategory: 'Color-Coated-Shutter', image: shop_rolling_shutter },
+  { _id: '10', name: 'Mild-Steel-Shutter', speciality: 'Shutter', subCategory: 'Mild-Steel-Shutter', image: ms_shutter },
+  { _id: '11', name: 'Grill-Rolling-Shutter', speciality: 'Shutter', subCategory: 'Grill-Rolling-Shutter', image: grill_rolling_s },
 
  
- 
-  { _id: '15', name: 'S-S Sliding-Gate', speciality: 'Gates & Door', subCategory: 'S S Sliding Gate', image: ss_sliding_gate },
-  { _id: '16', name: 'M-S Sliding-Gate', speciality: 'Gates & Door', subCategory: 'M S Sliding Gate', image: ms_sliding_gate },
-  { _id: '17', name: 'Electric-Retractable-SS-Gate', speciality: 'Gates & Door', subCategory: 'Electric Retractable SS Gate', image: electric_retractable },
-  { _id: '18', name: 'Fire-Resistant-Door', speciality: 'Gates & Door', subCategory: 'Fire Resistant Door', image: fire_door },
- 
-  { _id: '19', name: 'Sliding-Hangar-Doors', speciality: 'Gates & Door', subCategory: 'Sliding Hangar Doors', image: Sliding_Hnager_Door },
-  { _id: '20', name: 'Automatic-Barrier', speciality: 'Gates & Door', subCategory: 'Automatic Barrier', image: automatic_barrier },
-  { _id: '21', name: 'Dock-Levelers', speciality: 'Gates & Door', subCategory: 'Dock Levelers', image: Dock_Levelers },
-  { _id: '22', name: 'Mirror-Sensor-Door', speciality: 'Gates & Door', subCategory: 'Mirror Sensor Door', image: Mirror_Senser_Door },
+  { _id: '12', name: 'Aluminium-Partition', speciality: 'Aluminium-Section', subCategory: 'Aluminium-Partition', image: aluminium_partition },
+  { _id: '13', name: 'Aluminium-Window', speciality: 'Aluminium-Section', subCategory: 'Aluminium-Window', image: aluminium_windows },
+  { _id: '14', name: 'Aluminium-Door', speciality: 'Aluminium-Section', subCategory: 'Aluminium-Door', image: AluminiumGate },
 
 
 
-  { _id: '23', name: 'Roof-Ceiling', speciality: 'Roof Product', subCategory: 'Roof Ceiling', image: roof_celing },
-  { _id: '24', name: 'Roof-Ceiling-Light', speciality: 'Roof Product', subCategory: 'Roof Ceiling Light', image: roof_light },
-
-
- 
   
-  { _id: '26', name: 'Plywood-Table', speciality: 'Office Work Station', subCategory: 'Plywood Table', image: pallywood_table },
-  { _id: '27', name: 'Comfort-Chair', speciality: 'Office Work Station', subCategory: 'Comfort Chair', image: office_chair },
-  { _id: '28', name: 'Electric-Board-in-Table', speciality: 'Office Work Station', subCategory: 'Electric Board in Table', image: electric_board_table },
-  { _id: '29', name: 'Floor-Mating', speciality: 'Office Work Station', subCategory: 'Floor Mating', image: floor_mating },
-  { _id: '30', name: 'Cabin', speciality: 'Office Work Station', subCategory: 'Cabin', image: Cabin },
+  { _id: '15', name: 'S-S Sliding-Gate', speciality: 'Gates & Door', subCategory: 'S-S Sliding-Gate', image: ss_sliding_gate },
+  { _id: '16', name: 'M-S Sliding-Gate', speciality: 'Gates & Door', subCategory: 'M-S Sliding-Gate', image: ms_sliding_gate },
+  { _id: '17', name: 'Electric-Retractable-SS-Gate', speciality: 'Gates & Door', subCategory: 'Electric-Retractable-SS-Gate', image: electric_retractable },
+  { _id: '18', name: 'Fire-Resistant-Door', speciality: 'Gates & Door', subCategory: 'Fire-Resistant-Door', image: fire_door },
+
+  
+  { _id: '19', name: 'Sliding-Hangar-Doors', speciality: 'Doors', subCategory: 'Sliding-Hangar-Doors', image: Sliding_Hnager_Door },
+  { _id: '20', name: 'Automatic-Barrier', speciality: 'Doors', subCategory: 'Automatic-Barrier', image: automatic_barrier },
+  { _id: '21', name: 'Dock-Levelers', speciality: 'Doors', subCategory: 'Dock-Levelers', image: Dock_Levelers },
+  { _id: '22', name: 'Mirror-Sensor-Door', speciality: 'Doors', subCategory: 'Mirror-Sensor-Door', image: Mirror_Senser_Door },
 
 
-  { _id: '31', name: 'M-S-Raling', speciality: 'Raling', subCategory: 'M S Raling', image: MS_Raling },
-  { _id: '32', name: 'S-S-Raling', speciality: 'Raling', subCategory: 'S S Raling', image: SS_Raling },
+
+   
+  { _id: '23', name: 'Roof-Ceiling', speciality: 'Roof-Product', subCategory: 'Roof-Ceiling', image: roof_celing },
+  { _id: '24', name: 'Roof-Ceiling-Light', speciality: 'Roof-Product', subCategory: 'Roof-Ceiling-Light', image: roof_light },
+
+
+
+
+   
+  { _id: '26', name: 'Plywood-Table', speciality: 'Office-Work-Station', subCategory: 'Plywood-Table', image: pallywood_table },
+  { _id: '27', name: 'Comfort-Chair', speciality: 'Office-Work-Station', subCategory: 'Comfort-Chair', image: office_chair },
+  { _id: '28', name: 'Electric-Board-in-Table', speciality: 'Office-Work-Station', subCategory: 'Electric-Board-in-Table', image: electric_board_table },
+  { _id: '29', name: 'Floor-Mating', speciality: 'Office-Work-Station', subCategory: 'Floor-Mating', image: floor_mating },
+  { _id: '30', name: 'Cabin', speciality: 'Office-Work-Station', subCategory: 'Cabin', image: Cabin },
+
+
+  
+  { _id: '31', name: 'M-S-Raling', speciality: 'Raling', subCategory: 'M-S-Raling', image: MS_Raling },
+  { _id: '32', name: 'S-S-Raling', speciality: 'Raling', subCategory: 'S-S-Raling', image: SS_Raling },
+
 
 
   
@@ -178,11 +182,11 @@ export const speciality = [
     ]
   },
   {
-    title: 'Aluminium Section',
+    title: 'Aluminium-Section',
     Options: [
-      { label: 'Aluminium Partition' },
-      { label: 'Aluminium Window' },
-      { label: 'Aluminium Door' }
+      { label: 'Aluminium-Partition' },
+      { label: 'Aluminium-Window' },
+      { label: 'Aluminium-Door' }
     ]
   },
   {
@@ -219,8 +223,8 @@ export const speciality = [
   {
     title: 'Raling',
     Options: [
-      { label: 'M S Raling', link: '/awnings/retractable' },
-      { label: 'S S Raling', link: '/awnings/fixed' }
+      { label: 'M-S-Raling', link: '/awnings/retractable' },
+      { label: 'S-S-Raling', link: '/awnings/fixed' }
     ]
   },
 ];
